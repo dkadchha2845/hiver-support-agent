@@ -45,10 +45,18 @@ means `make agents` and `make judge` replay the exact same generations for free 
 verify them. A clone is about 9 MB.
 
 ```bash
-make setup      # venv + 7 pinned deps, ~60s
-make repro      # recompute every metric, table and the report itself, ~12s
-make test       # 16 unit tests on the parts that fail silently, ~2s
+git clone https://github.com/dkadchha2845/hiver-support-agent.git
+cd hiver-support-agent
+make setup      # venv + 7 pinned deps
+make repro      # recompute every metric, table, and the report itself
+make test       # 16 unit tests on the parts that fail silently
 ```
+
+Measured on a fresh clone (Apple M5, Python 3.9): clone 2s, `setup` 14s, `repro` 32s,
+`test` 1s — **49 seconds total**. `git status` is clean afterwards, i.e. every regenerated
+artefact (`results/metrics.json`, `results/tables.md`, `REPORT.md`, and the README headline
+block) comes back **byte-identical** to what is committed. That is the actual reproducibility
+claim: not "it runs", but "it produces the same numbers".
 
 `make repro` regenerates `results/metrics.json`, `tables.md`, `failures.json`,
 `judge_agreement_primary.json`, `judge_sensitivity.json`, `name_audit.json`,
