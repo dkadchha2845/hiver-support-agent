@@ -1,0 +1,8 @@
+{
+  "n": 40,
+  "intent_agreement": 1.0,
+  "intent_kappa": 1.0,
+  "route_agreement": 1.0,
+  "route_kappa": 1.0,
+  "disagreements": []
+}

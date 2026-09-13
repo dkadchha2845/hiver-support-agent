@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Got it. It sounds like Auto Skip might be on. Try disabling it and see if that helps. Follow our guide at <url> if you need help /AU\", \"used_evidence_ids\": [\"1839814-1839814\"], \"commitments\": []}"}

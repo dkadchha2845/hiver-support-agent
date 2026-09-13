@@ -1,0 +1,687 @@
+{
+  "golden_set": {
+    "n": 200,
+    "intent_distribution": {
+      "playback_bug": 37,
+      "billing_charge": 28,
+      "subscription_plan": 26,
+      "account_access": 25,
+      "how_to": 17,
+      "praise_thanks": 17,
+      "content_availability": 16,
+      "feature_request": 13,
+      "complaint_no_ask": 11,
+      "other_unclear": 10
+    },
+    "route_distribution": {
+      "auto": 102,
+      "escalate": 98
+    },
+    "escalation_driver_distribution": {
+      "none": 102,
+      "account_specific": 28,
+      "money_involved": 21,
+      "security_or_privacy": 15,
+      "non_english": 13,
+      "vague_no_detail": 9,
+      "churn_threat": 8,
+      "human_requested": 2,
+      "legal_or_regulatory": 2
+    },
+    "stratum_distribution": {
+      "general": 120,
+      "money": 18,
+      "churn_human": 16,
+      "security": 16,
+      "non_english": 10,
+      "safety_legal": 10,
+      "vague_short": 10
+    },
+    "position_distribution": {
+      "opener": 140,
+      "follow_up": 60
+    },
+    "n_flagged_hard": 46,
+    "gold_escalate_rate_on_sample": 0.49,
+    "gold_escalate_rate_weighted": 0.3813
+  },
+  "send_ready_definition": "min(groundedness, resolution, tone, safety) >= 4",
+  "systems": {
+    "B0_trivial_escalate_all": {
+      "system": "B0_trivial_escalate_all",
+      "n": 200,
+      "intent": {
+        "n": 200,
+        "accuracy_strict": 0.185,
+        "accuracy_strict_ci95": [
+          0.1373,
+          0.2446
+        ],
+        "accuracy_lenient": 0.21,
+        "macro_f1": 0.0312,
+        "weighted_f1": 0.0578,
+        "per_class": {
+          "account_access": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 25
+          },
+          "billing_charge": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 28
+          },
+          "complaint_no_ask": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "content_availability": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 16
+          },
+          "feature_request": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 13
+          },
+          "how_to": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          },
+          "other_unclear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 10
+          },
+          "playback_bug": {
+            "precision": 0.185,
+            "recall": 1.0,
+            "f1": 0.312,
+            "support": 37
+          },
+          "praise_thanks": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          },
+          "subscription_plan": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 26
+          }
+        }
+      },
+      "routing": {
+        "n": 200,
+        "confusion": {
+          "tp_escalate": 98,
+          "fn_missed_escalation": 0,
+          "fp_over_escalate": 102,
+          "tn_auto": 0
+        },
+        "escalation_recall": 1.0,
+        "escalation_recall_ci95": [
+          0.9623,
+          1.0
+        ],
+        "escalation_precision": 0.49,
+        "auto_coverage": 0.0,
+        "auto_precision": null,
+        "unsafe_auto_rate": 0.0,
+        "unsafe_auto_rate_ci95": [
+          0.0,
+          0.0188
+        ],
+        "unsafe_auto_rate_weighted": 0.0,
+        "route_agreement": 0.49,
+        "route_kappa": 0.0
+      }
+    },
+    "B0_trivial_auto_all": {
+      "system": "B0_trivial_auto_all",
+      "n": 200,
+      "intent": {
+        "n": 200,
+        "accuracy_strict": 0.185,
+        "accuracy_strict_ci95": [
+          0.1373,
+          0.2446
+        ],
+        "accuracy_lenient": 0.21,
+        "macro_f1": 0.0312,
+        "weighted_f1": 0.0578,
+        "per_class": {
+          "account_access": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 25
+          },
+          "billing_charge": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 28
+          },
+          "complaint_no_ask": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "content_availability": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 16
+          },
+          "feature_request": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 13
+          },
+          "how_to": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          },
+          "other_unclear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 10
+          },
+          "playback_bug": {
+            "precision": 0.185,
+            "recall": 1.0,
+            "f1": 0.312,
+            "support": 37
+          },
+          "praise_thanks": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          },
+          "subscription_plan": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 26
+          }
+        }
+      },
+      "routing": {
+        "n": 200,
+        "confusion": {
+          "tp_escalate": 0,
+          "fn_missed_escalation": 98,
+          "fp_over_escalate": 0,
+          "tn_auto": 102
+        },
+        "escalation_recall": 0.0,
+        "escalation_recall_ci95": [
+          0.0,
+          0.0377
+        ],
+        "escalation_precision": null,
+        "auto_coverage": 1.0,
+        "auto_precision": 0.51,
+        "unsafe_auto_rate": 0.49,
+        "unsafe_auto_rate_ci95": [
+          0.4216,
+          0.5588
+        ],
+        "unsafe_auto_rate_weighted": 0.3813,
+        "route_agreement": 0.51,
+        "route_kappa": 0.0
+      }
+    },
+    "B1_simple": {
+      "system": "B1_simple",
+      "n": 200,
+      "intent": {
+        "n": 200,
+        "accuracy_strict": 0.41,
+        "accuracy_strict_ci95": [
+          0.3442,
+          0.4792
+        ],
+        "accuracy_lenient": 0.535,
+        "macro_f1": 0.2955,
+        "weighted_f1": 0.3672,
+        "per_class": {
+          "account_access": {
+            "precision": 0.606,
+            "recall": 0.8,
+            "f1": 0.69,
+            "support": 25
+          },
+          "billing_charge": {
+            "precision": 0.367,
+            "recall": 0.393,
+            "f1": 0.379,
+            "support": 28
+          },
+          "complaint_no_ask": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "content_availability": {
+            "precision": 0.333,
+            "recall": 0.125,
+            "f1": 0.182,
+            "support": 16
+          },
+          "feature_request": {
+            "precision": 0.5,
+            "recall": 0.077,
+            "f1": 0.133,
+            "support": 13
+          },
+          "how_to": {
+            "precision": 0.333,
+            "recall": 0.176,
+            "f1": 0.231,
+            "support": 17
+          },
+          "other_unclear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 10
+          },
+          "playback_bug": {
+            "precision": 0.475,
+            "recall": 0.757,
+            "f1": 0.583,
+            "support": 37
+          },
+          "praise_thanks": {
+            "precision": 0.471,
+            "recall": 0.471,
+            "f1": 0.471,
+            "support": 17
+          },
+          "subscription_plan": {
+            "precision": 0.243,
+            "recall": 0.346,
+            "f1": 0.286,
+            "support": 26
+          }
+        }
+      },
+      "routing": {
+        "n": 200,
+        "confusion": {
+          "tp_escalate": 70,
+          "fn_missed_escalation": 28,
+          "fp_over_escalate": 13,
+          "tn_auto": 89
+        },
+        "escalation_recall": 0.7143,
+        "escalation_recall_ci95": [
+          0.6181,
+          0.7943
+        ],
+        "escalation_precision": 0.8434,
+        "auto_coverage": 0.585,
+        "auto_precision": 0.7607,
+        "unsafe_auto_rate": 0.14,
+        "unsafe_auto_rate_ci95": [
+          0.0987,
+          0.1949
+        ],
+        "unsafe_auto_rate_weighted": 0.1633,
+        "route_agreement": 0.795,
+        "route_kappa": 0.5886
+      }
+    },
+    "S3_agent": {
+      "system": "S3_agent",
+      "n": 10,
+      "intent": {
+        "n": 10,
+        "accuracy_strict": 0.6,
+        "accuracy_strict_ci95": [
+          0.3127,
+          0.8318
+        ],
+        "accuracy_lenient": 0.6,
+        "macro_f1": 0.4222,
+        "weighted_f1": 0.56,
+        "per_class": {
+          "account_access": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "billing_charge": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "complaint_no_ask": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "content_availability": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "how_to": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other_unclear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "playback_bug": {
+            "precision": 0.667,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 2
+          },
+          "praise_thanks": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "subscription_plan": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        }
+      },
+      "routing": {
+        "n": 10,
+        "confusion": {
+          "tp_escalate": 4,
+          "fn_missed_escalation": 2,
+          "fp_over_escalate": 1,
+          "tn_auto": 3
+        },
+        "escalation_recall": 0.6667,
+        "escalation_recall_ci95": [
+          0.3,
+          0.9032
+        ],
+        "escalation_precision": 0.8,
+        "auto_coverage": 0.5,
+        "auto_precision": 0.6,
+        "unsafe_auto_rate": 0.2,
+        "unsafe_auto_rate_ci95": [
+          0.0567,
+          0.5098
+        ],
+        "unsafe_auto_rate_weighted": 0.2736,
+        "route_agreement": 0.7,
+        "route_kappa": 0.4
+      }
+    },
+    "HUMAN_brand_reply": {
+      "system": "HUMAN_brand_reply",
+      "n": 200
+    }
+  },
+  "slices_S3_agent": {
+    "by_position": {
+      "opener": {
+        "n": 140,
+        "intent_strict_acc": 0.0429,
+        "unsafe_auto_rate": 0.0071
+      },
+      "follow_up": {
+        "n": 60,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0167
+      }
+    },
+    "by_stratum": {
+      "churn_human": {
+        "n": 16,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0
+      },
+      "general": {
+        "n": 120,
+        "intent_strict_acc": 0.025,
+        "unsafe_auto_rate": 0.0167
+      },
+      "money": {
+        "n": 18,
+        "intent_strict_acc": 0.0556,
+        "unsafe_auto_rate": 0.0
+      },
+      "non_english": {
+        "n": 10,
+        "intent_strict_acc": 0.1,
+        "unsafe_auto_rate": 0.0
+      },
+      "safety_legal": {
+        "n": 10,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0
+      },
+      "security": {
+        "n": 16,
+        "intent_strict_acc": 0.0625,
+        "unsafe_auto_rate": 0.0
+      },
+      "vague_short": {
+        "n": 10,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0
+      }
+    },
+    "by_annotator_difficulty": {
+      "clear": {
+        "n": 154,
+        "intent_strict_acc": 0.0325,
+        "unsafe_auto_rate": 0.0
+      },
+      "flagged_hard": {
+        "n": 46,
+        "intent_strict_acc": 0.0217,
+        "unsafe_auto_rate": 0.0435
+      }
+    },
+    "by_gold_intent": {
+      "account_access": {
+        "n": 25,
+        "intent_strict_acc": 0.04,
+        "unsafe_auto_rate": 0.0
+      },
+      "billing_charge": {
+        "n": 28,
+        "intent_strict_acc": 0.0714,
+        "unsafe_auto_rate": 0.0
+      },
+      "complaint_no_ask": {
+        "n": 11,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0
+      },
+      "content_availability": {
+        "n": 16,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0
+      },
+      "feature_request": {
+        "n": 13,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0
+      },
+      "how_to": {
+        "n": 17,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0
+      },
+      "other_unclear": {
+        "n": 10,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.1
+      },
+      "playback_bug": {
+        "n": 37,
+        "intent_strict_acc": 0.0541,
+        "unsafe_auto_rate": 0.0
+      },
+      "praise_thanks": {
+        "n": 17,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0
+      },
+      "subscription_plan": {
+        "n": 26,
+        "intent_strict_acc": 0.0385,
+        "unsafe_auto_rate": 0.0385
+      }
+    }
+  },
+  "slices_B1_simple": {
+    "by_position": {
+      "opener": {
+        "n": 140,
+        "intent_strict_acc": 0.3857,
+        "unsafe_auto_rate": 0.1714
+      },
+      "follow_up": {
+        "n": 60,
+        "intent_strict_acc": 0.4667,
+        "unsafe_auto_rate": 0.0667
+      }
+    },
+    "by_stratum": {
+      "churn_human": {
+        "n": 16,
+        "intent_strict_acc": 0.25,
+        "unsafe_auto_rate": 0.0625
+      },
+      "general": {
+        "n": 120,
+        "intent_strict_acc": 0.3417,
+        "unsafe_auto_rate": 0.1667
+      },
+      "money": {
+        "n": 18,
+        "intent_strict_acc": 0.2778,
+        "unsafe_auto_rate": 0.1667
+      },
+      "non_english": {
+        "n": 10,
+        "intent_strict_acc": 0.4,
+        "unsafe_auto_rate": 0.1
+      },
+      "safety_legal": {
+        "n": 10,
+        "intent_strict_acc": 0.6,
+        "unsafe_auto_rate": 0.1
+      },
+      "security": {
+        "n": 16,
+        "intent_strict_acc": 0.9375,
+        "unsafe_auto_rate": 0.0
+      },
+      "vague_short": {
+        "n": 10,
+        "intent_strict_acc": 0.7,
+        "unsafe_auto_rate": 0.2
+      }
+    },
+    "by_annotator_difficulty": {
+      "clear": {
+        "n": 154,
+        "intent_strict_acc": 0.4545,
+        "unsafe_auto_rate": 0.1104
+      },
+      "flagged_hard": {
+        "n": 46,
+        "intent_strict_acc": 0.2609,
+        "unsafe_auto_rate": 0.2391
+      }
+    },
+    "by_gold_intent": {
+      "account_access": {
+        "n": 25,
+        "intent_strict_acc": 0.8,
+        "unsafe_auto_rate": 0.08
+      },
+      "billing_charge": {
+        "n": 28,
+        "intent_strict_acc": 0.3929,
+        "unsafe_auto_rate": 0.1786
+      },
+      "complaint_no_ask": {
+        "n": 11,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.0909
+      },
+      "content_availability": {
+        "n": 16,
+        "intent_strict_acc": 0.125,
+        "unsafe_auto_rate": 0.0
+      },
+      "feature_request": {
+        "n": 13,
+        "intent_strict_acc": 0.0769,
+        "unsafe_auto_rate": 0.0
+      },
+      "how_to": {
+        "n": 17,
+        "intent_strict_acc": 0.1765,
+        "unsafe_auto_rate": 0.1765
+      },
+      "other_unclear": {
+        "n": 10,
+        "intent_strict_acc": 0.0,
+        "unsafe_auto_rate": 0.7
+      },
+      "playback_bug": {
+        "n": 37,
+        "intent_strict_acc": 0.7568,
+        "unsafe_auto_rate": 0.0811
+      },
+      "praise_thanks": {
+        "n": 17,
+        "intent_strict_acc": 0.4706,
+        "unsafe_auto_rate": 0.0
+      },
+      "subscription_plan": {
+        "n": 26,
+        "intent_strict_acc": 0.3462,
+        "unsafe_auto_rate": 0.2692
+      }
+    }
+  }
+}

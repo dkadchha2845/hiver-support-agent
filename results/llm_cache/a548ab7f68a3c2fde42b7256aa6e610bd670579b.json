@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry you can\u2019t see the 7-day trial. Let\u2019s check your subscription status. Can you try signing out and back in?\", \"used_evidence_ids\": [\"subscription_plan\"], \"commitments\": []}"}

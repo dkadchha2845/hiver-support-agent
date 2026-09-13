@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We hear you! Adding your followed artists' new releases directly to Home could make things easier. Stay tuned for updates.\", \"used_evidence_ids\": [\"feature_request\"], \"commitments\": []}"}

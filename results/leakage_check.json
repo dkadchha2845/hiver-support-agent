@@ -1,0 +1,18 @@
+{
+  "temporal_bleed": {
+    "pool_earliest_ts": "2017-11-16T00:51:42+00:00",
+    "history_units_after_that": 199,
+    "share_of_history": 0.0068,
+    "note": "The split is thread-level and time-ordered by thread start, so no conversation spans both sides. These units are later turns of long-running history threads. Retrieval additionally excludes a unit's own conversation, so this cannot leak a unit's own answer."
+  },
+  "nearest_neighbour_similarity_on_golden": {
+    "min": 0.1985,
+    "p25": 0.2795,
+    "median": 0.3367,
+    "p75": 0.4098,
+    "max": 1.0,
+    "share_above_0.90_near_duplicate": 0.01,
+    "share_above_0.60": 0.05,
+    "share_below_0.15_no_precedent": 0.0
+  }
+}

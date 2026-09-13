@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"@customer Hi there! To reduce suggested tracks, try adding more black metal artists to your playlists. A human will look into your request too. DM us your username if needed. Thanks!\", \"used_evidence_ids\": [\"1705024-1705024\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"@customer We\u2019re sorry to hear you\u2019re having trouble. Can you try accessing the web player in incognito mode? Let us know if that helps /CX\", \"used_evidence_ids\": [\"785940-785934\"], \"commitments\": []}"}

@@ -1,0 +1,44 @@
+{
+  "brand": "SpotifyCares",
+  "pool_units": 11971,
+  "pool_deduped": 11644,
+  "n_frame": 200,
+  "seed": 20250913,
+  "strata": {
+    "general": {
+      "population": 8882,
+      "sampled": 120,
+      "weight": 74.017
+    },
+    "safety_legal": {
+      "population": 40,
+      "sampled": 10,
+      "weight": 4.0
+    },
+    "security": {
+      "population": 284,
+      "sampled": 16,
+      "weight": 17.75
+    },
+    "money": {
+      "population": 1087,
+      "sampled": 18,
+      "weight": 60.389
+    },
+    "churn_human": {
+      "population": 212,
+      "sampled": 16,
+      "weight": 13.25
+    },
+    "non_english": {
+      "population": 56,
+      "sampled": 10,
+      "weight": 5.6
+    },
+    "vague_short": {
+      "population": 1083,
+      "sampled": 10,
+      "weight": 108.3
+    }
+  }
+}

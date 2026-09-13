@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry you\u2019re having trouble accessing Spotify via iOS. A teammate will look into it for you. Could you share the exact version of iOS you\u2019re using?\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

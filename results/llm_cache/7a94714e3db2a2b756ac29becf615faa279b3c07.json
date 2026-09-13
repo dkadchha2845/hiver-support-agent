@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi! We don't have Norwegian support yet, but we can help in English here. Let us know if you'd like to see any changes or have suggestions for Discover Weekly.\", \"used_evidence_ids\": [\"429236-429236\"], \"commitments\": []}"}

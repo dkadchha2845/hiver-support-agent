@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi there. We take feedback seriously and want to help. Could you DM us more details about the issue with your playlists? Let's sort this out together.\", \"used_evidence_ids\": [\"714874-714872\"], \"commitments\": []}"}

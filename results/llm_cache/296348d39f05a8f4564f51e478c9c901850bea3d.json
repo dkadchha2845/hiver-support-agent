@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi there! If you already have Spotify Premium, you might still be eligible for special offers. Check your account or our website for any current deals /MQ\", \"used_evidence_ids\": [\"2051757-2051756\"], \"commitments\": []}"}

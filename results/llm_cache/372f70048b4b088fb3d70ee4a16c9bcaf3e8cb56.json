@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We hear you! 'Otis' by Kanye and Jay is definitely a favorite. We\u2019ll make sure to pass this along. Thanks for letting us know!\", \"used_evidence_ids\": [\"@customer\"], \"commitments\": []}"}

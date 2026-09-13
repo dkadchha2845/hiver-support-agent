@@ -1,0 +1,19 @@
+{
+  "system": "S3_agent",
+  "provider": "ollama",
+  "model": "qwen2.5:7b-instruct",
+  "router": "policy",
+  "retrieval": true,
+  "k": 4,
+  "n": 200,
+  "workers": 2,
+  "wall_seconds": 1883.7,
+  "llm_stats": {
+    "calls": 259,
+    "cache_hits": 141,
+    "retries": 0,
+    "wall_seconds": 3748.163316488266,
+    "json_repairs": 0,
+    "hard_failures": 0
+  }
+}

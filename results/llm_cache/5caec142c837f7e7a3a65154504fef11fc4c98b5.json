@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey there! To upload your music, head to the 'Upload' section in your account settings. We\u2019ve got a guide to help you through it.\", \"used_evidence_ids\": [\"how_to\"], \"commitments\": []}"}

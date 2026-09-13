@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Thanks for the suggestion, @SpotifyCares! We\u2019ll look into adding Havayoth to our library. Stay tuned!\", \"used_evidence_ids\": [\"feature_request\"], \"commitments\": []}"}

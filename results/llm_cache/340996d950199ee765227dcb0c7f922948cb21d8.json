@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We hear you, and we\u2019re here to help. A human teammate will take a look at your account. Could you please share your username or email for us to assist?\", \"used_evidence_ids\": [\"account_access\"], \"commitments\": []}"}

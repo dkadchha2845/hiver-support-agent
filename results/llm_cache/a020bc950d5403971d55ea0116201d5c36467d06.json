@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"@customer Hey! Thanks for letting us know. Can you check if the ad has a 'skip' option within it? If not, we\u2019ll look into it. Give it a try first!\", \"used_evidence_ids\": [\"1557726-1557726\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! If you cancel now, your Premium will end at the end of your current 3-month trial. Let's chat in a DM if you need to adjust anything /DR\", \"used_evidence_ids\": [\"381780-381778\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey there! The cavalry's here. What country is your account set to? We'll check backstage.\", \"used_evidence_ids\": [\"1151488-1151488\"], \"commitments\": []}"}

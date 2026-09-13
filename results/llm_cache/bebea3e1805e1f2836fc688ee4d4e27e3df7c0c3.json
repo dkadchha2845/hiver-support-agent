@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Don't worry, we\u2019ll have the album available to you as soon as it\u2019s back. If there\u2019s anything else, just let us know!\", \"used_evidence_ids\": [\"2368043-2368040\"], \"commitments\": []}"}

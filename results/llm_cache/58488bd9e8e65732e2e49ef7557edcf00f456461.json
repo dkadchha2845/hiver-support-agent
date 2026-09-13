@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi there! We\u2019re sorry your college isn\u2019t listed. You can add it manually in Settings > Student Info. Let us know if you need any help!\", \"used_evidence_ids\": [\"subscription_plan\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Thanks for your feedback! We\u2019re working to improve our Premium features. Stay tuned for updates.\", \"used_evidence_ids\": [\"feature_request\"], \"commitments\": []}"}

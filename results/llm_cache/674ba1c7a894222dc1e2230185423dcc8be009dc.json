@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! We\u2019re working on it as we speak. A human teammate will follow up with you soon to get this sorted /NY\", \"used_evidence_ids\": [\"2395906-2395906\"], \"commitments\": []}"}

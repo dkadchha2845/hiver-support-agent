@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! We appreciate your feedback. You can already see new releases from followed artists on the Browse > New Releases page. Let us know if you need any help finding them!\", \"used_evidence_ids\": [\"[1884367-1884367]\"], \"commitments\": []}"}

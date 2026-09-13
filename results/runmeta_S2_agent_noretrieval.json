@@ -1,0 +1,19 @@
+{
+  "system": "S2_agent_noretrieval",
+  "provider": "ollama",
+  "model": "qwen2.5:7b-instruct",
+  "router": "policy",
+  "retrieval": false,
+  "k": 4,
+  "n": 100,
+  "workers": 2,
+  "wall_seconds": 347.9,
+  "llm_stats": {
+    "calls": 100,
+    "cache_hits": 100,
+    "retries": 0,
+    "wall_seconds": 691.4105641841888,
+    "json_repairs": 0,
+    "hard_failures": 0
+  }
+}

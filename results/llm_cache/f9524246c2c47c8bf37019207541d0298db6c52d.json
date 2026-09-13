@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Thanks! Just to check, are you able to sync Local Files on your laptop but not the mobile app? If so, a screenshot of any error messages could help us out.\", \"used_evidence_ids\": [\"1267516-1267515\", \"285336-285335\"], \"commitments\": []}"}

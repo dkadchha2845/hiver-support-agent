@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We hear you, and we\u2019re working on improving shuffle experiences. We\u2019ll look into this for you.\", \"used_evidence_ids\": [\"complaint_no_ask\"], \"commitments\": []}"}

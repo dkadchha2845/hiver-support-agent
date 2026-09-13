@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We hear you, and we\u2019re working on it! We\u2019ll review and update the artist page soon.\", \"used_evidence_ids\": [\"content_availability\"], \"commitments\": []}"}

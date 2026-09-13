@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear you\u2019re having trouble accessing Premium. A teammate will reach out soon to help resolve this. Could you share your username or the last 4 digits of your card for faster assistance?\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

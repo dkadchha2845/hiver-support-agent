@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi Danielle! We hear you and appreciate your feedback. You can try adding songs to your own playlist or creating a new one for the songs you want to keep. Let us know if there\u2019s anything else we can help with!\", \"used_evidence_ids\": [\"2422810-2422810\"], \"commitments\": []}"}

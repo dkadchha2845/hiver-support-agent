@@ -1,0 +1,191 @@
+# Intent codebook for @SpotifyCares, induced bottom-up from ~450 sampled threads.
+#
+# How it was built (see DECISIONS.md #2): I read a random sample of threads and
+# grouped them by *what the brand actually did next*, not by topic. Codes only
+# exist where Spotify's own first response differs. "Songs cut off on Echo" and
+# "app crashes on Windows" are one code because Spotify answers both the same way
+# (ask for device / OS / version). "I was charged £14.99" and "how do I join
+# Premium for Family" are different codes because one always goes to DM and the
+# other is often answered in public with a link.
+#
+# policy:
+#   auto_eligible    -> may be auto-sent if no hard risk signal fires
+#   always_escalate  -> never auto-sent, whatever else is true
+
+version: 3
+brand: SpotifyCares
+
+intents:
+  - name: playback_bug
+    definition: >
+      The product is misbehaving on a device or platform - audio stops, skips,
+      won't play, plays the wrong thing, app crashes, freezes, won't sync or
+      download, offline mode broken, device/speaker integration failing.
+    policy: auto_eligible
+    first_response: Ask for device, OS, app version, network, and when it started.
+    examples:
+      - "Songs run time continues to play but no music is heard, can't change song"
+      - "songs cut off early when I listen through Amazon Echo"
+      - "I've uninstalled and reinstalled Spotify twice and nothing solved it"
+
+  - name: account_access
+    definition: >
+      The customer cannot get into, or cannot control, their own account -
+      login/password failures, Facebook login, account compromised or appearing
+      in a leak, someone else listening on their account, remote logout,
+      changing the email on the account.
+    policy: always_escalate
+    first_response: Ask for username/email in DM; never troubleshoot in public.
+    examples:
+      - "I have an issue logging into my account via Facebook, password invalid"
+      - "i just found my username and password in a pastebin doc"
+      - "I can't remote logout from device Sonos Play"
+
+  - name: billing_charge
+    definition: >
+      Money has already moved or failed to move - an unexpected or duplicate
+      charge, a refund request, a payment that keeps being declined, being
+      billed at the wrong price, a charge after cancelling.
+    policy: always_escalate
+    first_response: Ask for account email in DM; handle backstage.
+    examples:
+      - "took £14.99 from my bank account, for no reason at all"
+      - "I've tried both a Prepaid Visa AND a Mastercard, nothing works"
+      - "Want to make sure I won't be double charged for this month"
+
+  - name: subscription_plan
+    definition: >
+      Questions about the shape or lifecycle of a plan rather than a specific
+      transaction - joining/managing Premium for Family, student pricing,
+      upgrading or downgrading, how to cancel, what a plan includes, invitation
+      errors when setting a plan up.
+    policy: auto_eligible
+    first_response: >
+      Answer in public with the right help link when the question is general;
+      move to DM when it needs a look at this customer's plan.
+    examples:
+      - "I am interested in signing up for the Premium family plan. What is the easiest way?"
+      - "I can not join to a premium for family plan, every time I accept an invitation I get an error"
+      - "Premium for Family isn't much use if I can't tell it which are kids"
+
+  - name: content_availability
+    definition: >
+      A specific song, album, artist, podcast or piece of metadata is missing,
+      wrong, merged with another artist, region-locked, or not out yet.
+    policy: auto_eligible
+    first_response: Explain licensing, link the content policy page, or ask for the URI.
+    examples:
+      - "why isn't the pretty reckless first album on Spotify?"
+      - "Somebody wanna tell me why Take Care is not in Spotify anymore"
+      - "two different artists with the same name having their catalogues smashed together"
+
+  - name: feature_request
+    definition: >
+      Asks for a capability the product does not have, or complains about a
+      deliberate product limitation. The correct answer is the idea board, not a fix.
+    policy: auto_eligible
+    first_response: Empathise, point to the Community idea board, invite a vote.
+    examples:
+      - "a way to forever block an artist from ever coming into any playlist"
+      - "Can you show us how many times we have listened to a certain song?"
+      - "please start developing for Linux again"
+
+  - name: how_to
+    definition: >
+      Asks how to do something the product already supports, or where to find
+      something - a documentation question with a stable answer.
+    policy: auto_eligible
+    first_response: Give the steps or the help-centre link.
+    examples:
+      - "Im trying to set up my profile as an artist and upload my music"
+      - "how do I report two different artists with the same name"
+      - "Why can't I search for artists on the playstation app?"
+
+  - name: praise_thanks
+    definition: >
+      Positive sentiment, thanks, or thread closure ("nevermind, it fixed
+      itself"). Nothing is being asked for.
+    policy: auto_eligible
+    first_response: Warm one-liner, leave the door open.
+    examples:
+      - "You really do care - not just a name"
+      - "thank u for the quick response!"
+      - "nevermind it fixed itself"
+
+  - name: complaint_no_ask
+    definition: >
+      Criticism, frustration or sarcasm with no answerable request and no
+      specific bug - general venting about the product, price or company.
+    policy: auto_eligible
+    first_response: Acknowledge, pass feedback on, offer the idea board if relevant.
+    examples:
+      - "What's the point of having a premium subscription if there's a limit to downloading"
+      - "Dammit! Spotify just RickRolled us!"
+      - "this is the worst update ever"
+
+  - name: other_unclear
+    definition: >
+      Cannot be placed - off-topic mentions, spam, a bare "help", a message whose
+      referent is missing (reply to a deleted tweet, image-only), or genuinely
+      ambiguous between three or more codes.
+    policy: always_escalate
+    first_response: Ask one clarifying question.
+    examples:
+      - "@SpotifyCares Not true right? @SpotifyCares"
+      - "please help"
+      - "Appvalley really blow my shit when I press on Spotify"
+
+# Risk signals are extracted by the model and consumed by a deterministic policy.
+# `hard_escalate: true` means: if this fires, the message is never auto-handled,
+# regardless of intent.
+risk_signals:
+  - key: account_specific
+    definition: >
+      Answering correctly requires looking up THIS customer's account, plan,
+      invoice or listening data. Generic product questions are not account specific.
+    hard_escalate: true
+  - key: money_involved
+    definition: >
+      Money has already moved, has failed to move, or is about to move wrongly for
+      THIS customer - an unexpected/duplicate charge, a refund, a declined payment,
+      a pro-rata question about money already paid, a disputed amount. It does NOT
+      fire for general questions about prices, offers or payment options, which have
+      the same answer for everyone.
+    hard_escalate: true
+  - key: security_or_privacy
+    definition: >
+      Credentials, unauthorised access, a leak, or exposure of personal data is
+      mentioned.
+    hard_escalate: true
+  - key: legal_or_regulatory
+    definition: >
+      Mentions lawyers, small claims, GDPR/data requests, regulators, fraud
+      reports, the press, or a formal complaint.
+    hard_escalate: true
+  - key: human_requested
+    definition: >
+      Explicitly asks for a person, an agent, a manager, a callback, or says they
+      have already tried the bot/automated channel.
+    hard_escalate: true
+  - key: churn_threat
+    definition: >
+      Says they are cancelling, leaving, or switching to a competitor - stated as
+      a decision or an imminent one, not as idle grumbling.
+    hard_escalate: true
+  - key: safety_or_wellbeing
+    definition: >
+      Self-harm, medical emergency, threats of violence, or a minor at risk.
+    hard_escalate: true
+  - key: non_english
+    definition: >
+      The substance of the message is in a language other than English.
+    hard_escalate: true
+  - key: abusive_or_public_escalation
+    definition: >
+      Profanity or abuse aimed at the brand or staff, or a threat to take it to
+      the press / go viral / tag journalists.
+    hard_escalate: true
+  - key: vague_no_detail
+    definition: >
+      There is not enough information to act even after reading the earlier turns.
+    hard_escalate: false

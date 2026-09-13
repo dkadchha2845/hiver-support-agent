@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re looking into your billing issue. A teammate will get in touch soon. Please share your order number for us to help faster.\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

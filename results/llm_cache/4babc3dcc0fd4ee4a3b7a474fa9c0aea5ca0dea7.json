@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We hear you, and we\u2019re sorry about the surprise. We\u2019ll keep Take Care available for now. Thanks for letting us know!\", \"used_evidence_ids\": [\"complaint_no_ask\"], \"commitments\": []}"}

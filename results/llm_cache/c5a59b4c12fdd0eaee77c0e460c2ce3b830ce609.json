@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Our friends in Artist Support can help with that. You can get in touch with them here: <url> /NY\", \"used_evidence_ids\": [\"930090-930090\"], \"commitments\": []}"}

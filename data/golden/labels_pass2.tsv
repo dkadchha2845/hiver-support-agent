@@ -1,0 +1,43 @@
+# Second-pass re-label of a 40-unit random subset (same annotator, items reshuffled,
+# first-pass labels not visible). Used for intra-annotator consistency only.
+# index refers to the shuffled order printed by scripts/pass2_show.py (seed 4242).
+0|complaint_no_ask|auto
+1|how_to|auto
+2|playback_bug|escalate
+3|how_to|auto
+4|praise_thanks|auto
+5|praise_thanks|auto
+6|subscription_plan|escalate
+7|content_availability|auto
+8|how_to|escalate
+9|playback_bug|auto
+10|praise_thanks|auto
+11|content_availability|auto
+12|account_access|escalate
+13|account_access|escalate
+14|billing_charge|escalate
+15|subscription_plan|auto
+16|complaint_no_ask|auto
+17|praise_thanks|auto
+18|subscription_plan|escalate
+19|account_access|escalate
+20|how_to|auto
+21|playback_bug|auto
+22|feature_request|auto
+23|subscription_plan|auto
+24|content_availability|auto
+25|other_unclear|escalate
+26|feature_request|auto
+27|subscription_plan|auto
+28|playback_bug|auto
+29|account_access|escalate
+30|billing_charge|escalate
+31|billing_charge|escalate
+32|praise_thanks|auto
+33|content_availability|auto
+34|account_access|escalate
+35|billing_charge|escalate
+36|content_availability|auto
+37|praise_thanks|auto
+38|subscription_plan|escalate
+39|complaint_no_ask|auto

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! You can check out our offers page to see if there's a better plan for you: <url> /PC\", \"used_evidence_ids\": [\"2114115-2114114\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear your experience isn\u2019t smooth. Let\u2019s fix that! Can you check if updating the app helps?\", \"used_evidence_ids\": [\"playback_bug\"], \"commitments\": []}"}

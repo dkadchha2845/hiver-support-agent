@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Got it! We\u2019re looking into this for you. Please check if the ad-free time appears after the next play. If not, let us know and we\u2019ll help further.\", \"used_evidence_ids\": [\"AN\"], \"commitments\": []}"}

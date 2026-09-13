@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey there! The offer is indeed for first-time Premium subscribers. If you're an existing user, we can't apply it. Let's confirm your details in a DM if you'd like to check anything further /SY\", \"used_evidence_ids\": [\"1812159-1812158\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"\u00a1Hola! Lamento la confusi\u00f3n. Un compa\u00f1ero telem\u00e1tico revisar\u00e1 esto para ti. Por favor, env\u00edanos tu nombre de usuario o correo electr\u00f3nico usado en Spotify.\", \"used_evidence_ids\": [\"billing_charge\"], \"commitments\": []}"}

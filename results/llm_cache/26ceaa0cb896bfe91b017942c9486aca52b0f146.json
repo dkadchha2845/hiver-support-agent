@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Thanks for reaching out! We\u2019ll get 'Welcome to Forever' added to Spotify for you. Stay tuned!\", \"used_evidence_ids\": [\"content_availability\"], \"commitments\": []}"}

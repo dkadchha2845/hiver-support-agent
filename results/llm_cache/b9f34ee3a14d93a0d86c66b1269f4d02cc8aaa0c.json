@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear you\u2019re having trouble renewing your premium subscription. A human will look into this for you. Could you please DM your order ID?\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

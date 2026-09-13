@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear you\u2019re having trouble with Spotify. Let\u2019s fix this together. Can you check if other apps work fine and try signing out then back in? \ud83c\udfa7\", \"used_evidence_ids\": [\"playback_bug\"], \"commitments\": []}"}

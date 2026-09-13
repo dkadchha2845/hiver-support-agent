@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey there! Can you DM us your account's email address? We'll check things backstage and see what we can suggest.\", \"used_evidence_ids\": [\"1801240-1801240\", \"1131556-1131556\", \"1752731-1752731\", \"1982617-1982617\"], \"commitments\": []}"}

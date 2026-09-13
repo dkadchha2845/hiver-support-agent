@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Got it @customer. Let\u2019s check that out. Can you try restarting your device and updating to the latest Spotify version? We\u2019ll help if needed.\", \"used_evidence_ids\": [\"AU\"], \"commitments\": []}"}

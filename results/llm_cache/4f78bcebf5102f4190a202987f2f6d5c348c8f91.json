@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry you\u2019re having trouble adding your wife to your Family account. Can you try signing up for a new Family plan where both of you can use your Facebook accounts? Let us know if this helps!\", \"used_evidence_ids\": [\"subscription_plan\"], \"commitments\": []}"}

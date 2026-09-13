@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Great to hear it's working now! Thanks for the heads up and the quick fix.\", \"used_evidence_ids\": [\"BRAND: @customer Hey! Everything's looking good at the moment. Does restarting your device help at all? We'll be waiting for your reply /MG\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Got it! We\u2019re looking into this issue and will let you know if there\u2019s anything else needed from your end. In the meantime, try restarting the app.\", \"used_evidence_ids\": [\"820213-820211\", \"374845-374843\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! If your Spotify account was linked via Facebook and you delete that FB account, it shouldn't affect your ability to log in with the email address you used. Let us know if you need any more help!\", \"used_evidence_ids\": [\"1828552-1828552\", \"2924856-2924856\"], \"commitments\": []}"}

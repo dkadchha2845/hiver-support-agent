@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Yes, the annual plan now applies to Family Plans too! Check your settings to switch if you'd like.\", \"used_evidence_ids\": [\"subscription_plan\"], \"commitments\": []}"}

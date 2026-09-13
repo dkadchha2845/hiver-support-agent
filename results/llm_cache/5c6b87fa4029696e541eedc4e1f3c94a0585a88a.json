@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Right-clicking isn\u2019t always available on mobile. Try tapping and holding the song title instead to get options like report or share. Let us know if you need more help!\", \"used_evidence_ids\": [\"278132-278132\"], \"commitments\": []}"}

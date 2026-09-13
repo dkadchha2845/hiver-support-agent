@@ -1,0 +1,11 @@
+{
+  "brand": "SpotifyCares",
+  "n_threads": 28280,
+  "n_units": 41383,
+  "n_history_units": 29412,
+  "n_pool_units": 11971,
+  "history_fraction": 0.7,
+  "history_ts_max": "2017-12-03T12:23:06+00:00",
+  "pool_ts_min": "2017-11-16T00:51:42+00:00",
+  "opener_share_pool": 0.6603
+}

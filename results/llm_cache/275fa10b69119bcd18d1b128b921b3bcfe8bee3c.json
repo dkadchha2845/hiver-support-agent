@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Can you check your internet connection and try restarting the app? Let us know if that helps!\", \"used_evidence_ids\": [\"8686-8679\"], \"commitments\": []}"}

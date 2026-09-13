@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! We're sorry if the promo isn't available right now, but we\u2019ll let the right team know you\u2019d like to see it again. Can you DM your account's email so we can assist further?\", \"used_evidence_ids\": [\"2022251-2022250\"], \"commitments\": []}"}

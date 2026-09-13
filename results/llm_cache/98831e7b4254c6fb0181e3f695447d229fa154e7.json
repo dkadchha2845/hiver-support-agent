@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear about the playback issue. Let\u2019s try restarting your device and signing out then back in to Spotify. If that doesn\u2019t help, a fresh reinstall might work too.\", \"used_evidence_ids\": [\"playback_bug\"], \"commitments\": []}"}

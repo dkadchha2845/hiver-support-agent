@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Got it! Your annual subscription should take effect and your monthly plan will pause. No action needed from you. If anything changes, we\u2019ll let you know.\", \"used_evidence_ids\": [], \"commitments\": []}"}

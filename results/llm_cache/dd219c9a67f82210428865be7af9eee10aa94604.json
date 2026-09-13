@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We understand you're eager for your artist 'Free Waffle' to be verified. A human teammate will look into this as soon as possible. Please check your email for next steps.\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

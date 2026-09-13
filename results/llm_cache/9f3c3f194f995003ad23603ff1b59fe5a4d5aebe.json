@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Thanks so much for your kind words! We\u2019re glad you find multiple ways to enjoy Spotify. Your feedback helps us improve. If you have any more suggestions or need help, let us know!\", \"used_evidence_ids\": [\"intent_praise_thanks\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"@customer We can help better in English via Twitter, but we also offer support in Bahasa Indonesia via email at the link provided. A human will look into this for you /ME.\", \"used_evidence_ids\": [\"848543-848543\", \"2275486-2275482\"], \"commitments\": []}"}

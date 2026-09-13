@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We can see how that would be handy. Just let us know if you'd like to switch your family plan to annual billing and we'll take a look.\", \"used_evidence_ids\": [\"1096231-1096230\"], \"commitments\": []}"}

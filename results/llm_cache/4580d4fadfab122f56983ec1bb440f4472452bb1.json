@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear that Future\u2019s 56 Nights & Beastmode are missing. We\u2019ll look into it right away. Thanks for letting us know!\", \"used_evidence_ids\": [\"content_availability\"], \"commitments\": []}"}

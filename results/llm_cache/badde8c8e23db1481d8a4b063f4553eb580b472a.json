@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry you\u2019re having trouble with your Visa card on our site. A teammate will look into it right away. Could you please share the error message?\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

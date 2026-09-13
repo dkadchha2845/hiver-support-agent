@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi Earl! We\u2019ve got you in our sights. Can you check if you\u2019re signed out on all devices and try logging back in? Let us know how it goes!\", \"used_evidence_ids\": [\"928441-928443\"], \"commitments\": []}"}

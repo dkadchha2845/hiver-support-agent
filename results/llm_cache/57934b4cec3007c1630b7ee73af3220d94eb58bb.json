@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Thanks for reaching out, Jonny! We noticed your issue. Let's try restarting your device by holding the Home + Lock button for 10 seconds. Does that help?\", \"used_evidence_ids\": [\"337089-337088\"], \"commitments\": []}"}

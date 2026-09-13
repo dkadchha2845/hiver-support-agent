@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi! For now, we're focusing on new plans. Let's check your account for any updates. DM us your email if you need a closer look.\", \"used_evidence_ids\": [\"12076-12078\", \"1659813-1659812\"], \"commitments\": []}"}

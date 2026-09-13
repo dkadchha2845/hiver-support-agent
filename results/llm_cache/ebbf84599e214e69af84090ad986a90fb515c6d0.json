@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"@customer We understand the frustration. Please try signing out of Spotify on both devices and then sign back in. This should help sync your playback across devices. Let us know if that helps!\", \"used_evidence_ids\": [\"1750793-1750789\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Thanks for reaching out! If you switch to annual billing now, your monthly subscription for this month will be refunded. Your renewal will then be on Dec 17. A human will follow up with details.\", \"used_evidence_ids\": [\"billing_charge\"], \"commitments\": []}"}

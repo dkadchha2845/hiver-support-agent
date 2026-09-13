@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi! We're sorry for any confusion. You can try changing your app's language settings. Here\u2019s our guide: <url> /MU\", \"used_evidence_ids\": [\"211063-211063\"], \"commitments\": []}"}

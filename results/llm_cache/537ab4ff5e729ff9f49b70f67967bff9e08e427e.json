@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey there! We\u2019ve recently made some improvements to our shuffle algorithm. We\u2019d love to hear your feedback here: <url>\", \"used_evidence_ids\": [\"1898875-1898875\", \"2317766-2317766\", \"1864325-1864325\", \"1832811-1832811\"], \"commitments\": []}"}

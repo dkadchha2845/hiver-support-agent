@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear you can\u2019t find the Spotify Live session. We\u2019ve removed some content for now. Let\u2019s check your library or try searching again\u2014hope we can still bring you great music!\", \"used_evidence_ids\": [\"content_availability\"], \"commitments\": []}"}

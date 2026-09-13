@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi there! Taylor Swift's 'Reputation' isn't available just yet \u2013 stay tuned! Check out the singles here: <url> /GN\", \"used_evidence_ids\": [\"2505227-2505227\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We understand you're looking for version info. Check Settings > About Spotify for details. Change logs are in the App Store update notes.\", \"used_evidence_ids\": [\"how_to\"], \"commitments\": []}"}

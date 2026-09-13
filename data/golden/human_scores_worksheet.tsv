@@ -1,0 +1,61 @@
+# blind_id|groundedness|resolution|tone|safety|note
+0|5|4|4|5|correct Indonesian-support redirect, matches evidence
+1|3|3|5|3|promises song recovery the evidence does not support
+2|2|2|3|2|asks for account email for a catalogue question, implies they can restore content
+3|4|2|4|4|passes to devs, restores nothing, asks nothing
+4|1|1|3|2|claims a DM was sent; it was not, and none was needed
+5|1|1|2|3|false DM claim in reply to a thank-you
+6|2|1|3|3|canned DM request for a product-capability question
+7|5|5|2|4|perfect next step but greets the wrong name, copied from the evidence
+8|5|4|4|5|
+9|5|4|2|5|typo "Anyitme" and a truncated sentence
+10|5|4|2|5|wrong name again (Corey)
+11|5|4|4|5|handles the language handoff cleanly
+12|5|4|4|5|canned DM line happens to be exactly right for a billing dispute
+13|2|1|3|4|answers about new releases; nothing to do with the message
+14|4|3|3|4|right channel instinct, ignores that the message is Tagalog
+15|5|5|5|5|uses the name the customer signed, correct next step
+16|5|3|4|5|"passing on your feedback" when no feedback was given
+17|5|4|5|5|
+18|5|4|3|4|no acknowledgement of an alarming unrequested unsubscribe
+19|5|4|4|5|
+20|5|3|2|5|truncated sign-off and a wink emoji answering a sad one
+21|2|1|2|3|canned account request in reply to "it's fixed, thanks"
+22|5|4|4|5|
+23|2|3|4|3|invents "Auto Skip"; the evidence says Autoplay
+24|2|1|3|3|canned DM request for an equaliser how-to
+25|5|5|2|5|exactly right answer, wrong name copied from the retrieved reply
+26|5|4|4|5|
+27|5|5|2|5|correct idea-board action, wrong name
+28|2|1|3|3|canned DM request when the evidence contains the actual answer
+29|5|3|3|5|redirects but never acknowledges the customer reporting a pricing bug
+30|5|3|4|5|
+31|4|3|2|3|template reply to a public accusation plus lost playlists
+32|5|4|2|3|wrong name during an account-compromise report
+33|2|4|4|2|asserts "we couldn't locate an account" - unevidenced and possibly false
+34|5|4|4|5|
+35|5|4|4|5|right clarifying question for a vague bug report
+36|5|5|2|5|right diagnostic question, wrong name
+37|4|4|2|3|"glad to hear you unsubscribed" to someone who did not unsubscribe
+38|5|5|4|5|correct fast handoff on a fraud claim
+39|3|2|2|3|English canned DM reply to a French customer who already tried email
+40|1|1|3|2|answers about a completely different artist and album
+41|5|4|3|4|
+42|4|3|2|4|garbled "@customer 1:/2:" multi-tweet artefacts, never answers eligibility
+43|4|3|3|4|
+44|4|1|3|3|answers about playlists, not about when premium ends
+45|5|4|2|4|wrong name (Stephan)
+46|4|3|4|5|redirect only; a generic answer exists
+47|5|4|4|4|asserts a DM was sent, which may not be true
+48|5|4|5|5|
+49|3|2|3|4|
+50|2|1|2|4|asks about "our contact page" - unrelated to the artist-page report
+51|5|2|2|2|self-serve link for a customer locked out of the email on the account
+52|5|5|5|5|
+53|5|4|2|3|wrong name (Summer) on a compromise report
+54|5|5|5|5|correct Private Session answer, concise and evidenced
+55|4|3|2|3|literal "[link]" placeholder would have gone out publicly
+56|3|1|3|3|
+57|5|5|4|5|correct browser/incognito diagnostic
+58|5|4|2|5|correct idea-board handling, wrong name (Kay)
+59|5|4|3|4|

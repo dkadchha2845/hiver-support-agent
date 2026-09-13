@@ -1,0 +1,41 @@
+{
+  "brand": "SpotifyCares",
+  "n_threads": 28280,
+  "n_answered_customer_turns": 41383,
+  "median_thread_turns": 2,
+  "turn_position_share": {
+    "opener": 0.6308,
+    "follow_up": 0.3692
+  },
+  "share_of_threads_with_a_dm_request": 0.4229,
+  "mean_brand_reply_chars": 127.8,
+  "mean_customer_message_chars": 102.5,
+  "brand_reply_action_patterns": {
+    "asks_for_dm": 0.3184,
+    "asks_device_os_version": 0.1009,
+    "links_somewhere": 0.5211,
+    "points_to_community_ideas": 0.0387,
+    "mentions_licensing": 0.0168,
+    "has_agent_signature": 0.7494,
+    "uses_emoji": 0.1333
+  },
+  "eval_pool_stratum_share": {
+    "general": 0.7628,
+    "safety_legal": 0.0034,
+    "security": 0.0244,
+    "money": 0.0934,
+    "churn_human": 0.0182,
+    "non_english": 0.0048,
+    "vague_short": 0.093
+  },
+  "eval_pool_deduped": 11644,
+  "golden_weights": {
+    "general": 74.017,
+    "safety_legal": 4.0,
+    "security": 17.75,
+    "money": 60.389,
+    "churn_human": 13.25,
+    "non_english": 5.6,
+    "vague_short": 108.3
+  }
+}

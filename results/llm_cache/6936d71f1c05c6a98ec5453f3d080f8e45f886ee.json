@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We've received your request. A teammate will look into speeding up the verification for Free Waffle. Can you DM us your account's email address, please?\", \"used_evidence_ids\": [\"2110158-2110144\", \"982458-982458\"], \"commitments\": []}"}

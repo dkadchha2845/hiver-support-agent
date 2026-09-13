@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Got it. When did your ad-free time go away and were you using any other apps at the same time? /AN\", \"used_evidence_ids\": [\"1263265-1263264\"], \"commitments\": []}"}

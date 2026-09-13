@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry for the issues you\u2019ve experienced. A human teammate will look into it right away. Please provide the dates of the unauthorized charges so we can assist better.\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear about your account issue. A human teammate will look into it right away. Could you please provide the email associated with your account for us to help secure it?\", \"used_evidence_ids\": [\"account_access\"], \"commitments\": []}"}

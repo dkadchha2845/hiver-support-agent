@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear you\u2019re having trouble with your Spotify account. A human will look into this for you. Could you please DM us your email associated with the account?\", \"used_evidence_ids\": [\"account_access\"], \"commitments\": []}"}

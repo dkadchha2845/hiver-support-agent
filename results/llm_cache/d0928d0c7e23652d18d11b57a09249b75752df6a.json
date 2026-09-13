@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"@customer We\u2019re sorry to hear you can\u2019t find your favorite cover. Let\u2019s get it back for you! Check <url> to see when it might be available.\", \"used_evidence_ids\": [\"1298049-1298049\"], \"commitments\": [\"check url\"]}"}

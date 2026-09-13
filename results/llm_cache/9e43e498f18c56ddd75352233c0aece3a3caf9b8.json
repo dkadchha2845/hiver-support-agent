@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry you had a bad experience. A human will look into it right away. Please share your username so we can help.\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

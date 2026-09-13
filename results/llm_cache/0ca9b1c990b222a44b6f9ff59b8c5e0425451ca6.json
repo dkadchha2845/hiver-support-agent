@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Of course! A human teammate will look into your request. Could you share more details?\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

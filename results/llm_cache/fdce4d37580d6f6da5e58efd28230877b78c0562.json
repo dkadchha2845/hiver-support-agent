@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Thanks for letting us know. Can you send over the URIs of the artist pages and the albums that should be separate? We\u2019ll take a look.\", \"used_evidence_ids\": [\"2044433-2044433\"], \"commitments\": []}"}

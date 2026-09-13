@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey there! Sorry if you're seeing something unexpected. Can you let us know your device and any details about what's happening? A human will look into it.\", \"used_evidence_ids\": [\"2294406-2294406\"], \"commitments\": []}"}

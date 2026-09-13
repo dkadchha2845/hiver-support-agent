@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry to hear there\u2019s an issue with your Hulu. A teammate will get in touch soon to help resolve it.\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

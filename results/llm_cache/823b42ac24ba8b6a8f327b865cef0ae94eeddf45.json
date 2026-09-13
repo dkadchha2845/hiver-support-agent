@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We're sorry to hear you're having issues. Can you try signing out and back in? If that doesn't help, please DM your account info so we can look into it.\", \"used_evidence_ids\": [\"1618071-1618068\"], \"commitments\": []}"}

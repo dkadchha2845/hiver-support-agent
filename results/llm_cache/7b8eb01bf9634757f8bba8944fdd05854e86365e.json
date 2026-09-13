@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We hear you, and we\u2019re working to improve your Discover Weekly. Let\u2019s tweak your playlist settings to better match your taste.\", \"used_evidence_ids\": [\"content_availability\"], \"commitments\": []}"}

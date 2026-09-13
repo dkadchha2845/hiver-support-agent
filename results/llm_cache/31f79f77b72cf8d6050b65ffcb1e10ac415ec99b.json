@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Can you let us know your device model and operating system version? A human will look into this for you.\", \"used_evidence_ids\": [\"412004-412004\", \"2210895-2210895\"], \"commitments\": []}"}

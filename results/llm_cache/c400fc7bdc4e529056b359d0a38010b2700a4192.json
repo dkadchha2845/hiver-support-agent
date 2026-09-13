@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We're sorry to hear you're having trouble. Let's check your playback settings or try signing out and back in. If that doesn't help, we'll look into it further.\", \"used_evidence_ids\": [\"playback_bug\"], \"commitments\": []}"}

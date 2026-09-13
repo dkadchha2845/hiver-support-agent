@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Could you send us the URIs for those albums? We\u2019ll look into why they might be missing and get back to you.\", \"used_evidence_ids\": [\"2066073-2066073\"], \"commitments\": []}"}

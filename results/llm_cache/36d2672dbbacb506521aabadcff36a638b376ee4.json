@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Sorry to hear about the French songs. It\u2019s based on your listening history, and we\u2019ll re-tune Discover Weekly for you on Monday. Try Release Radar in the meantime.\", \"used_evidence_ids\": [\"1825334-1825334\"], \"commitments\": []}"}

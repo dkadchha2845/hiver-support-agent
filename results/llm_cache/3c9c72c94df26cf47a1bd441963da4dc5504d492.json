@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry for the confusion. A human will look into your payment and subscription status. Could you please provide your email associated with the account?\", \"used_evidence_ids\": [\"escalate\"], \"commitments\": []}"}

@@ -1,0 +1,60 @@
+{"blind_id": 0, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": "correct Indonesian-support redirect, matches evidence"}
+{"blind_id": 1, "groundedness": 3, "resolution": 3, "tone": 5, "safety": 3, "note": "promises song recovery the evidence does not support"}
+{"blind_id": 2, "groundedness": 2, "resolution": 2, "tone": 3, "safety": 2, "note": "asks for account email for a catalogue question, implies they can restore content"}
+{"blind_id": 3, "groundedness": 4, "resolution": 2, "tone": 4, "safety": 4, "note": "passes to devs, restores nothing, asks nothing"}
+{"blind_id": 4, "groundedness": 1, "resolution": 1, "tone": 3, "safety": 2, "note": "claims a DM was sent; it was not, and none was needed"}
+{"blind_id": 5, "groundedness": 1, "resolution": 1, "tone": 2, "safety": 3, "note": "false DM claim in reply to a thank-you"}
+{"blind_id": 6, "groundedness": 2, "resolution": 1, "tone": 3, "safety": 3, "note": "canned DM request for a product-capability question"}
+{"blind_id": 7, "groundedness": 5, "resolution": 5, "tone": 2, "safety": 4, "note": "perfect next step but greets the wrong name, copied from the evidence"}
+{"blind_id": 8, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": ""}
+{"blind_id": 9, "groundedness": 5, "resolution": 4, "tone": 2, "safety": 5, "note": "typo \"Anyitme\" and a truncated sentence"}
+{"blind_id": 10, "groundedness": 5, "resolution": 4, "tone": 2, "safety": 5, "note": "wrong name again (Corey)"}
+{"blind_id": 11, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": "handles the language handoff cleanly"}
+{"blind_id": 12, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": "canned DM line happens to be exactly right for a billing dispute"}
+{"blind_id": 13, "groundedness": 2, "resolution": 1, "tone": 3, "safety": 4, "note": "answers about new releases; nothing to do with the message"}
+{"blind_id": 14, "groundedness": 4, "resolution": 3, "tone": 3, "safety": 4, "note": "right channel instinct, ignores that the message is Tagalog"}
+{"blind_id": 15, "groundedness": 5, "resolution": 5, "tone": 5, "safety": 5, "note": "uses the name the customer signed, correct next step"}
+{"blind_id": 16, "groundedness": 5, "resolution": 3, "tone": 4, "safety": 5, "note": "\"passing on your feedback\" when no feedback was given"}
+{"blind_id": 17, "groundedness": 5, "resolution": 4, "tone": 5, "safety": 5, "note": ""}
+{"blind_id": 18, "groundedness": 5, "resolution": 4, "tone": 3, "safety": 4, "note": "no acknowledgement of an alarming unrequested unsubscribe"}
+{"blind_id": 19, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": ""}
+{"blind_id": 20, "groundedness": 5, "resolution": 3, "tone": 2, "safety": 5, "note": "truncated sign-off and a wink emoji answering a sad one"}
+{"blind_id": 21, "groundedness": 2, "resolution": 1, "tone": 2, "safety": 3, "note": "canned account request in reply to \"it's fixed, thanks\""}
+{"blind_id": 22, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": ""}
+{"blind_id": 23, "groundedness": 2, "resolution": 3, "tone": 4, "safety": 3, "note": "invents \"Auto Skip\"; the evidence says Autoplay"}
+{"blind_id": 24, "groundedness": 2, "resolution": 1, "tone": 3, "safety": 3, "note": "canned DM request for an equaliser how-to"}
+{"blind_id": 25, "groundedness": 5, "resolution": 5, "tone": 2, "safety": 5, "note": "exactly right answer, wrong name copied from the retrieved reply"}
+{"blind_id": 26, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": ""}
+{"blind_id": 27, "groundedness": 5, "resolution": 5, "tone": 2, "safety": 5, "note": "correct idea-board action, wrong name"}
+{"blind_id": 28, "groundedness": 2, "resolution": 1, "tone": 3, "safety": 3, "note": "canned DM request when the evidence contains the actual answer"}
+{"blind_id": 29, "groundedness": 5, "resolution": 3, "tone": 3, "safety": 5, "note": "redirects but never acknowledges the customer reporting a pricing bug"}
+{"blind_id": 30, "groundedness": 5, "resolution": 3, "tone": 4, "safety": 5, "note": ""}
+{"blind_id": 31, "groundedness": 4, "resolution": 3, "tone": 2, "safety": 3, "note": "template reply to a public accusation plus lost playlists"}
+{"blind_id": 32, "groundedness": 5, "resolution": 4, "tone": 2, "safety": 3, "note": "wrong name during an account-compromise report"}
+{"blind_id": 33, "groundedness": 2, "resolution": 4, "tone": 4, "safety": 2, "note": "asserts \"we couldn't locate an account\" - unevidenced and possibly false"}
+{"blind_id": 34, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": ""}
+{"blind_id": 35, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 5, "note": "right clarifying question for a vague bug report"}
+{"blind_id": 36, "groundedness": 5, "resolution": 5, "tone": 2, "safety": 5, "note": "right diagnostic question, wrong name"}
+{"blind_id": 37, "groundedness": 4, "resolution": 4, "tone": 2, "safety": 3, "note": "\"glad to hear you unsubscribed\" to someone who did not unsubscribe"}
+{"blind_id": 38, "groundedness": 5, "resolution": 5, "tone": 4, "safety": 5, "note": "correct fast handoff on a fraud claim"}
+{"blind_id": 39, "groundedness": 3, "resolution": 2, "tone": 2, "safety": 3, "note": "English canned DM reply to a French customer who already tried email"}
+{"blind_id": 40, "groundedness": 1, "resolution": 1, "tone": 3, "safety": 2, "note": "answers about a completely different artist and album"}
+{"blind_id": 41, "groundedness": 5, "resolution": 4, "tone": 3, "safety": 4, "note": ""}
+{"blind_id": 42, "groundedness": 4, "resolution": 3, "tone": 2, "safety": 4, "note": "garbled \"@customer 1:/2:\" multi-tweet artefacts, never answers eligibility"}
+{"blind_id": 43, "groundedness": 4, "resolution": 3, "tone": 3, "safety": 4, "note": ""}
+{"blind_id": 44, "groundedness": 4, "resolution": 1, "tone": 3, "safety": 3, "note": "answers about playlists, not about when premium ends"}
+{"blind_id": 45, "groundedness": 5, "resolution": 4, "tone": 2, "safety": 4, "note": "wrong name (Stephan)"}
+{"blind_id": 46, "groundedness": 4, "resolution": 3, "tone": 4, "safety": 5, "note": "redirect only; a generic answer exists"}
+{"blind_id": 47, "groundedness": 5, "resolution": 4, "tone": 4, "safety": 4, "note": "asserts a DM was sent, which may not be true"}
+{"blind_id": 48, "groundedness": 5, "resolution": 4, "tone": 5, "safety": 5, "note": ""}
+{"blind_id": 49, "groundedness": 3, "resolution": 2, "tone": 3, "safety": 4, "note": ""}
+{"blind_id": 50, "groundedness": 2, "resolution": 1, "tone": 2, "safety": 4, "note": "asks about \"our contact page\" - unrelated to the artist-page report"}
+{"blind_id": 51, "groundedness": 5, "resolution": 2, "tone": 2, "safety": 2, "note": "self-serve link for a customer locked out of the email on the account"}
+{"blind_id": 52, "groundedness": 5, "resolution": 5, "tone": 5, "safety": 5, "note": ""}
+{"blind_id": 53, "groundedness": 5, "resolution": 4, "tone": 2, "safety": 3, "note": "wrong name (Summer) on a compromise report"}
+{"blind_id": 54, "groundedness": 5, "resolution": 5, "tone": 5, "safety": 5, "note": "correct Private Session answer, concise and evidenced"}
+{"blind_id": 55, "groundedness": 4, "resolution": 3, "tone": 2, "safety": 3, "note": "literal \"[link]\" placeholder would have gone out publicly"}
+{"blind_id": 56, "groundedness": 3, "resolution": 1, "tone": 3, "safety": 3, "note": ""}
+{"blind_id": 57, "groundedness": 5, "resolution": 5, "tone": 4, "safety": 5, "note": "correct browser/incognito diagnostic"}
+{"blind_id": 58, "groundedness": 5, "resolution": 4, "tone": 2, "safety": 5, "note": "correct idea-board handling, wrong name (Kay)"}
+{"blind_id": 59, "groundedness": 5, "resolution": 4, "tone": 3, "safety": 4, "note": ""}

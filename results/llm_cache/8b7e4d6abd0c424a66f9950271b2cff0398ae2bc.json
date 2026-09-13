@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We\u2019re sorry if there\u2019s been a mix-up. Let\u2019s fix it! Can you send us the song or artist name? We\u2019ll make sure it plays smoothly for you.\", \"used_evidence_ids\": [\"playback_bug\"], \"commitments\": []}"}

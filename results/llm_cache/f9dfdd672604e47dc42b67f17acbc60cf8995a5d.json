@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Great question. Just select 'See more offers' on the Payments page to switch to yearly. Your monthly will pause automatically. Let us know if you need help finding it.\", \"used_evidence_ids\": [\"2309845-2309845\"], \"commitments\": []}"}

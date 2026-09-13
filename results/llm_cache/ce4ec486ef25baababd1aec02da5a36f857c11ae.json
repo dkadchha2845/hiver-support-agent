@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey there! Fingers crossed we'll be able to have TWICE soon. Check out this page for updates: <url>\", \"used_evidence_ids\": [\"1438767-1438767\"], \"commitments\": []}"}

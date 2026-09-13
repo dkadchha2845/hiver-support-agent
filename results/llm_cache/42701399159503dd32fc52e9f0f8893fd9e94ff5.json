@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Thanks for letting us know! It sounds like you might be hitting some availability limits. Can you check if your device is connected to a different network and see if that helps?\", \"used_evidence_ids\": [\"8686-8679\"], \"commitments\": []}"}

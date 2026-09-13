@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Awesome, glad we could help! Enjoy the music.\", \"used_evidence_ids\": [\"1062070-1062067\"], \"commitments\": []}"}
