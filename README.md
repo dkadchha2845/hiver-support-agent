@@ -38,9 +38,11 @@ resampled.
 
 ## Reproduce the headline numbers in under 15 minutes
 
-Every LLM call made in this project is cached on disk by a content hash, and the cache
-and all model outputs are committed. So the default path regenerates every number in
-the report **without generating a single new token**.
+All model outputs are committed (`results/preds_*.jsonl`, `results/judge_*.jsonl`), so the
+default path regenerates every number in the report **without generating a single token**.
+The 1,810-file LLM response cache is committed too — it is not needed for `make repro`, but it
+means `make agents` and `make judge` replay the exact same generations for free if you want to
+verify them. A clone is about 9 MB.
 
 ```bash
 make setup      # venv + 7 pinned deps, ~60s
