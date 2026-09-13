@@ -21,17 +21,16 @@ or nowhere.
 | HUMAN (Spotify's own reply) | {{F:name_audit.json:by_system.HUMAN_brand_reply.greeted_by_name}} | {{F:name_audit.json:by_system.HUMAN_brand_reply.in_thread}} | {{F:name_audit.json:by_system.HUMAN_brand_reply.in_evidence_only}} | **{{F:name_audit.json:by_system.HUMAN_brand_reply.unverifiable}}** |
 | S3 agent | **0** | – | – | – |
 
-**(a) It is B1's defect, not the agent's.** All of B1's named greetings use a name that
-provably belongs to a *different customer's* thread — the inevitable consequence of
-replaying a retrieved reply verbatim. The agent never greets anyone by name at all, which
-costs it warmth and removes this failure mode entirely. My first draft of this section
-blamed the agent; the script corrected me.
+**(a) It is B1's defect, not the agent's.** All of B1's named greetings use a name belonging to
+a *different customer's* thread — the inevitable consequence of replaying a retrieved reply
+verbatim. The agent never greets anyone by name at all, which costs it warmth and removes the
+failure mode entirely. My first draft of this section blamed the agent; the script corrected me.
 
-**(b) I penalised Spotify's real agents for being right.** Five of the six named greetings
-in Spotify's own replies use a name I could not find anywhere — because the dataset
-anonymises Twitter *handles* (`@115712` → `@customer`) but leaves first names in the reply
-body intact. The real agent could see the handle; I could not. Those were almost certainly
-the customer's actual name, and I marked them wrong.
+**(b) I penalised Spotify's real agents for being right.** Five of their six named greetings use
+a name I could not find anywhere — the dataset anonymises Twitter *handles* (`@115712` →
+`@customer`) but leaves first names in the reply body intact. The real agent could see the
+handle; I could not. Those were almost certainly the customer's actual name, and I marked them
+wrong.
 
 **(c) Correcting it erases the result I was most pleased with.** Reverting only those five
 deductions (item-by-item in `src/name_audit.py`; original blind scores kept as the primary
@@ -94,8 +93,12 @@ and nothing forces them to agree — hence handoff compliance as its own metric 
 > your device by holding the Home + Lock button for 10 seconds."
 
 A name from nowhere, invented hardware steps for an unknown device, and a confident fix for a
-message containing no problem statement. **Fix:** when `route == escalate`, pick a handoff
-template and let the model fill only the acknowledgement.
+message containing no problem statement.
+
+**Hypothesis.** Routing and drafting are separate calls with no shared state; the draft prompt
+receives `route` as a string, but the model's strongest prior — a customer asked something, so
+answer it — overrides an instruction it is never penalised for ignoring. **Fix:** when
+`route == escalate`, pick a handoff template and let the model fill only the acknowledgement.
 
 ### F4. It invents plausible specifics when the evidence is generic
 
@@ -126,9 +129,13 @@ the failure it then penalises**: `resolution` and `groundedness` are in tension 
 > needed." *(routed **auto**)*
 
 By contrast, for "why is there limit for this? `<url>`" (referent inside an image) the agent
-asked a clarifying question and routed auto — exactly right. A clarifying question is the
-safest automatable reply there is, and my policy escalates `other_unclear` instead. That is
-the `clarify` tier in §6.
+asked a clarifying question and routed auto — exactly right.
+
+**Hypothesis.** There is no "insufficient information" action anywhere in the pipeline: every
+path terminates in a drafted reply, and the only signal that could trigger abstention
+(`vague_no_detail`) has 33% recall because vagueness is a property of what is *absent*, which
+is much harder to detect than what is present. A clarifying question is the safest automatable
+reply there is, and my policy escalates `other_unclear` instead — the `clarify` tier in §6.
 
 ### Intent confusions, and the baselines
 

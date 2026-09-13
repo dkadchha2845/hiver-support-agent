@@ -35,7 +35,7 @@ CSS = """
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body {
   font-family: "Charter", "Georgia", "Times New Roman", serif;
-  font-size: 9.05pt; line-height: 1.27; color: #15181c; margin: 0;
+  font-size: 9.05pt; line-height: 1.25; color: #15181c; margin: 0;
   hyphens: auto; -webkit-hyphens: auto;
 }
 h1 {
@@ -118,8 +118,8 @@ def main() -> None:
 github.com/dkadchha2845/hiver-support-agent</strong> &mdash;
 <code>make setup &amp;&amp; make repro</code> regenerates every number above from committed
 artefacts in <strong>49s</strong> on a fresh clone, byte-identically, without generating a
-token. Design reasoning: <code>DECISIONS.md</code>; labelling protocol:
-<code>data/golden/LABELLING.md</code>; Tables 3&ndash;5 and 7: <code>results/tables.md</code>.
+token. Decision log: <code>DECISIONS.md</code>; labelling protocol:
+<code>data/golden/LABELLING.md</code>; remaining tables: <code>results/tables.md</code>.
 </div>
 </body></html>
 """

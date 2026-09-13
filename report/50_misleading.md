@@ -55,9 +55,9 @@ both were flattering before I looked. I have no reason to think they were the la
 `safety_legal` {{FP:data_profile.json:eval_pool_stratum_share.safety_legal}} of the pool and 5%
 of my sample. Gold escalation rate is {{P:golden_set.gold_escalate_rate_on_sample}} on-sample,
 {{P:golden_set.gold_escalate_rate_weighted}} reweighted. **Quote the reweighted column** — and
-note its own flaw: `general` carries weight 74 and `vague_short` 108, so a handful of units
-drive the population estimate, whose true variance is wider than the Wilson interval printed
-beside it. A stratum bootstrap would widen it further; I did not implement one.
+note its flaw: `general` carries weight 74 and `vague_short` 108, so a handful of units drive
+the population estimate, whose true variance is wider than the Wilson interval beside it. A
+stratum bootstrap would widen it further; I did not implement one.
 
 **5.6 Routing measures agreement with my policy, not with reality.** Gold routes apply a risk
 appetite I chose, and the agent routes from signals defined in the same codebook I labelled
