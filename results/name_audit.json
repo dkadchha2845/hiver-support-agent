@@ -1,0 +1,259 @@
+{
+  "n_replies_greeting_by_name": 11,
+  "by_system": {
+    "B1_simple": {
+      "greeted_by_name": 5,
+      "in_thread": 0,
+      "in_evidence_only": 5,
+      "unverifiable": 0
+    },
+    "HUMAN_brand_reply": {
+      "greeted_by_name": 6,
+      "in_thread": 1,
+      "in_evidence_only": 0,
+      "unverifiable": 5
+    }
+  },
+  "my_tone_deductions_on_named_replies": {
+    "n_penalised_tone_le_2": 10,
+    "of_which_name_provably_from_evidence": 5,
+    "of_which_name_unverifiable": 5,
+    "of_which_name_was_in_the_thread": 0
+  },
+  "rows": [
+    {
+      "blind_id": 7,
+      "system": "B1_simple",
+      "unit_id": "2928683-2928683",
+      "name": "Jade",
+      "in_thread": false,
+      "in_evidence_only": true,
+      "unverifiable": false,
+      "human_tone": 2,
+      "reply": "@customer Hey Jade, help's here. Can you DM us any possible email addresses or usernames you might have used to open an account? We'll take "
+    },
+    {
+      "blind_id": 10,
+      "system": "HUMAN_brand_reply",
+      "unit_id": "2428563-2428563",
+      "name": "Corey",
+      "in_thread": false,
+      "in_evidence_only": false,
+      "unverifiable": true,
+      "human_tone": 2,
+      "reply": "@customer Hi Corey, help's here! Can you DM us your account's email address? We'll take a look under the hood /DV <url>"
+    },
+    {
+      "blind_id": 15,
+      "system": "HUMAN_brand_reply",
+      "unit_id": "2730540-2730540",
+      "name": "Jim",
+      "in_thread": true,
+      "in_evidence_only": false,
+      "unverifiable": false,
+      "human_tone": 5,
+      "reply": "@customer Hey Jim, help's here! Could you DM us your account's username or email address? We'll take a look backstage /GU <url>"
+    },
+    {
+      "blind_id": 25,
+      "system": "B1_simple",
+      "unit_id": "2896750-2896750",
+      "name": "Jeremy",
+      "in_thread": false,
+      "in_evidence_only": true,
+      "unverifiable": false,
+      "human_tone": 2,
+      "reply": "@customer Hey Jeremy! There's currently a 10k limit in Your Music (Songs + Albums + Artists). More info here: <url> /SY"
+    },
+    {
+      "blind_id": 27,
+      "system": "B1_simple",
+      "unit_id": "2368014-2368014",
+      "name": "Allison",
+      "in_thread": false,
+      "in_evidence_only": true,
+      "unverifiable": false,
+      "human_tone": 2,
+      "reply": "@customer Hi Allison! Sounds like a great idea! Suggest it in our Community at <url> and get support from other users \ud83d\ude09 /GT"
+    },
+    {
+      "blind_id": 32,
+      "system": "HUMAN_brand_reply",
+      "unit_id": "2618582-2618582",
+      "name": "Sophia",
+      "in_thread": false,
+      "in_evidence_only": false,
+      "unverifiable": true,
+      "human_tone": 2,
+      "reply": "@customer Hey Sophia, help's here! Can you DM us your account's email address? We'll check backstage /GK <url>"
+    },
+    {
+      "blind_id": 36,
+      "system": "B1_simple",
+      "unit_id": "2572256-2572256",
+      "name": "Sam",
+      "in_thread": false,
+      "in_evidence_only": true,
+      "unverifiable": false,
+      "human_tone": 2,
+      "reply": "@customer Hey Sam! Can you let us know which device/OS and Spotify version you're using? We'll see what we can suggest /YM"
+    },
+    {
+      "blind_id": 45,
+      "system": "HUMAN_brand_reply",
+      "unit_id": "599463-599463",
+      "name": "Stephan",
+      "in_thread": false,
+      "in_evidence_only": false,
+      "unverifiable": true,
+      "human_tone": 2,
+      "reply": "@customer Hey Stephan! Could you send us a DM with your account's username or email address? We'll take a look and see what we can suggest \ud83d\udd0d"
+    },
+    {
+      "blind_id": 51,
+      "system": "B1_simple",
+      "unit_id": "508873-508873",
+      "name": "Tim",
+      "in_thread": false,
+      "in_evidence_only": true,
+      "unverifiable": false,
+      "human_tone": 2,
+      "reply": "@customer Hey Tim, we're sorry to hear that. It'd be best to check out <url> for the steps needed to be done. They should help /AY"
+    },
+    {
+      "blind_id": 53,
+      "system": "HUMAN_brand_reply",
+      "unit_id": "86413-86413",
+      "name": "Summer",
+      "in_thread": false,
+      "in_evidence_only": false,
+      "unverifiable": true,
+      "human_tone": 2,
+      "reply": "@customer Hey Summer, this doesn't sound good! Could you send us a DM with your account's username or email address? We'll take a look backs"
+    },
+    {
+      "blind_id": 58,
+      "system": "HUMAN_brand_reply",
+      "unit_id": "2896729-2896729",
+      "name": "Kay",
+      "in_thread": false,
+      "in_evidence_only": false,
+      "unverifiable": true,
+      "human_tone": 2,
+      "reply": "@customer Hi Kay! It currently isn't possible to do this. Don't worry, we'll be sure to let our devs know this is something you'd like to se"
+    }
+  ],
+  "self_correction": {
+    "n_adjustments": 7,
+    "adjustments": [
+      {
+        "blind_id": 10,
+        "field": "tone",
+        "from": 2,
+        "to": 4,
+        "why": "'Corey' is unverifiable, not provably wrong"
+      },
+      {
+        "blind_id": 32,
+        "field": "tone",
+        "from": 2,
+        "to": 4,
+        "why": "'Sophia' unverifiable"
+      },
+      {
+        "blind_id": 32,
+        "field": "safety",
+        "from": 3,
+        "to": 4,
+        "why": "safety deduction was for the same unverified name"
+      },
+      {
+        "blind_id": 45,
+        "field": "tone",
+        "from": 2,
+        "to": 4,
+        "why": "'Stephan' unverifiable"
+      },
+      {
+        "blind_id": 53,
+        "field": "tone",
+        "from": 2,
+        "to": 4,
+        "why": "'Summer' unverifiable"
+      },
+      {
+        "blind_id": 53,
+        "field": "safety",
+        "from": 3,
+        "to": 4,
+        "why": "safety deduction was for the same unverified name"
+      },
+      {
+        "blind_id": 58,
+        "field": "tone",
+        "from": 2,
+        "to": 5,
+        "why": "'Kay' unverifiable; the rest of the reply is correct"
+      }
+    ],
+    "file": "human_judge_scores_name_adjusted.jsonl"
+  },
+  "human_score_variants": {
+    "as_scored_blind": {
+      "B0_trivial_escalate_all": {
+        "n": 15,
+        "mean_overall": 3.217,
+        "mean_tone": 3.0,
+        "send_ready": 3
+      },
+      "B1_simple": {
+        "n": 15,
+        "mean_overall": 3.367,
+        "mean_tone": 2.667,
+        "send_ready": 2
+      },
+      "HUMAN_brand_reply": {
+        "n": 15,
+        "mean_overall": 3.85,
+        "mean_tone": 3.0,
+        "send_ready": 4
+      },
+      "S3_agent": {
+        "n": 15,
+        "mean_overall": 4.067,
+        "mean_tone": 4.0,
+        "send_ready": 8
+      }
+    },
+    "name_adjusted": {
+      "B0_trivial_escalate_all": {
+        "n": 15,
+        "mean_overall": 3.217,
+        "mean_tone": 3.0,
+        "send_ready": 3
+      },
+      "B1_simple": {
+        "n": 15,
+        "mean_overall": 3.367,
+        "mean_tone": 2.667,
+        "send_ready": 2
+      },
+      "HUMAN_brand_reply": {
+        "n": 15,
+        "mean_overall": 4.067,
+        "mean_tone": 3.733,
+        "send_ready": 9
+      },
+      "S3_agent": {
+        "n": 15,
+        "mean_overall": 4.067,
+        "mean_tone": 4.0,
+        "send_ready": 8
+      }
+    },
+    "agent_minus_human_mean_overall": {
+      "as_scored_blind": 0.217,
+      "name_adjusted": 0.0
+    }
+  }
+}

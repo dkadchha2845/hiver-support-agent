@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"route\": \"auto\", \"reason\": \"Feature request for home screen tile is clear and common.\"}"}

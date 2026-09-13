@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"No worries! If you need to restart the app every time, we\u2019re working on a fix. In the meantime, try signing out and back in or updating to the latest iOS version. Let us know if that helps!\", \"used_evidence_ids\": [\"820213-820211\", \"374845-374843\"], \"commitments\": []}"}

@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We're launching regularly in countries around the world. Sign up here to be first to hear: <url>\", \"used_evidence_ids\": [\"1447347-1447347\", \"795079-795079\"], \"commitments\": []}"}

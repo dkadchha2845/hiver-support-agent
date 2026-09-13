@@ -1,0 +1,23 @@
+{
+  "tag": "primary_aux",
+  "provider": "ollama",
+  "model": "llama3.1:8b-instruct-q4_K_M",
+  "temperature": 0.0,
+  "show_reference": false,
+  "systems": [
+    "B0_trivial_escalate_all",
+    "S2_agent_noretrieval",
+    "S4_agent_llmrouter"
+  ],
+  "n_scores": 300,
+  "workers": 2,
+  "wall_seconds": 1107.6,
+  "llm_stats": {
+    "calls": 267,
+    "cache_hits": 33,
+    "retries": 0,
+    "wall_seconds": 2211.093628883362,
+    "json_repairs": 0,
+    "hard_failures": 0
+  }
+}

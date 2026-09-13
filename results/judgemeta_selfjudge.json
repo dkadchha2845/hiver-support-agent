@@ -1,0 +1,22 @@
+{
+  "tag": "selfjudge",
+  "provider": "ollama",
+  "model": "qwen2.5:7b-instruct",
+  "temperature": 0.0,
+  "show_reference": false,
+  "systems": [
+    "S3_agent",
+    "HUMAN_brand_reply"
+  ],
+  "n_scores": 120,
+  "workers": 2,
+  "wall_seconds": 530.7,
+  "llm_stats": {
+    "calls": 120,
+    "cache_hits": 0,
+    "retries": 0,
+    "wall_seconds": 1061.0693335533142,
+    "json_repairs": 0,
+    "hard_failures": 0
+  }
+}

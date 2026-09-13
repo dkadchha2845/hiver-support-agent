@@ -1,0 +1,1 @@
+{"model": "llama3.1:8b-instruct-q4_K_M", "provider": "ollama", "response": "{\n  \"groundedness\": 3,\n  \"resolution\": 2,\n  \"tone\": 4,\n  \"safety\": 5,\n  \"send_as_is\": false,\n  \"unsupported_claims\": [\"availability limits\"],\n  \"one_line_reason\": \"Makes an unsupported claim and doesn't provide a concrete next step\"\n}"}

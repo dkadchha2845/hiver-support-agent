@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi! We can see how useful that\u2019d be. You can vote for the official idea here: <url> Keep rocking out!\", \"used_evidence_ids\": [\"1355015-1355015\"], \"commitments\": []}"}

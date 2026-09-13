@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! We\u2019d recommend reaching out to your distributor. They'll work with our team to make sure 'A Matter Of Opinion' gets its own profile.\", \"used_evidence_ids\": [\"936220-936220\", \"2225744-2225744\", \"2246055-2246055\"], \"commitments\": []}"}

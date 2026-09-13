@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"@customer Hi! Help's here. Can you send us the Song Link? Just tap the three dots > Share > Copy Link /LO\", \"used_evidence_ids\": [\"844347-844347\"], \"commitments\": []}"}

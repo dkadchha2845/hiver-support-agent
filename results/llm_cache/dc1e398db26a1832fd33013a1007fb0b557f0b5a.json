@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey, we hear you! If you're still seeing ads every 15 minutes after 30 minutes of ad-free time, the app might have crashed. Try restarting it and let us know if that helps.\", \"used_evidence_ids\": [\"[1988262-1988262]\", \"[1979785-1979785]\"], \"commitments\": []}"}

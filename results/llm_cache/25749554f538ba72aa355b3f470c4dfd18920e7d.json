@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! We're no longer sending emails for every new release. Head to Browse > New Releases to find the latest tracks updated every Friday. Let us know if you have more feedback!\", \"used_evidence_ids\": [\"1884367-1884367\"], \"commitments\": []}"}

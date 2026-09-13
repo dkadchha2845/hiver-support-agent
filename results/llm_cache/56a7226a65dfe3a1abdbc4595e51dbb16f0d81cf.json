@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! We hear you, and we\u2019re sorry about the frustration. Can you let us know your device and Spotify version so we can look into it?\", \"used_evidence_ids\": [\"2251451-2251451\", \"1492388-1492388\"], \"commitments\": []}"}

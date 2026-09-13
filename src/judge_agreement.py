@@ -64,7 +64,8 @@ def cmd_sample(args: argparse.Namespace) -> None:
 
 def cmd_score(args: argparse.Namespace) -> None:
     blind = {json.loads(l)["blind_id"]: json.loads(l) for l in BLIND_PATH.open()}
-    human = {json.loads(l)["blind_id"]: json.loads(l) for l in HUMAN_PATH.open()}
+    human_path = GOLDEN / args.human_file
+    human = {json.loads(l)["blind_id"]: json.loads(l) for l in human_path.open()}
     judge = {}
     for line in (RESULTS / f"judge_{args.tag}.jsonl").open():
         r = json.loads(line)
@@ -79,7 +80,12 @@ def cmd_score(args: argparse.Namespace) -> None:
     if not pairs:
         raise SystemExit("no overlapping judge scores; run run_judge.py first")
 
-    out: dict = {"n": len(pairs), "judge_tag": args.tag, "per_dimension": {}}
+    out: dict = {
+        "n": len(pairs),
+        "judge_tag": args.tag,
+        "human_scores": args.human_file,
+        "per_dimension": {},
+    }
     for d in DIMS:
         hv = [p[1][d] for p in pairs]
         jv = [p[2][d] for p in pairs]
@@ -129,7 +135,8 @@ def cmd_score(args: argparse.Namespace) -> None:
         "ranking_identical": h_rank == j_rank,
     }
 
-    path = RESULTS / f"judge_agreement_{args.tag}.json"
+    suffix = "" if args.human_file == "human_judge_scores.jsonl" else "_name_adjusted"
+    path = RESULTS / f"judge_agreement_{args.tag}{suffix}.json"
     path.write_text(json.dumps(out, indent=2))
     print(json.dumps(out, indent=2))
 
@@ -143,6 +150,11 @@ def main() -> None:
     s.set_defaults(func=cmd_sample)
     c = sub.add_parser("score")
     c.add_argument("--tag", default="primary")
+    c.add_argument(
+        "--human-file",
+        default="human_judge_scores.jsonl",
+        help="human_judge_scores_name_adjusted.jsonl for the corrected variant",
+    )
     c.set_defaults(func=cmd_score)
     args = ap.parse_args()
     args.func(args)

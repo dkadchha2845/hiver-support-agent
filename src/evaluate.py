@@ -19,6 +19,11 @@ from config import GOLDEN, RESULTS, SEND_READY_THRESHOLD
 # Does an escalate-routed draft actually hand off, or does it quietly try to fix the
 # problem itself? This is a prompt-compliance bug I found in the failure analysis, and
 # it costs nothing to measure in code.
+# Spotify's agents sign replies with their initials ("/JX"). The draft prompt explicitly
+# says not to sign off - measuring how often the model does it anyway turns a prompt
+# instruction into a number, and the no-retrieval ablation shows where it comes from.
+SIGNATURE_RE = re.compile(r"/[A-Z]{1,2}\b\s*(?:<url>)?\s*$")
+
 HANDOFF_RE = re.compile(
     r"\b(dm|direct message|human|teammate|team|colleague|specialist|advisor|"
     r"backstage|look into|our friends|pass(ing)? (this|you) on|get back to you)\b",
@@ -57,6 +62,11 @@ def load_judge(tag: str) -> dict[tuple[str, str], dict]:
     return out
 
 
+# The two trivial-baseline variants differ only in the routing decision; the reply is
+# the same constant string, so they share one set of judge scores.
+JUDGE_ALIAS = {"B0_trivial_auto_all": "B0_trivial_escalate_all"}
+
+
 def judge_summary(
     golden: list[dict], scores: dict[tuple[str, str], dict], system: str
 ) -> dict | None:
@@ -92,6 +102,7 @@ def evaluate_system(
     if not preds:
         return None
     scores = load_judge(judge_tag)
+    judge_key = JUDGE_ALIAS.get(system, system)
     covered = [g for g in golden if g["unit_id"] in preds]
     out: dict = {"system": system, "n": len(covered)}
 
@@ -119,7 +130,21 @@ def evaluate_system(
                 "rate": round(complied / len(esc), 4),
             }
 
-    js = judge_summary(covered, scores, system)
+    replies = [preds[g["unit_id"]].get("reply", "") or "" for g in covered]
+    if replies:
+        leaked = sum(bool(SIGNATURE_RE.search(r.strip())) for r in replies)
+        out["style_leakage"] = {
+            "n": len(replies),
+            "replies_ending_in_an_agent_signature": leaked,
+            "rate": round(leaked / len(replies), 4),
+            "note": (
+                "The draft prompt forbids signing off. For the LLM systems this is "
+                "fabricated identity copied out of the retrieved evidence; for B1 and "
+                "HUMAN it is simply what Spotify's agents really do."
+            ),
+        }
+
+    js = judge_summary(covered, scores, judge_key)
     if js:
         js["mean_reply_chars"] = round(
             sum(len(preds[g["unit_id"]].get("reply", "")) for g in covered) / len(covered), 1
@@ -128,25 +153,26 @@ def evaluate_system(
 
     # ---- headline composite
     if "route" in next(iter(preds.values())) and js:
-        good = []
+        good: list[bool] = []
+        good_weights: list[float] = []
         for g in covered:
+            if (judge_key, g["unit_id"]) not in scores:
+                continue  # TAR is only defined where a reply was judged
             p = preds[g["unit_id"]]
-            s = scores.get((system, g["unit_id"]))
-            ok = (
+            s = scores[(judge_key, g["unit_id"])]
+            good.append(
                 p["route"] == "auto"
                 and g["gold_route"] == "auto"
-                and s is not None
                 and bool(s["send_ready"])
             )
-            good.append(ok)
-        out["TAR"] = {
-            "rate": round(sum(good) / len(good), 4),
-            "ci95": wilson(sum(good), len(good)),
-            "rate_weighted": round(
-                weighted_rate(good, [g["weight"] for g in covered]), 4
-            ),
-            "n": len(good),
-        }
+            good_weights.append(g["weight"])
+        if good:
+            out["TAR"] = {
+                "rate": round(sum(good) / len(good), 4),
+                "ci95": wilson(sum(good), len(good)),
+                "rate_weighted": round(weighted_rate(good, good_weights), 4),
+                "n": len(good),
+            }
     return out
 
 
@@ -208,6 +234,59 @@ def slices(golden: list[dict], system: str, judge_tag: str = "primary") -> dict:
     return out
 
 
+def matched_comparison(
+    golden: list[dict], reference: str, others: list[str], judge_tag: str = "primary"
+) -> dict:
+    """Ablations run on fewer units than the headline system, so comparing their raw
+    numbers to it is wrong. This restricts the reference system to exactly the units
+    each ablation covers."""
+    ref_preds = load_preds(reference)
+    out: dict = {}
+    for other in others:
+        other_preds = load_preds(other)
+        if not other_preds or not ref_preds:
+            continue
+        shared = [g for g in golden if g["unit_id"] in other_preds and g["unit_id"] in ref_preds]
+        if not shared:
+            continue
+        block = {"n_shared_units": len(shared)}
+        for name in (reference, other):
+            preds = load_preds(name)
+            scores = load_judge(judge_tag)
+            key = JUDGE_ALIAS.get(name, name)
+            ready = [
+                bool(scores[(key, g["unit_id"])]["send_ready"])
+                for g in shared
+                if (key, g["unit_id"]) in scores
+            ]
+            block[name] = {
+                "intent_macro_f1": intent_metrics(
+                    [g["gold_intent"] for g in shared],
+                    [preds[g["unit_id"]]["intent"] for g in shared],
+                    [g["gold_intent_alt"] for g in shared],
+                )["macro_f1"],
+                "intent_strict_acc": round(
+                    sum(preds[g["unit_id"]]["intent"] == g["gold_intent"] for g in shared)
+                    / len(shared),
+                    4,
+                ),
+                **{
+                    k: v
+                    for k, v in routing_metrics(
+                        [g["gold_route"] for g in shared],
+                        [preds[g["unit_id"]]["route"] for g in shared],
+                        [g["weight"] for g in shared],
+                    ).items()
+                    if k in {"escalation_recall", "unsafe_auto_rate", "auto_coverage"}
+                },
+            }
+            if ready:
+                block[name]["send_ready_rate"] = round(sum(ready) / len(ready), 4)
+                block[name]["n_judged"] = len(ready)
+        out[other] = block
+    return out
+
+
 def main() -> None:
     golden = load_golden()
     systems = [
@@ -259,6 +338,9 @@ def main() -> None:
             f"min(groundedness, resolution, tone, safety) >= {SEND_READY_THRESHOLD}"
         ),
         "systems": results,
+        "matched_ablation_comparison": matched_comparison(
+            golden, "S3_agent", ["S2_agent_noretrieval", "S4_agent_llmrouter"]
+        ),
         "slices_S3_agent": slices(golden, "S3_agent"),
         "slices_B1_simple": slices(golden, "B1_simple"),
     }

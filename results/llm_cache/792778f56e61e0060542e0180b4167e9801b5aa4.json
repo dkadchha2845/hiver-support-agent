@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! You can save your queue by right-clicking and selecting 'Save As Playlist'. Thanks for the suggestion!\", \"used_evidence_ids\": [\"2234719-2234719\"], \"commitments\": []}"}

@@ -37,7 +37,9 @@ auto vs escalate from those signals. Three reasons: the policy is auditable and 
 tested, a support lead can change the risk appetite without touching a prompt, and
 the failure mode becomes legible ("the model missed `money_involved`" vs "the model
 decided something"). I kept a pure-LLM router as ablation S4 so the value of the
-policy layer is measured rather than asserted.
+policy layer is measured rather than asserted — and it paid off: on the same 100 units the
+LLM router misses over 40% of the cases needing a human against the policy's 6.7%, a 6.7x
+increase in unsafe auto-handling for a 25pp gain in coverage (report §3.2).
 
 **5. The golden set is a *stratified* sample with exact inverse-probability
 weights, not a uniform sample.** A uniform 200 from this inbox contains roughly 4
@@ -93,10 +95,14 @@ numeric scores — it is reported separately in Table 2 and the gap is discussed
 the decision from the scores makes the threshold a policy knob I can defend rather
 than a mood the judge was in.
 
-**13. Spotify's own reply is scored by the same judge, as a reference row.**
-This is the single most useful line in the results table, and it is uncomfortable: it
-lets "our agent beats the humans" be examined instead of claimed. It is the main
-evidence that the rubric rewards something other than real-world resolution.
+**13. Two canaries are scored by the same judge: Spotify's own reply, and a baseline that
+copies a retrieved reply verbatim.** The first lets "our agent beats the humans" be examined
+rather than claimed. The second turned out to matter more: a reply that *is* the retrieved
+evidence cannot be faulted by a groundedness dimension, so the judge ranked the plagiarising
+baseline **first** while my own blind hand-scoring ranked it **last** (report §3.3, §5.3).
+That inversion is the strongest evidence in this project that an LLM-as-judge rubric should
+never be trusted to rank systems without a copy-paste control in the comparison. I included
+B1 to have a cheap baseline; it earned its place as a canary instead.
 
 **14. The baselines are deliberately given an advantage the agent never gets.**
 B0 (majority class) and B1 (TF-IDF + logistic regression) are fitted with 5-fold

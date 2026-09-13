@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Thanks for letting us know. We\u2019ll get this added to our list of bands to consider /KB\", \"used_evidence_ids\": [\"2378264-2378264\"], \"commitments\": []}"}

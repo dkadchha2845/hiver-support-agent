@@ -33,11 +33,14 @@ eval:             ## recompute every metric from committed predictions + judge s
 	$(PY) src/evaluate.py
 	$(PY) src/data_profile.py
 	$(PY) src/leakage_check.py
+	$(PY) src/name_audit.py
 	$(PY) src/annotator_agreement.py
 	$(PY) src/judge_agreement.py score --tag primary
+	$(PY) src/judge_agreement.py score --tag primary --human-file human_judge_scores_name_adjusted.jsonl
 	$(PY) src/judge_sensitivity.py
 	$(PY) src/failure_analysis.py
 	$(PY) src/report_tables.py
+	$(PY) scripts/build_report.py
 
 repro:            ## THE 15-MINUTE PATH: metrics + report tables from committed artefacts
 	$(MAKE) eval
@@ -57,6 +60,7 @@ demo:             ## run the agent on one message: make demo M="I was charged tw
 profile:          ## descriptive stats about the brand's inbox (cited in the report)
 	$(PY) src/data_profile.py
 	$(PY) src/leakage_check.py
+	$(PY) src/name_audit.py
 
 failures:         ## dump concrete failure examples the report quotes
 	$(PY) src/failure_analysis.py

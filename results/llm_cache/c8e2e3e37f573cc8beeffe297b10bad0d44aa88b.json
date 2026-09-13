@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\n  \"groundedness\": 4,\n  \"resolution\": 3,\n  \"tone\": 5,\n  \"safety\": 4,\n  \"send_as_is\": false,\n  \"unsupported_claims\": [\"/AN\"],\n  \"one_line_reason\": \"The reply includes a URL without context, which is not supported by the evidence. It also lacks concrete resolution or next steps.\"\n}"}

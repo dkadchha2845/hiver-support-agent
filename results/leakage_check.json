@@ -11,8 +11,8 @@
     "median": 0.3367,
     "p75": 0.4098,
     "max": 1.0,
-    "share_above_0.90_near_duplicate": 0.01,
-    "share_above_0.60": 0.05,
-    "share_below_0.15_no_precedent": 0.0
+    "share_above_090_near_duplicate": 0.01,
+    "share_above_060": 0.05,
+    "share_below_015_no_precedent": 0.0
   }
 }

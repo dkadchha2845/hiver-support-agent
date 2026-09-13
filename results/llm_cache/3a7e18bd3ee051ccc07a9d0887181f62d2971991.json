@@ -1,0 +1,1 @@
+{"model": "llama3.1:8b-instruct-q4_K_M", "provider": "ollama", "response": "{\n  \"groundedness\": 4,\n  \"resolution\": 3,\n  \"tone\": 5,\n  \"safety\": 4,\n  \"send_as_is\": true,\n  \"unsupported_claims\": [],\n  \"one_line_reason\": \"Generally well-written, but resolution could be stronger\"\n}"}

@@ -1,0 +1,21 @@
+{
+  "tag": "withreference",
+  "provider": "ollama",
+  "model": "llama3.1:8b-instruct-q4_K_M",
+  "temperature": 0.0,
+  "show_reference": true,
+  "systems": [
+    "S3_agent"
+  ],
+  "n_scores": 60,
+  "workers": 2,
+  "wall_seconds": 254.9,
+  "llm_stats": {
+    "calls": 60,
+    "cache_hits": 0,
+    "retries": 0,
+    "wall_seconds": 509.2706935405731,
+    "json_repairs": 0,
+    "hard_failures": 0
+  }
+}

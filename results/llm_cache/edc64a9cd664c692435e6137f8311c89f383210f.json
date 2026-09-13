@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey, no worries! You can cancel anytime by heading to your account settings. Let us know if you need any help /VK\", \"used_evidence_ids\": [\"1797152-1797152\"], \"commitments\": []}"}

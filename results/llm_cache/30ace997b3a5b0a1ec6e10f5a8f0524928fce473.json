@@ -1,0 +1,1 @@
+{"model": "llama3.1:8b-instruct-q4_K_M", "provider": "ollama", "response": "{\n  \"groundedness\": 2,\n  \"resolution\": 3,\n  \"tone\": 4,\n  \"safety\": 1,\n  \"send_as_is\": false,\n  \"unsupported_claims\": [\"We'll take a look backstage for you\"],\n  \"one_line_reason\": \"The reply makes an unsupported claim about what the brand will do 'backstage'.\"\n}"}

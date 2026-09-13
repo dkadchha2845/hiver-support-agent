@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Just select 'See more offers' on the Payments page. This should handle the switch for you. Hope that helps!\", \"used_evidence_ids\": [\"2309845-2309845\"], \"commitments\": []}"}

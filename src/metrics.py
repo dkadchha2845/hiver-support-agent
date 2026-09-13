@@ -28,15 +28,15 @@ def weighted_rate(flags: list[bool], weights: list[float]) -> float:
 
 def intent_metrics(gold: list[str], pred: list[str], alt: list[str | None]) -> dict:
     labels = sorted(set(gold) | set(pred))
-    strict = sum(g == p for g, p in zip(gold, pred)) / len(gold)
-    lenient = sum(
+    n_strict = sum(g == p for g, p in zip(gold, pred))
+    n_lenient = sum(
         p == g or (a is not None and p == a) for g, p, a in zip(gold, pred, alt)
-    ) / len(gold)
+    )
     return {
         "n": len(gold),
-        "accuracy_strict": round(strict, 4),
-        "accuracy_strict_ci95": wilson(int(strict * len(gold)), len(gold)),
-        "accuracy_lenient": round(lenient, 4),
+        "accuracy_strict": round(n_strict / len(gold), 4),
+        "accuracy_strict_ci95": wilson(n_strict, len(gold)),
+        "accuracy_lenient": round(n_lenient / len(gold), 4),
         "macro_f1": round(float(f1_score(gold, pred, average="macro", labels=labels, zero_division=0)), 4),
         "weighted_f1": round(float(f1_score(gold, pred, average="weighted", labels=labels, zero_division=0)), 4),
         "per_class": {

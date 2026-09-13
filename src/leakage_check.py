@@ -50,11 +50,11 @@ def main() -> None:
             "median": round(sims_sorted[len(sims) // 2], 4),
             "p75": round(sims_sorted[3 * len(sims) // 4], 4),
             "max": round(sims_sorted[-1], 4),
-            "share_above_0.90_near_duplicate": round(
+            "share_above_090_near_duplicate": round(
                 sum(s > 0.90 for s in sims) / len(sims), 4
             ),
-            "share_above_0.60": round(sum(s > 0.60 for s in sims) / len(sims), 4),
-            "share_below_0.15_no_precedent": round(
+            "share_above_060": round(sum(s > 0.60 for s in sims) / len(sims), 4),
+            "share_below_015_no_precedent": round(
                 sum(s < 0.15 for s in sims) / len(sims), 4
             ),
         },

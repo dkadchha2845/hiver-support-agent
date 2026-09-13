@@ -1,0 +1,1 @@
+{"model": "llama3.1:8b-instruct-q4_K_M", "provider": "ollama", "response": "{\n  \"groundedness\": 5,\n  \"resolution\": 3,\n  \"tone\": 4,\n  \"safety\": 4,\n  \"send_as_is\": false,\n  \"unsupported_claims\": [],\n  \"one_line_reason\": \"Reply is a copy-paste from past evidence, but doesn't add any new value or resolution to the customer's issue.\"\n}"}

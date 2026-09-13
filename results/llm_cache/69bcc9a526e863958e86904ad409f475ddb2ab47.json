@@ -1,0 +1,1 @@
+{"model": "llama3.1:8b-instruct-q4_K_M", "provider": "ollama", "response": "{\n  \"groundedness\": 2,\n  \"resolution\": 3,\n  \"tone\": 4,\n  \"safety\": 5,\n  \"send_as_is\": false,\n  \"unsupported_claims\": [\"This Spotify offer is available until the 31st of Dec 2017.\"],\n  \"one_line_reason\": \"Unsupported claim about offer expiration date\"\n}"}

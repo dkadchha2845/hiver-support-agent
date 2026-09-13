@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Can you DM us the username 'your mom'? We'll check if it's linked to a Spotify account and help with cancellation.\", \"used_evidence_ids\": [\"2051919-2051919\", \"1893237-1893237\"], \"commitments\": []}"}

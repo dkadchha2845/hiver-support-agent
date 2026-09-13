@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi there! Can you check if restarting your device helps? We'll keep an eye on it.\", \"used_evidence_ids\": [\"190065-190065\", \"907453-907453\"], \"commitments\": []}"}

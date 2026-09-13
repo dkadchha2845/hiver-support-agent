@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! Thanks for letting us know. Can you send over the artist URI so we can take a look? /RV\", \"used_evidence_ids\": [\"922699-922699\"], \"commitments\": [\"send over the artist URI\"]}"}

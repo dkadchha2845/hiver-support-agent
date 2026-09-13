@@ -1,0 +1,108 @@
+{
+  "stability": {
+    "S3_agent": {
+      "primary": {
+        "n": 60,
+        "mean_overall": 4.308,
+        "send_ready_rate": 0.3,
+        "mean_groundedness": 4.267,
+        "mean_resolution": 3.317,
+        "mean_tone": 4.717,
+        "mean_safety": 4.933
+      },
+      "stability": {
+        "n": 60,
+        "mean_overall": 4.062,
+        "send_ready_rate": 0.2167,
+        "mean_groundedness": 4.017,
+        "mean_resolution": 3.0,
+        "mean_tone": 4.483,
+        "mean_safety": 4.75
+      },
+      "delta_send_ready": -0.0833,
+      "delta_mean_overall": -0.246,
+      "send_ready_decision_flips": 25,
+      "send_ready_flip_rate": 0.4167
+    }
+  },
+  "selfjudge": {
+    "HUMAN_brand_reply": {
+      "primary": {
+        "n": 60,
+        "mean_overall": 4.112,
+        "send_ready_rate": 0.2,
+        "mean_groundedness": 3.883,
+        "mean_resolution": 3.15,
+        "mean_tone": 4.6,
+        "mean_safety": 4.817
+      },
+      "selfjudge": {
+        "n": 60,
+        "mean_overall": 3.921,
+        "send_ready_rate": 0.1167,
+        "mean_groundedness": 3.667,
+        "mean_resolution": 2.8,
+        "mean_tone": 4.4,
+        "mean_safety": 4.817
+      },
+      "delta_send_ready": -0.0833,
+      "delta_mean_overall": -0.191,
+      "send_ready_decision_flips": 11,
+      "send_ready_flip_rate": 0.1833
+    },
+    "S3_agent": {
+      "primary": {
+        "n": 60,
+        "mean_overall": 4.308,
+        "send_ready_rate": 0.3,
+        "mean_groundedness": 4.267,
+        "mean_resolution": 3.317,
+        "mean_tone": 4.717,
+        "mean_safety": 4.933
+      },
+      "selfjudge": {
+        "n": 60,
+        "mean_overall": 4.237,
+        "send_ready_rate": 0.2667,
+        "mean_groundedness": 4.2,
+        "mean_resolution": 3.233,
+        "mean_tone": 4.567,
+        "mean_safety": 4.95
+      },
+      "delta_send_ready": -0.0333,
+      "delta_mean_overall": -0.071,
+      "send_ready_decision_flips": 12,
+      "send_ready_flip_rate": 0.2
+    }
+  },
+  "withreference": {
+    "S3_agent": {
+      "primary": {
+        "n": 60,
+        "mean_overall": 4.308,
+        "send_ready_rate": 0.3,
+        "mean_groundedness": 4.267,
+        "mean_resolution": 3.317,
+        "mean_tone": 4.717,
+        "mean_safety": 4.933
+      },
+      "withreference": {
+        "n": 60,
+        "mean_overall": 4.312,
+        "send_ready_rate": 0.3,
+        "mean_groundedness": 4.3,
+        "mean_resolution": 3.35,
+        "mean_tone": 4.7,
+        "mean_safety": 4.9
+      },
+      "delta_send_ready": 0.0,
+      "delta_mean_overall": 0.004,
+      "send_ready_decision_flips": 8,
+      "send_ready_flip_rate": 0.1333
+    }
+  },
+  "agent_minus_human_gap": {
+    "primary": 0.196,
+    "selfjudge": 0.316
+  }
+}

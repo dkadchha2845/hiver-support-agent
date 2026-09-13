@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hey! We'd love to have Agust D back on Spotify, but there's more info here: <url>\", \"used_evidence_ids\": [\"2400665-1535161\"], \"commitments\": []}"}

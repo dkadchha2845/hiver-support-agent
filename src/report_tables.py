@@ -97,6 +97,20 @@ def main() -> None:
             f"{fmt(h['rate'], True)} |"
         )
 
+    lines.append(
+        "\n### Table 3c - Fabricated agent signatures (the draft prompt forbids sign-offs)\n"
+    )
+    lines.append("| system | n | replies ending in an agent signature | rate |")
+    lines.append("|---|---|---|---|")
+    for k in ORDER:
+        v = S.get(k, {}).get("style_leakage")
+        if not v:
+            continue
+        lines.append(
+            f"| {LABELS[k]} | {v['n']} | {v['replies_ending_in_an_agent_signature']} | "
+            f"{fmt(v['rate'], True)} |"
+        )
+
     sl = m.get("slices_S3_agent", {})
     if sl:
         lines.append("\n### Table 4 - Where the headline hides things (S3 agent)\n")
@@ -127,6 +141,31 @@ def main() -> None:
                 f"| {name} | {blk['n']} | {fmt(blk.get('intent_strict_acc'), True)} | "
                 f"{fmt(blk.get('unsafe_auto_rate'), True)} | {fmt(blk.get('send_ready_rate'), True)} |"
             )
+
+    mc = m.get("matched_ablation_comparison", {})
+    if mc:
+        lines.append(
+            "\n### Table 5b - Ablations, compared on the same units as the headline system\n"
+        )
+        lines.append(
+            "| ablation | n | system | intent macro-F1 | intent acc | escalation recall | "
+            "unsafe auto | auto coverage | send-ready |"
+        )
+        lines.append("|---|---|---|---|---|---|---|---|---|")
+        for abl, blk in mc.items():
+            for name in ("S3_agent", abl):
+                v = blk.get(name)
+                if not v:
+                    continue
+                lines.append(
+                    f"| {LABELS.get(abl, abl)} | {blk['n_shared_units']} | "
+                    f"{LABELS.get(name, name)} | {fmt(v.get('intent_macro_f1'))} | "
+                    f"{fmt(v.get('intent_strict_acc'), True)} | "
+                    f"{fmt(v.get('escalation_recall'), True)} | "
+                    f"{fmt(v.get('unsafe_auto_rate'), True)} | "
+                    f"{fmt(v.get('auto_coverage'), True)} | "
+                    f"{fmt(v.get('send_ready_rate'), True)} |"
+                )
 
     ja_path = RESULTS / "judge_agreement_primary.json"
     if ja_path.exists():
@@ -168,7 +207,25 @@ def main() -> None:
 
     out = "\n".join(lines) + "\n"
     (RESULTS / "tables.md").write_text(out)
+
+    # The report has a page budget, so it embeds only the four tables an argument
+    # cannot be made without. The rest stay in results/tables.md.
+    CORE = ("### Table 1", "### Table 2", "### Table 4", "### Table 6", "### Table 7")
+    blocks: list[list[str]] = []
+    for raw in lines:
+        line = raw.lstrip("\n")
+        if line.startswith("### Table"):
+            blocks.append([line])
+        elif blocks:
+            blocks[-1].append(raw)
+    core = [
+        "\n".join(b).strip()
+        for b in blocks
+        if any(b[0].startswith(c) for c in CORE)
+    ]
+    (RESULTS / "tables_core.md").write_text("\n\n".join(core) + "\n")
     print(out)
+    print(f"[wrote results/tables.md ({len(blocks)} tables) and tables_core.md ({len(core)})]")
 
 
 if __name__ == "__main__":

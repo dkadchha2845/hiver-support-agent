@@ -1,0 +1,1 @@
+{"model": "llama3.1:8b-instruct-q4_K_M", "provider": "ollama", "response": "{\n  \"groundedness\": 4,\n  \"resolution\": 3,\n  \"tone\": 4,\n  \"safety\": 2,\n  \"send_as_is\": false,\n  \"unsupported_claims\": [\"/RR\"],\n  \"one_line_reason\": \"Unexplained reference to '/RR' which is not supported by evidence\"\n}"}

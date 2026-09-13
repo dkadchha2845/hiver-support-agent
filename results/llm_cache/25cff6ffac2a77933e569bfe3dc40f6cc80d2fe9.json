@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\n  \"groundedness\": 3,\n  \"resolution\": 2,\n  \"tone\": 4,\n  \"safety\": 3,\n  \"send_as_is\": false,\n  \"unsupported_claims\": [\"backstage\"],\n  \"one_line_reason\": \"The reply asks for sensitive data publicly and introduces an unsupported term 'backstage'.\"\n}"}

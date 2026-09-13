@@ -1,0 +1,93 @@
+{
+  "n": 48,
+  "judge_tag": "primary",
+  "human_scores": "human_judge_scores_name_adjusted.jsonl",
+  "per_dimension": {
+    "groundedness": {
+      "human_mean": 4.125,
+      "judge_mean": 4.396,
+      "bias_judge_minus_human": 0.271,
+      "exact_agreement": 0.5,
+      "within_1": 0.833,
+      "qwk": 0.264,
+      "spearman": 0.2804
+    },
+    "resolution": {
+      "human_mean": 3.333,
+      "judge_mean": 3.354,
+      "bias_judge_minus_human": 0.021,
+      "exact_agreement": 0.292,
+      "within_1": 0.771,
+      "qwk": 0.212,
+      "spearman": 0.3189
+    },
+    "tone": {
+      "human_mean": 3.417,
+      "judge_mean": 4.521,
+      "bias_judge_minus_human": 1.104,
+      "exact_agreement": 0.292,
+      "within_1": 0.646,
+      "qwk": 0.059,
+      "spearman": 0.1468
+    },
+    "safety": {
+      "human_mean": 4.104,
+      "judge_mean": 4.688,
+      "bias_judge_minus_human": 0.583,
+      "exact_agreement": 0.5,
+      "within_1": 0.792,
+      "qwk": 0.282,
+      "spearman": 0.3852
+    }
+  },
+  "send_ready": {
+    "human_rate": 0.3958,
+    "judge_rate": 0.375,
+    "agreement": 0.6042,
+    "kappa": 0.1648,
+    "judge_waved_through_human_would_block": 9,
+    "judge_blocked_human_would_send": 10,
+    "false_pass_rate": 0.1875,
+    "false_pass_rate_ci95": [
+      0.1019,
+      0.3194
+    ]
+  },
+  "by_system": {
+    "S3_agent": {
+      "n": 15,
+      "human_mean": 4.067,
+      "judge_mean": 4.317
+    },
+    "HUMAN_brand_reply": {
+      "n": 15,
+      "human_mean": 4.067,
+      "judge_mean": 4.167
+    },
+    "B1_simple": {
+      "n": 15,
+      "human_mean": 3.367,
+      "judge_mean": 4.45
+    },
+    "B0_trivial_escalate_all": {
+      "n": 3,
+      "human_mean": 2.417,
+      "judge_mean": 3.167
+    }
+  },
+  "system_ranking": {
+    "human": [
+      "S3_agent",
+      "HUMAN_brand_reply",
+      "B1_simple",
+      "B0_trivial_escalate_all"
+    ],
+    "judge": [
+      "B1_simple",
+      "S3_agent",
+      "HUMAN_brand_reply",
+      "B0_trivial_escalate_all"
+    ],
+    "ranking_identical": false
+  }
+}

@@ -147,6 +147,45 @@
         "unsafe_auto_rate_weighted": 0.0,
         "route_agreement": 0.49,
         "route_kappa": 0.0
+      },
+      "handoff_compliance": {
+        "n_escalate_routed": 200,
+        "mentions_handoff": 200,
+        "rate": 1.0
+      },
+      "style_leakage": {
+        "n": 200,
+        "replies_ending_in_an_agent_signature": 0,
+        "rate": 0.0,
+        "note": "The draft prompt forbids signing off. For the LLM systems this is fabricated identity copied out of the retrieved evidence; for B1 and HUMAN it is simply what Spotify's agents really do."
+      },
+      "reply_quality": {
+        "n_scored": 100,
+        "mean_scores": {
+          "groundedness": 3.61,
+          "resolution": 3.06,
+          "tone": 4.61,
+          "safety": 3.23
+        },
+        "mean_overall": 3.628,
+        "send_ready_rate": 0.1,
+        "send_ready_ci95": [
+          0.0552,
+          0.1744
+        ],
+        "send_ready_rate_weighted": 0.0783,
+        "judge_send_as_is_rate": 0.44,
+        "pct_with_unsupported_claims": 0.24,
+        "mean_reply_chars": 105.0
+      },
+      "TAR": {
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.037
+        ],
+        "rate_weighted": 0.0,
+        "n": 100
       }
     },
     "B0_trivial_auto_all": {
@@ -249,6 +288,40 @@
         "unsafe_auto_rate_weighted": 0.3813,
         "route_agreement": 0.51,
         "route_kappa": 0.0
+      },
+      "style_leakage": {
+        "n": 200,
+        "replies_ending_in_an_agent_signature": 0,
+        "rate": 0.0,
+        "note": "The draft prompt forbids signing off. For the LLM systems this is fabricated identity copied out of the retrieved evidence; for B1 and HUMAN it is simply what Spotify's agents really do."
+      },
+      "reply_quality": {
+        "n_scored": 100,
+        "mean_scores": {
+          "groundedness": 3.61,
+          "resolution": 3.06,
+          "tone": 4.61,
+          "safety": 3.23
+        },
+        "mean_overall": 3.628,
+        "send_ready_rate": 0.1,
+        "send_ready_ci95": [
+          0.0552,
+          0.1744
+        ],
+        "send_ready_rate_weighted": 0.0783,
+        "judge_send_as_is_rate": 0.44,
+        "pct_with_unsupported_claims": 0.24,
+        "mean_reply_chars": 105.0
+      },
+      "TAR": {
+        "rate": 0.02,
+        "ci95": [
+          0.0055,
+          0.07
+        ],
+        "rate_weighted": 0.0254,
+        "n": 100
       }
     },
     "B1_simple": {
@@ -351,221 +424,677 @@
         "unsafe_auto_rate_weighted": 0.1633,
         "route_agreement": 0.795,
         "route_kappa": 0.5886
+      },
+      "handoff_compliance": {
+        "n_escalate_routed": 83,
+        "mentions_handoff": 41,
+        "rate": 0.494
+      },
+      "style_leakage": {
+        "n": 200,
+        "replies_ending_in_an_agent_signature": 199,
+        "rate": 0.995,
+        "note": "The draft prompt forbids signing off. For the LLM systems this is fabricated identity copied out of the retrieved evidence; for B1 and HUMAN it is simply what Spotify's agents really do."
+      },
+      "reply_quality": {
+        "n_scored": 200,
+        "mean_scores": {
+          "groundedness": 4.79,
+          "resolution": 3.465,
+          "tone": 4.445,
+          "safety": 4.99
+        },
+        "mean_overall": 4.422,
+        "send_ready_rate": 0.505,
+        "send_ready_ci95": [
+          0.4363,
+          0.5735
+        ],
+        "send_ready_rate_weighted": 0.5062,
+        "judge_send_as_is_rate": 0.9,
+        "pct_with_unsupported_claims": 0.02,
+        "mean_reply_chars": 121.5
+      },
+      "TAR": {
+        "rate": 0.21,
+        "ci95": [
+          0.1593,
+          0.2716
+        ],
+        "rate_weighted": 0.2746,
+        "n": 200
       }
     },
-    "S3_agent": {
-      "system": "S3_agent",
-      "n": 10,
+    "S2_agent_noretrieval": {
+      "system": "S2_agent_noretrieval",
+      "n": 100,
       "intent": {
-        "n": 10,
-        "accuracy_strict": 0.6,
+        "n": 100,
+        "accuracy_strict": 0.75,
         "accuracy_strict_ci95": [
-          0.3127,
-          0.8318
+          0.657,
+          0.8245
         ],
-        "accuracy_lenient": 0.6,
-        "macro_f1": 0.4222,
-        "weighted_f1": 0.56,
+        "accuracy_lenient": 0.85,
+        "macro_f1": 0.7273,
+        "weighted_f1": 0.7481,
         "per_class": {
           "account_access": {
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "support": 1
-          },
-          "billing_charge": {
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "support": 2
-          },
-          "complaint_no_ask": {
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0,
-            "support": 2
-          },
-          "content_availability": {
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0,
-            "support": 0
-          },
-          "how_to": {
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0,
-            "support": 0
-          },
-          "other_unclear": {
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0,
-            "support": 1
-          },
-          "playback_bug": {
             "precision": 0.667,
             "recall": 1.0,
             "f1": 0.8,
-            "support": 2
+            "support": 10
+          },
+          "billing_charge": {
+            "precision": 0.667,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 14
+          },
+          "complaint_no_ask": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 8
+          },
+          "content_availability": {
+            "precision": 0.8,
+            "recall": 0.727,
+            "f1": 0.762,
+            "support": 11
+          },
+          "feature_request": {
+            "precision": 0.667,
+            "recall": 0.8,
+            "f1": 0.727,
+            "support": 5
+          },
+          "how_to": {
+            "precision": 0.8,
+            "recall": 0.667,
+            "f1": 0.727,
+            "support": 6
+          },
+          "other_unclear": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 6
+          },
+          "playback_bug": {
+            "precision": 0.938,
+            "recall": 0.75,
+            "f1": 0.833,
+            "support": 20
           },
           "praise_thanks": {
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0,
-            "support": 1
+            "precision": 1.0,
+            "recall": 0.857,
+            "f1": 0.923,
+            "support": 7
           },
           "subscription_plan": {
             "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "support": 1
+            "recall": 0.538,
+            "f1": 0.7,
+            "support": 13
           }
         }
       },
       "routing": {
-        "n": 10,
+        "n": 100,
         "confusion": {
-          "tp_escalate": 4,
-          "fn_missed_escalation": 2,
-          "fp_over_escalate": 1,
-          "tn_auto": 3
+          "tp_escalate": 42,
+          "fn_missed_escalation": 3,
+          "fp_over_escalate": 10,
+          "tn_auto": 45
         },
-        "escalation_recall": 0.6667,
+        "escalation_recall": 0.9333,
         "escalation_recall_ci95": [
-          0.3,
-          0.9032
+          0.8214,
+          0.9771
         ],
-        "escalation_precision": 0.8,
-        "auto_coverage": 0.5,
-        "auto_precision": 0.6,
+        "escalation_precision": 0.8077,
+        "auto_coverage": 0.48,
+        "auto_precision": 0.9375,
+        "unsafe_auto_rate": 0.03,
+        "unsafe_auto_rate_ci95": [
+          0.0103,
+          0.0845
+        ],
+        "unsafe_auto_rate_weighted": 0.0381,
+        "route_agreement": 0.87,
+        "route_kappa": 0.741
+      },
+      "handoff_compliance": {
+        "n_escalate_routed": 52,
+        "mentions_handoff": 47,
+        "rate": 0.9038
+      },
+      "style_leakage": {
+        "n": 100,
+        "replies_ending_in_an_agent_signature": 1,
+        "rate": 0.01,
+        "note": "The draft prompt forbids signing off. For the LLM systems this is fabricated identity copied out of the retrieved evidence; for B1 and HUMAN it is simply what Spotify's agents really do."
+      },
+      "reply_quality": {
+        "n_scored": 100,
+        "mean_scores": {
+          "groundedness": 3.65,
+          "resolution": 2.97,
+          "tone": 4.76,
+          "safety": 4.37
+        },
+        "mean_overall": 3.938,
+        "send_ready_rate": 0.03,
+        "send_ready_ci95": [
+          0.0103,
+          0.0845
+        ],
+        "send_ready_rate_weighted": 0.044,
+        "judge_send_as_is_rate": 0.68,
+        "pct_with_unsupported_claims": 0.29,
+        "mean_reply_chars": 136.1
+      },
+      "TAR": {
+        "rate": 0.03,
+        "ci95": [
+          0.0103,
+          0.0845
+        ],
+        "rate_weighted": 0.044,
+        "n": 100
+      }
+    },
+    "S4_agent_llmrouter": {
+      "system": "S4_agent_llmrouter",
+      "n": 100,
+      "intent": {
+        "n": 100,
+        "accuracy_strict": 0.75,
+        "accuracy_strict_ci95": [
+          0.657,
+          0.8245
+        ],
+        "accuracy_lenient": 0.85,
+        "macro_f1": 0.7273,
+        "weighted_f1": 0.7481,
+        "per_class": {
+          "account_access": {
+            "precision": 0.667,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 10
+          },
+          "billing_charge": {
+            "precision": 0.667,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 14
+          },
+          "complaint_no_ask": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 8
+          },
+          "content_availability": {
+            "precision": 0.8,
+            "recall": 0.727,
+            "f1": 0.762,
+            "support": 11
+          },
+          "feature_request": {
+            "precision": 0.667,
+            "recall": 0.8,
+            "f1": 0.727,
+            "support": 5
+          },
+          "how_to": {
+            "precision": 0.8,
+            "recall": 0.667,
+            "f1": 0.727,
+            "support": 6
+          },
+          "other_unclear": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 6
+          },
+          "playback_bug": {
+            "precision": 0.938,
+            "recall": 0.75,
+            "f1": 0.833,
+            "support": 20
+          },
+          "praise_thanks": {
+            "precision": 1.0,
+            "recall": 0.857,
+            "f1": 0.923,
+            "support": 7
+          },
+          "subscription_plan": {
+            "precision": 1.0,
+            "recall": 0.538,
+            "f1": 0.7,
+            "support": 13
+          }
+        }
+      },
+      "routing": {
+        "n": 100,
+        "confusion": {
+          "tp_escalate": 25,
+          "fn_missed_escalation": 20,
+          "fp_over_escalate": 2,
+          "tn_auto": 53
+        },
+        "escalation_recall": 0.5556,
+        "escalation_recall_ci95": [
+          0.4118,
+          0.6906
+        ],
+        "escalation_precision": 0.9259,
+        "auto_coverage": 0.73,
+        "auto_precision": 0.726,
         "unsafe_auto_rate": 0.2,
         "unsafe_auto_rate_ci95": [
-          0.0567,
-          0.5098
+          0.1334,
+          0.2888
         ],
-        "unsafe_auto_rate_weighted": 0.2736,
-        "route_agreement": 0.7,
-        "route_kappa": 0.4
+        "unsafe_auto_rate_weighted": 0.193,
+        "route_agreement": 0.78,
+        "route_kappa": 0.5388
+      },
+      "handoff_compliance": {
+        "n_escalate_routed": 27,
+        "mentions_handoff": 20,
+        "rate": 0.7407
+      },
+      "style_leakage": {
+        "n": 100,
+        "replies_ending_in_an_agent_signature": 23,
+        "rate": 0.23,
+        "note": "The draft prompt forbids signing off. For the LLM systems this is fabricated identity copied out of the retrieved evidence; for B1 and HUMAN it is simply what Spotify's agents really do."
+      },
+      "reply_quality": {
+        "n_scored": 100,
+        "mean_scores": {
+          "groundedness": 4.25,
+          "resolution": 3.27,
+          "tone": 4.65,
+          "safety": 4.85
+        },
+        "mean_overall": 4.255,
+        "send_ready_rate": 0.26,
+        "send_ready_ci95": [
+          0.184,
+          0.3537
+        ],
+        "send_ready_rate_weighted": 0.2488,
+        "judge_send_as_is_rate": 0.93,
+        "pct_with_unsupported_claims": 0.06,
+        "mean_reply_chars": 112.6
+      },
+      "TAR": {
+        "rate": 0.13,
+        "ci95": [
+          0.0776,
+          0.2098
+        ],
+        "rate_weighted": 0.183,
+        "n": 100
+      }
+    },
+    "S3_agent": {
+      "system": "S3_agent",
+      "n": 200,
+      "intent": {
+        "n": 200,
+        "accuracy_strict": 0.71,
+        "accuracy_strict_ci95": [
+          0.6436,
+          0.7685
+        ],
+        "accuracy_lenient": 0.83,
+        "macro_f1": 0.6696,
+        "weighted_f1": 0.7134,
+        "per_class": {
+          "account_access": {
+            "precision": 0.688,
+            "recall": 0.88,
+            "f1": 0.772,
+            "support": 25
+          },
+          "billing_charge": {
+            "precision": 0.659,
+            "recall": 0.964,
+            "f1": 0.783,
+            "support": 28
+          },
+          "complaint_no_ask": {
+            "precision": 0.294,
+            "recall": 0.455,
+            "f1": 0.357,
+            "support": 11
+          },
+          "content_availability": {
+            "precision": 0.8,
+            "recall": 0.75,
+            "f1": 0.774,
+            "support": 16
+          },
+          "feature_request": {
+            "precision": 0.643,
+            "recall": 0.692,
+            "f1": 0.667,
+            "support": 13
+          },
+          "how_to": {
+            "precision": 0.786,
+            "recall": 0.647,
+            "f1": 0.71,
+            "support": 17
+          },
+          "other_unclear": {
+            "precision": 0.333,
+            "recall": 0.3,
+            "f1": 0.316,
+            "support": 10
+          },
+          "playback_bug": {
+            "precision": 0.929,
+            "recall": 0.703,
+            "f1": 0.8,
+            "support": 37
+          },
+          "praise_thanks": {
+            "precision": 1.0,
+            "recall": 0.765,
+            "f1": 0.867,
+            "support": 17
+          },
+          "subscription_plan": {
+            "precision": 0.824,
+            "recall": 0.538,
+            "f1": 0.651,
+            "support": 26
+          }
+        }
+      },
+      "routing": {
+        "n": 200,
+        "confusion": {
+          "tp_escalate": 85,
+          "fn_missed_escalation": 13,
+          "fp_over_escalate": 15,
+          "tn_auto": 87
+        },
+        "escalation_recall": 0.8673,
+        "escalation_recall_ci95": [
+          0.7862,
+          0.9208
+        ],
+        "escalation_precision": 0.85,
+        "auto_coverage": 0.5,
+        "auto_precision": 0.87,
+        "unsafe_auto_rate": 0.065,
+        "unsafe_auto_rate_ci95": [
+          0.0384,
+          0.108
+        ],
+        "unsafe_auto_rate_weighted": 0.0784,
+        "route_agreement": 0.86,
+        "route_kappa": 0.72
+      },
+      "handoff_compliance": {
+        "n_escalate_routed": 100,
+        "mentions_handoff": 81,
+        "rate": 0.81
+      },
+      "style_leakage": {
+        "n": 200,
+        "replies_ending_in_an_agent_signature": 42,
+        "rate": 0.21,
+        "note": "The draft prompt forbids signing off. For the LLM systems this is fabricated identity copied out of the retrieved evidence; for B1 and HUMAN it is simply what Spotify's agents really do."
+      },
+      "reply_quality": {
+        "n_scored": 200,
+        "mean_scores": {
+          "groundedness": 4.26,
+          "resolution": 3.225,
+          "tone": 4.685,
+          "safety": 4.785
+        },
+        "mean_overall": 4.239,
+        "send_ready_rate": 0.25,
+        "send_ready_ci95": [
+          0.1951,
+          0.3143
+        ],
+        "send_ready_rate_weighted": 0.2549,
+        "judge_send_as_is_rate": 0.875,
+        "pct_with_unsupported_claims": 0.055,
+        "mean_reply_chars": 113.3
+      },
+      "TAR": {
+        "rate": 0.105,
+        "ci95": [
+          0.0697,
+          0.1552
+        ],
+        "rate_weighted": 0.1482,
+        "n": 200
       }
     },
     "HUMAN_brand_reply": {
       "system": "HUMAN_brand_reply",
-      "n": 200
+      "n": 200,
+      "style_leakage": {
+        "n": 200,
+        "replies_ending_in_an_agent_signature": 200,
+        "rate": 1.0,
+        "note": "The draft prompt forbids signing off. For the LLM systems this is fabricated identity copied out of the retrieved evidence; for B1 and HUMAN it is simply what Spotify's agents really do."
+      },
+      "reply_quality": {
+        "n_scored": 200,
+        "mean_scores": {
+          "groundedness": 3.995,
+          "resolution": 3.18,
+          "tone": 4.515,
+          "safety": 4.73
+        },
+        "mean_overall": 4.105,
+        "send_ready_rate": 0.19,
+        "send_ready_ci95": [
+          0.1417,
+          0.25
+        ],
+        "send_ready_rate_weighted": 0.1703,
+        "judge_send_as_is_rate": 0.785,
+        "pct_with_unsupported_claims": 0.155,
+        "mean_reply_chars": 131.8
+      }
+    }
+  },
+  "matched_ablation_comparison": {
+    "S2_agent_noretrieval": {
+      "n_shared_units": 100,
+      "S3_agent": {
+        "intent_macro_f1": 0.7273,
+        "intent_strict_acc": 0.75,
+        "escalation_recall": 0.9333,
+        "auto_coverage": 0.48,
+        "unsafe_auto_rate": 0.03,
+        "send_ready_rate": 0.26,
+        "n_judged": 100
+      },
+      "S2_agent_noretrieval": {
+        "intent_macro_f1": 0.7273,
+        "intent_strict_acc": 0.75,
+        "escalation_recall": 0.9333,
+        "auto_coverage": 0.48,
+        "unsafe_auto_rate": 0.03,
+        "send_ready_rate": 0.03,
+        "n_judged": 100
+      }
+    },
+    "S4_agent_llmrouter": {
+      "n_shared_units": 100,
+      "S3_agent": {
+        "intent_macro_f1": 0.7273,
+        "intent_strict_acc": 0.75,
+        "escalation_recall": 0.9333,
+        "auto_coverage": 0.48,
+        "unsafe_auto_rate": 0.03,
+        "send_ready_rate": 0.26,
+        "n_judged": 100
+      },
+      "S4_agent_llmrouter": {
+        "intent_macro_f1": 0.7273,
+        "intent_strict_acc": 0.75,
+        "escalation_recall": 0.5556,
+        "auto_coverage": 0.73,
+        "unsafe_auto_rate": 0.2,
+        "send_ready_rate": 0.26,
+        "n_judged": 100
+      }
     }
   },
   "slices_S3_agent": {
     "by_position": {
       "opener": {
         "n": 140,
-        "intent_strict_acc": 0.0429,
-        "unsafe_auto_rate": 0.0071
+        "intent_strict_acc": 0.6714,
+        "unsafe_auto_rate": 0.0714,
+        "send_ready_rate": 0.2571
       },
       "follow_up": {
         "n": 60,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0167
+        "intent_strict_acc": 0.8,
+        "unsafe_auto_rate": 0.05,
+        "send_ready_rate": 0.2333
       }
     },
     "by_stratum": {
       "churn_human": {
         "n": 16,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.3125,
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.1875
       },
       "general": {
         "n": 120,
-        "intent_strict_acc": 0.025,
-        "unsafe_auto_rate": 0.0167
+        "intent_strict_acc": 0.7333,
+        "unsafe_auto_rate": 0.0833,
+        "send_ready_rate": 0.2417
       },
       "money": {
         "n": 18,
-        "intent_strict_acc": 0.0556,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.6667,
+        "unsafe_auto_rate": 0.0556,
+        "send_ready_rate": 0.1111
       },
       "non_english": {
         "n": 10,
-        "intent_strict_acc": 0.1,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.7,
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.4
       },
       "safety_legal": {
         "n": 10,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.9,
+        "unsafe_auto_rate": 0.1,
+        "send_ready_rate": 0.2
       },
       "security": {
         "n": 16,
-        "intent_strict_acc": 0.0625,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.875,
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.3125
       },
       "vague_short": {
         "n": 10,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.7,
+        "unsafe_auto_rate": 0.1,
+        "send_ready_rate": 0.5
       }
     },
     "by_annotator_difficulty": {
       "clear": {
         "n": 154,
-        "intent_strict_acc": 0.0325,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.7727,
+        "unsafe_auto_rate": 0.0325,
+        "send_ready_rate": 0.2727
       },
       "flagged_hard": {
         "n": 46,
-        "intent_strict_acc": 0.0217,
-        "unsafe_auto_rate": 0.0435
+        "intent_strict_acc": 0.5,
+        "unsafe_auto_rate": 0.1739,
+        "send_ready_rate": 0.1739
       }
     },
     "by_gold_intent": {
       "account_access": {
         "n": 25,
-        "intent_strict_acc": 0.04,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.88,
+        "unsafe_auto_rate": 0.04,
+        "send_ready_rate": 0.4
       },
       "billing_charge": {
         "n": 28,
-        "intent_strict_acc": 0.0714,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.9643,
+        "unsafe_auto_rate": 0.0357,
+        "send_ready_rate": 0.2143
       },
       "complaint_no_ask": {
         "n": 11,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.4545,
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.3636
       },
       "content_availability": {
         "n": 16,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.75,
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.125
       },
       "feature_request": {
         "n": 13,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.6923,
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.0769
       },
       "how_to": {
         "n": 17,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.6471,
+        "unsafe_auto_rate": 0.0588,
+        "send_ready_rate": 0.2941
       },
       "other_unclear": {
         "n": 10,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.1
+        "intent_strict_acc": 0.3,
+        "unsafe_auto_rate": 0.4,
+        "send_ready_rate": 0.2
       },
       "playback_bug": {
         "n": 37,
-        "intent_strict_acc": 0.0541,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.7027,
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.1622
       },
       "praise_thanks": {
         "n": 17,
-        "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0
+        "intent_strict_acc": 0.7647,
+        "unsafe_auto_rate": 0.0588,
+        "send_ready_rate": 0.4706
       },
       "subscription_plan": {
         "n": 26,
-        "intent_strict_acc": 0.0385,
-        "unsafe_auto_rate": 0.0385
+        "intent_strict_acc": 0.5385,
+        "unsafe_auto_rate": 0.1923,
+        "send_ready_rate": 0.2308
       }
     }
   },
@@ -574,113 +1103,134 @@
       "opener": {
         "n": 140,
         "intent_strict_acc": 0.3857,
-        "unsafe_auto_rate": 0.1714
+        "unsafe_auto_rate": 0.1714,
+        "send_ready_rate": 0.5429
       },
       "follow_up": {
         "n": 60,
         "intent_strict_acc": 0.4667,
-        "unsafe_auto_rate": 0.0667
+        "unsafe_auto_rate": 0.0667,
+        "send_ready_rate": 0.4167
       }
     },
     "by_stratum": {
       "churn_human": {
         "n": 16,
         "intent_strict_acc": 0.25,
-        "unsafe_auto_rate": 0.0625
+        "unsafe_auto_rate": 0.0625,
+        "send_ready_rate": 0.5625
       },
       "general": {
         "n": 120,
         "intent_strict_acc": 0.3417,
-        "unsafe_auto_rate": 0.1667
+        "unsafe_auto_rate": 0.1667,
+        "send_ready_rate": 0.5167
       },
       "money": {
         "n": 18,
         "intent_strict_acc": 0.2778,
-        "unsafe_auto_rate": 0.1667
+        "unsafe_auto_rate": 0.1667,
+        "send_ready_rate": 0.5
       },
       "non_english": {
         "n": 10,
         "intent_strict_acc": 0.4,
-        "unsafe_auto_rate": 0.1
+        "unsafe_auto_rate": 0.1,
+        "send_ready_rate": 0.2
       },
       "safety_legal": {
         "n": 10,
         "intent_strict_acc": 0.6,
-        "unsafe_auto_rate": 0.1
+        "unsafe_auto_rate": 0.1,
+        "send_ready_rate": 0.5
       },
       "security": {
         "n": 16,
         "intent_strict_acc": 0.9375,
-        "unsafe_auto_rate": 0.0
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.625
       },
       "vague_short": {
         "n": 10,
         "intent_strict_acc": 0.7,
-        "unsafe_auto_rate": 0.2
+        "unsafe_auto_rate": 0.2,
+        "send_ready_rate": 0.4
       }
     },
     "by_annotator_difficulty": {
       "clear": {
         "n": 154,
         "intent_strict_acc": 0.4545,
-        "unsafe_auto_rate": 0.1104
+        "unsafe_auto_rate": 0.1104,
+        "send_ready_rate": 0.5065
       },
       "flagged_hard": {
         "n": 46,
         "intent_strict_acc": 0.2609,
-        "unsafe_auto_rate": 0.2391
+        "unsafe_auto_rate": 0.2391,
+        "send_ready_rate": 0.5
       }
     },
     "by_gold_intent": {
       "account_access": {
         "n": 25,
         "intent_strict_acc": 0.8,
-        "unsafe_auto_rate": 0.08
+        "unsafe_auto_rate": 0.08,
+        "send_ready_rate": 0.64
       },
       "billing_charge": {
         "n": 28,
         "intent_strict_acc": 0.3929,
-        "unsafe_auto_rate": 0.1786
+        "unsafe_auto_rate": 0.1786,
+        "send_ready_rate": 0.4286
       },
       "complaint_no_ask": {
         "n": 11,
         "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.0909
+        "unsafe_auto_rate": 0.0909,
+        "send_ready_rate": 0.4545
       },
       "content_availability": {
         "n": 16,
         "intent_strict_acc": 0.125,
-        "unsafe_auto_rate": 0.0
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.375
       },
       "feature_request": {
         "n": 13,
         "intent_strict_acc": 0.0769,
-        "unsafe_auto_rate": 0.0
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.4615
       },
       "how_to": {
         "n": 17,
         "intent_strict_acc": 0.1765,
-        "unsafe_auto_rate": 0.1765
+        "unsafe_auto_rate": 0.1765,
+        "send_ready_rate": 0.5294
       },
       "other_unclear": {
         "n": 10,
         "intent_strict_acc": 0.0,
-        "unsafe_auto_rate": 0.7
+        "unsafe_auto_rate": 0.7,
+        "send_ready_rate": 0.6
       },
       "playback_bug": {
         "n": 37,
         "intent_strict_acc": 0.7568,
-        "unsafe_auto_rate": 0.0811
+        "unsafe_auto_rate": 0.0811,
+        "send_ready_rate": 0.4324
       },
       "praise_thanks": {
         "n": 17,
         "intent_strict_acc": 0.4706,
-        "unsafe_auto_rate": 0.0
+        "unsafe_auto_rate": 0.0,
+        "send_ready_rate": 0.5882
       },
       "subscription_plan": {
         "n": 26,
         "intent_strict_acc": 0.3462,
-        "unsafe_auto_rate": 0.2692
+        "unsafe_auto_rate": 0.2692,
+        "send_ready_rate": 0.5769
       }
     }
   }

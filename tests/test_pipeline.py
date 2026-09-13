@@ -128,3 +128,69 @@ def test_golden_set_is_complete_and_schema_clean():
         assert r["weight"] > 0
         if r["gold_route"] == "escalate":
             assert r["gold_driver"] != "none"
+
+
+def test_signature_detector_catches_real_spotify_sign_offs_only_at_the_end():
+    import evaluate
+
+    assert evaluate.SIGNATURE_RE.search("Hey! Try a reinstall /JX")
+    assert evaluate.SIGNATURE_RE.search("We'll take a look backstage /NQ <url>")
+    assert not evaluate.SIGNATURE_RE.search("Head to https://x.co/A and tap Update")
+    assert not evaluate.SIGNATURE_RE.search("No sign off here at all")
+
+
+def test_handoff_detector_distinguishes_a_handoff_from_a_fix_attempt():
+    import evaluate
+
+    assert evaluate.HANDOFF_RE.search("Can you DM us your account's email address?")
+    assert evaluate.HANDOFF_RE.search("A human teammate will pick this up")
+    assert not evaluate.HANDOFF_RE.search(
+        "Try restarting your device and clearing the cache"
+    )
+
+
+def test_golden_weights_reproduce_the_stratum_populations():
+    """weight * sampled should recover the stratum population from frame_report.json."""
+    frame = json.loads((ROOT / "data" / "golden" / "frame_report.json").read_text())
+    rows = [json.loads(l) for l in (ROOT / "data" / "golden" / "golden_set.jsonl").open()]
+    counts: dict[str, int] = {}
+    weights: dict[str, float] = {}
+    for r in rows:
+        counts[r["stratum"]] = counts.get(r["stratum"], 0) + 1
+        weights[r["stratum"]] = r["weight"]
+    for stratum, meta in frame["strata"].items():
+        assert counts[stratum] == meta["sampled"]
+        assert weights[stratum] * counts[stratum] == pytest.approx(
+            meta["population"], rel=1e-3
+        )
+
+
+def test_escalate_always_intents_cannot_be_auto_routed_by_the_policy():
+    """The policy must never return `auto` for an intent marked always_escalate."""
+    from agent import SupportAgent
+
+    agent = SupportAgent(None, "BrandX", use_retrieval=False)
+    for intent in sorted(taxonomy.escalate_always()):
+        triage = {
+            "intent": intent,
+            "confidence": "high",
+            "signals": {s["key"]: False for s in taxonomy.risk_signals()},
+        }
+        route, reason = agent.decide_route(triage, [])
+        assert route == "escalate", f"{intent} was auto-routed: {reason}"
+
+
+def test_any_hard_risk_signal_forces_escalation_even_for_a_safe_intent():
+    from agent import SupportAgent
+
+    agent = SupportAgent(None, "BrandX", use_retrieval=False)
+    hard = [s["key"] for s in taxonomy.risk_signals() if s.get("hard_escalate")]
+    safe_intent = sorted(taxonomy.auto_eligible())[0]
+    for key in hard:
+        signals = {s["key"]: False for s in taxonomy.risk_signals()}
+        signals[key] = True
+        route, reason = agent.decide_route(
+            {"intent": safe_intent, "confidence": "high", "signals": signals}, []
+        )
+        assert route == "escalate", f"{key} did not force escalation"
+        assert key in reason

@@ -1,0 +1,19 @@
+{
+  "system": "S4_agent_llmrouter",
+  "provider": "ollama",
+  "model": "qwen2.5:7b-instruct",
+  "router": "llm",
+  "retrieval": true,
+  "k": 4,
+  "n": 100,
+  "workers": 2,
+  "wall_seconds": 769.6,
+  "llm_stats": {
+    "calls": 200,
+    "cache_hits": 100,
+    "retries": 0,
+    "wall_seconds": 1528.781644821167,
+    "json_repairs": 0,
+    "hard_failures": 0
+  }
+}

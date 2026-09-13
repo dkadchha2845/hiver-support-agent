@@ -69,7 +69,7 @@
     "over_escalations": 15,
     "intent_wrong_strict": 34,
     "intent_wrong_but_matched_alt": 24,
-    "replies_with_unsupported_claims": 0
+    "replies_with_unsupported_claims": 11
   },
   "top_intent_confusions": [
     {
@@ -152,10 +152,15 @@
       "reply": "Thanks for reaching out, Jonny! We noticed your issue. Let's try restarting your device by holding the Home + Lock button for 10 seconds. Does that help?",
       "brand_reply": "@customer Thanks. Can you try restarting your device, then log out and back in? Does that help? /AU",
       "best_retrieval_similarity": 0.4488,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but correct advice, no unsupported claims",
+      "unsupported_claims": [],
       "note": "fragment pointing at another thread"
     },
     {
@@ -176,10 +181,15 @@
       "reply": "@customer Hi there! Can you DM us your account's email address? We'll check this out for you.",
       "brand_reply": "@customer Hey Glen! Can you DM us both you and your wife's account's username and email address? We'll take a look backstage /TF",
       "best_retrieval_similarity": 0.3387,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 5,
+        "resolution": 4,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": true,
+      "judge_reason": "Generic but accurate and safe response",
+      "unsupported_claims": [],
       "note": "family invite blocked by FB link error"
     },
     {
@@ -200,10 +210,15 @@
       "reply": "Hey there! Can you DM us your account's email address or username? We'll check this out for you.",
       "brand_reply": "@customer Hey there! We're here to help. Can you DM us your account's email address? We'll take a look under the hood /AN <url>",
       "best_retrieval_similarity": 0.3262,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but safe and polite response",
+      "unsupported_claims": [],
       "note": "trial eligibility depends on their history"
     },
     {
@@ -226,10 +241,18 @@
       "reply": "Hey there! We\u2019ve got your back. You can remove songs from your library if needed. Keep an eye on our updates for any changes ahead.",
       "brand_reply": "@customer Hey Ruben! We have more info about this on our Community. Check it out: <url> /CP",
       "best_retrieval_similarity": 1.0,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply makes unsupported claims about removing songs and future updates",
+      "unsupported_claims": [
+        "You can remove songs from your library if needed",
+        "Keep an eye on our updates for any changes ahead"
+      ],
       "note": "bare mentions, no content"
     },
     {
@@ -250,10 +273,15 @@
       "reply": "Hey! We\u2019re sorry to hear you\u2019re having trouble. Can you DM us your account's username and more details about what\u2019s going on? Let\u2019s get this sorted out!",
       "brand_reply": "@customer Hey, help's here! What's happening exactly? Can you also let us know your device, operating system, and Spotify version? /LW",
       "best_retrieval_similarity": 0.3102,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 4
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply is safe and grounded, but resolution could be stronger by providing a more specific next step.",
+      "unsupported_claims": [],
       "note": "third-party app named as the broken thing; codebook lists this as other_unclear"
     },
     {
@@ -274,10 +302,15 @@
       "reply": "Got it. Can you let us know your account's email address and username? We'll check this for you.",
       "brand_reply": "@customer Hey Bethany! Can you DM us your account's email address? We'll take a look backstage /SJ <url> @customer No worries! Let us know if you ever need us again. We'd be... <url> /RS",
       "best_retrieval_similarity": 0.238,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but safe and factual response",
+      "unsupported_claims": [],
       "note": "offer sign-up loops back, payment not completing"
     },
     {
@@ -298,10 +331,15 @@
       "reply": "Hi! We don't have Norwegian support yet, but we can help in English here. Let us know if you'd like to see any changes or have suggestions for Discover Weekly.",
       "brand_reply": "@customer Hi there! We don't offer Norwegian support right now, so we hope you don't mind if we reply to you in English. Is this happening only in your Discover Weekly playlist? /LP",
       "best_retrieval_similarity": 0.4098,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Good tone and safety, but resolution could be stronger",
+      "unsupported_claims": [],
       "note": "Norwegian, positive, asks if algorithm changed"
     },
     {
@@ -322,10 +360,15 @@
       "reply": "Hey! Pre-sale codes are being sent out by email to some of Romeo Santos' biggest fans on Spotify. Hopefully you're one of them!",
       "brand_reply": "@customer Hey there! We've just replied to your DM. Check your inbox /RH",
       "best_retrieval_similarity": 0.2955,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 5,
+        "resolution": 4,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": true,
+      "judge_reason": "Accurately reflects the evidence and provides a clear next step.",
+      "unsupported_claims": [],
       "note": "presale code request - taxonomy gap (promos/ticketing)"
     },
     {
@@ -346,10 +389,15 @@
       "reply": "Hey! Can you let us know what exactly is happening? We'll see what we can suggest.",
       "brand_reply": "@customer Hey! At the moment, you can download up to 9,999 songs on three different devices (3,333 per device): <url> We're afraid we don't have any more info to share, but we'll be sure to pass your feedback to the right folks. If you need anything ",
       "best_retrieval_similarity": 0.4335,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply doesn't address the customer's question about the limit, and is too generic.",
+      "unsupported_claims": [],
       "note": "referent is only in the attached image"
     },
     {
@@ -370,10 +418,15 @@
       "reply": "Hey! Can you DM us your account's email address? We\u2019ll help you out.",
       "brand_reply": "@customer Hey Andrew. Can you fire over your account's email address or username via DM? We'll take a look under the hood /AY <url>",
       "best_retrieval_similarity": 0.2863,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 4
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but safe and polite response",
+      "unsupported_claims": [],
       "note": "wants to change profile email / DOB"
     },
     {
@@ -394,10 +447,15 @@
       "reply": "Hey there! Can you DM us your username or email address? We\u2019ll take a look backstage to figure this out.",
       "brand_reply": "@customer Hey there! We've just sent a DM your way. Let's carry on chatting there /AK",
       "best_retrieval_similarity": 0.4729,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 5,
+        "resolution": 4,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": true,
+      "judge_reason": "Accurately reflects the evidence and provides a clear next step.",
+      "unsupported_claims": [],
       "note": "hulu bundle authorisation failing"
     },
     {
@@ -418,10 +476,15 @@
       "reply": "Hi there! If you already have Spotify Premium, you might still be eligible for special offers. Check your account or our website for any current deals /MQ",
       "brand_reply": "@customer Hey! We can help out in English via Twitter, but we also have Norwegian support via email at <url> /DF",
       "best_retrieval_similarity": 0.2848,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Accurately conveys eligibility for special offers, but lacks concrete next step",
+      "unsupported_claims": [],
       "note": "Norwegian, offer eligibility for existing users"
     },
     {
@@ -442,10 +505,15 @@
       "reply": "Hi! Can you DM us your account's email address or username? We'll take a look backstage.",
       "brand_reply": "@customer Hey! We're afraid we don't offer telephone support, but we can help through Twitter. Can you DM us your account's email address? We'll take a look backstage /RA <url>",
       "best_retrieval_similarity": 0.3993,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 5,
+        "resolution": 4,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": true,
+      "judge_reason": "Accurately reflects the evidence and provides a clear next step.",
+      "unsupported_claims": [],
       "note": "student verification failing"
     }
   ],
@@ -470,10 +538,15 @@
       "reply": "Hey! We understand the wait. A human teammate will look into it for you. Let us know if you need anything else.",
       "brand_reply": "@customer Thanks for bearing with us. Don't worry, the devs are on it \ud83d\udd27 In the meantime, let us know if you need anything else /PC",
       "best_retrieval_similarity": 0.3204,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Human teammate will look into it, but no specific next step or timeline mentioned",
+      "unsupported_claims": [],
       "note": "thanks plus mild dig"
     },
     {
@@ -494,10 +567,15 @@
       "reply": "Hey! Can you DM us your account's username and email address? A human will take a look.",
       "brand_reply": "@customer Hey Jo\u00e3o! Could you let us know what's happening exactly? If you're getting any error messages, a screenshot of it would also be handy. We'll be right here waiting /LP",
       "best_retrieval_similarity": 0.5239,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 5,
+        "resolution": 4,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": true,
+      "judge_reason": "Accurately requests sensitive info and offers a clear next step",
+      "unsupported_claims": [],
       "note": "vague, website access"
     },
     {
@@ -520,10 +598,15 @@
       "reply": "Hi there. We've got you covered! Could you DM us your email address so we can assist you further?",
       "brand_reply": "@customer Hey Eric! Can you let us know what's happening exactly? We'll see what we can do /NS",
       "best_retrieval_similarity": 0.3025,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 4
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but polite response that doesn't address the specific issue of being RickRolled",
+      "unsupported_claims": [],
       "note": "jokey \"may have to cancel\" - not a real churn decision"
     },
     {
@@ -544,10 +627,15 @@
       "reply": "Hey! We'd love to have Agust D back on Spotify, but there's more info here: <url>",
       "brand_reply": "@customer Hey there! Just to check, what country is your account set to? We'll take a look backstage /JE",
       "best_retrieval_similarity": 0.473,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Accurately reflects the brand's stance on Agust D's availability and provides a helpful link.",
+      "unsupported_claims": [],
       "note": ""
     },
     {
@@ -570,10 +658,15 @@
       "reply": "Hey! Can you DM us your account's email address? We'll check it out.",
       "brand_reply": "@customer Hey! Right now, it's not possible to choose a username at sign-up, but you can add a display name instead. Other Spotify users will see this name when they visit your profile. Let us know if you have other questions /MG",
       "best_retrieval_similarity": 0.4068,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 5,
+        "resolution": 4,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": true,
+      "judge_reason": "Generic but clear next step",
+      "unsupported_claims": [],
       "note": "why is username random"
     },
     {
@@ -594,10 +687,17 @@
       "reply": "Hey! If your Spotify account was linked via Facebook and you delete that FB account, it shouldn't affect your ability to log in with the email address you used. Let us know if you need any more help!",
       "brand_reply": "@customer Hi! Could you send us a DM with your account's email address? We'll take a look backstage and see what we can suggest /DR <url>",
       "best_retrieval_similarity": 0.2918,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply makes an unsupported claim about account behavior after FB deletion",
+      "unsupported_claims": [
+        "it shouldn't affect your ability to log in with the email address you used"
+      ],
       "note": "hypothetical about fb login - generic answer"
     },
     {
@@ -620,10 +720,15 @@
       "reply": "Hey! Sorry to hear about your frustration with #spotiamb. A human will look into it. Can you share your device and Spotify version? /AP",
       "brand_reply": "@customer Hi Kelly, help's here! Can you DM us your account's email address? We'll take a look backstage /DV <url>",
       "best_retrieval_similarity": 0.2252,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Acknowledges and redirects to a human, but doesn't provide any concrete next steps or information about #spotiamb",
+      "unsupported_claims": [],
       "note": "third-party mod breaking the app"
     },
     {
@@ -646,10 +751,18 @@
       "reply": "Absolutely! Just head to our website and subscribe using your credit card or another payment method. Let us know if you need any more help!",
       "brand_reply": "@customer @customer Hi Rachel! We've just sent you a bit more info over DM. We'll carry on helping out there /GN @customer Hey Angel, we'd love to help! We have some handy info about payments here: <url> If you need a hand with anything else, just le",
       "best_retrieval_similarity": 0.3952,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 2,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply contradicts evidence that debit cards are supported",
+      "unsupported_claims": [
+        "credit card",
+        "another payment method"
+      ],
       "note": "payment-method options - generic answer exists"
     },
     {
@@ -670,10 +783,15 @@
       "reply": "@customer We\u2019re sorry to hear you\u2019re having trouble. Can you try accessing the web player in incognito mode? Let us know if that helps /CX",
       "brand_reply": "@customer Hi Kathryn! Can you let us know the make and model of your device, along with the iOS and Spotify versions you're using? We'll see what we can suggest /MC",
       "best_retrieval_similarity": 0.2522,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Helpful, but doesn't address the customer's specific issue with iOS",
+      "unsupported_claims": [],
       "note": "504 on web"
     },
     {
@@ -696,10 +814,15 @@
       "reply": "Hey there! Can you DM us your account's email address or username? We'll take a look and see what we can do.",
       "brand_reply": "@customer Hey there! Can you let us know which device and operating system you're using? Also, is this happening over WiFi or 3G/4G? /NQ",
       "best_retrieval_similarity": 0.277,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic response without addressing the customer's specific issue",
+      "unsupported_claims": [],
       "note": "price mentioned rhetorically, not a billing dispute"
     },
     {
@@ -722,10 +845,15 @@
       "reply": "Hey there! Sorry if you're seeing something unexpected. Can you let us know your device and any details about what's happening? A human will look into it.",
       "brand_reply": "@customer Hey, that's not cool! Can you shoot us over a DM with your account's username and email address? We'll check things out backstage /DI <url>",
       "best_retrieval_similarity": 0.4124,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generally well-written and safe, but resolution could be stronger with a more specific next step.",
+      "unsupported_claims": [],
       "note": "profanity aimed at the agent signature, still a plain bug"
     },
     {
@@ -746,10 +874,15 @@
       "reply": "Hey there! Can you DM us your device, operating system, and Spotify version? A human will look into it.",
       "brand_reply": "@customer Hey there! That doesn't sound good. Can you DM us your account's email address or username? We'll take a look backstage /PB <url>",
       "best_retrieval_similarity": 0.3578,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but correct response",
+      "unsupported_claims": [],
       "note": "downloads over data despite setting"
     },
     {
@@ -772,10 +905,15 @@
       "reply": "Hey there! We've just replied to your DM. Let's continue chatting there to help you out /JQ",
       "brand_reply": "@customer Hey! Don\u2019t worry, we can help. What\u2019s happening exactly? Can you let us know the device/OS you\u2019re using? /SJ",
       "best_retrieval_similarity": 0.4926,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic response that doesn't provide any new information or next steps.",
+      "unsupported_claims": [],
       "note": "\"trouble with my Spotify\", no detail at all"
     },
     {
@@ -796,10 +934,15 @@
       "reply": "Hey! We\u2019re sorry about the auto-generated username. Can you DM us your email so we can assist further? /AY",
       "brand_reply": "@customer Hey Nick! Right now, it's not possible to choose a username at sign-up, but other Spotify users will see your chosen display name when they visit your profile /LS",
       "best_retrieval_similarity": 0.2842,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Accurately acknowledges the auto-generated username issue and requests email for further assistance.",
+      "unsupported_claims": [],
       "note": "random-looking username on signup"
     },
     {
@@ -822,15 +965,1200 @@
       "reply": "@customer Hi there! To reduce suggested tracks, try adding more black metal artists to your playlists. A human will look into your request too. DM us your username if needed. Thanks!",
       "brand_reply": "@customer Thanks for the feedback \u2013 we appreciate it! We\u2019ll get this passed onto the right team /JS",
       "best_retrieval_similarity": 0.21,
-      "judge": null,
-      "judge_send_ready": null,
-      "judge_reason": null,
-      "unsupported_claims": null,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a commitment to have a human review the customer's request, but there is no evidence in past replies that Spotify actually does this.",
+      "unsupported_claims": [
+        "A human will look into your request too."
+      ],
       "note": "ad-genre targeting request; \"goodbye\" is a sign-off not churn"
     }
   ],
-  "worst_judged_replies": [],
-  "unsupported_claim_examples": [],
-  "high_precedent_still_blocked": [],
+  "worst_judged_replies": [
+    {
+      "unit_id": "563479-563479",
+      "stratum": "churn_human",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@customer it is disappointing that you are not supporting Samsung tvs before 2015. I\u2019m considering to cancel the subscription just because of it.",
+      "gold_intent": "feature_request",
+      "gold_intent_alt": "complaint_no_ask",
+      "pred_intent": "complaint_no_ask",
+      "confidence": "high",
+      "gold_route": "escalate",
+      "gold_driver": "churn_threat",
+      "pred_route": "escalate",
+      "route_reason": "risk signal `churn_threat`",
+      "signals_fired": [
+        "churn_threat"
+      ],
+      "reply": "We're sorry to hear about your experience. A human will look into getting Samsung TVs (2015+) added soon. Let us know if you need anything else.",
+      "brand_reply": "@customer We hear you \ud83c\udfa7 Rest assured, your feedback will be passed on to the right folks /DF",
+      "best_retrieval_similarity": 0.2773,
+      "judge": {
+        "groundedness": 2,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a commitment to add support for Samsung TVs (2015+), which is not supported by the evidence.",
+      "unsupported_claims": [
+        "A human will look into getting Samsung TVs (2015+) added soon"
+      ],
+      "note": "older Samsung TVs, considering cancelling"
+    },
+    {
+      "unit_id": "559976-559978",
+      "stratum": "general",
+      "position": 2,
+      "hard": true,
+      "customer_message": "@SpotifyCares No my son's getting a new phone for Christmas and he want s to have my other account. Is their a way to link them if i get the Spotify for 3 ppl",
+      "gold_intent": "subscription_plan",
+      "gold_intent_alt": null,
+      "pred_intent": "subscription_plan",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `subscription_plan` is auto-eligible, no risk signals, precedent similarity 0.28",
+      "signals_fired": [],
+      "reply": "Hey! If you get Spotify Family, you can add up to 3 accounts. Let us know if you need help setting it up!",
+      "brand_reply": "@customer If you'd like to have 3 accounts sharing a subscription, we suggest checking out Premium for Family at <url> Hope this helps! /JL",
+      "best_retrieval_similarity": 0.2842,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 2,
+        "tone": 5,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes an unsupported claim about the number of accounts that can be added with Spotify Family",
+      "unsupported_claims": [
+        "If you get Spotify Family, you can add up to 3 accounts"
+      ],
+      "note": "family plan linking question, generic answer"
+    },
+    {
+      "unit_id": "1347533-1347533",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares it\u2019s says I can skip ads, but where is the skip button ? <url>",
+      "gold_intent": "how_to",
+      "gold_intent_alt": null,
+      "pred_intent": "how_to",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `how_to` is auto-eligible, no risk signals, precedent similarity 0.42",
+      "signals_fired": [],
+      "reply": "@customer Hey! Thanks for letting us know. Can you check if the ad has a 'skip' option within it? If not, we\u2019ll look into it. Give it a try first!",
+      "brand_reply": "@customer Hey Lucas! Could you DM us your account's username or email address? We'll take a look backstage /LP <url>",
+      "best_retrieval_similarity": 0.4235,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a vague promise to 'look into' the issue without specifying what actions will be taken or when.",
+      "unsupported_claims": [
+        "we'll look into it"
+      ],
+      "note": "where is the skip-ad button"
+    },
+    {
+      "unit_id": "2653074-2653074",
+      "stratum": "churn_human",
+      "position": 0,
+      "hard": true,
+      "customer_message": "Dear, @customer, When I Am Listening To Satanic Black Metal, Please Do Not Put Shitty Pop Ads, Please. Thank you, And Goodbye~",
+      "gold_intent": "feature_request",
+      "gold_intent_alt": "complaint_no_ask",
+      "pred_intent": "how_to",
+      "confidence": "low",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "escalate",
+      "route_reason": "triage confidence is low",
+      "signals_fired": [
+        "vague_no_detail"
+      ],
+      "reply": "@customer Hi there! To reduce suggested tracks, try adding more black metal artists to your playlists. A human will look into your request too. DM us your username if needed. Thanks!",
+      "brand_reply": "@customer Thanks for the feedback \u2013 we appreciate it! We\u2019ll get this passed onto the right team /JS",
+      "best_retrieval_similarity": 0.21,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a commitment to have a human review the customer's request, but there is no evidence in past replies that Spotify actually does this.",
+      "unsupported_claims": [
+        "A human will look into your request too."
+      ],
+      "note": "ad-genre targeting request; \"goodbye\" is a sign-off not churn"
+    },
+    {
+      "unit_id": "514127-514128",
+      "stratum": "general",
+      "position": 2,
+      "hard": false,
+      "customer_message": "@SpotifyCares The problems started since I 've switched to spotify premium here in the netherlands. Before that, there were no problems",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.42",
+      "signals_fired": [],
+      "reply": "Thanks for letting us know! It sounds like you might be hitting some availability limits. Can you check if your device is connected to a different network and see if that helps?",
+      "brand_reply": "@customer Hmm. If it happens on WiFi only, can you reset the router if you're on a home WiFi network? Let us know how it goes /JU",
+      "best_retrieval_similarity": 0.4153,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Makes an unsupported claim and doesn't provide a concrete next step",
+      "unsupported_claims": [
+        "availability limits"
+      ],
+      "note": ""
+    },
+    {
+      "unit_id": "2544113-2544113",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares if we use fb as spotify login acct, what happened if that fb acct is deleted? Would the acct still work well with the email that use for the fb acct? Thanks",
+      "gold_intent": "how_to",
+      "gold_intent_alt": "account_access",
+      "pred_intent": "account_access",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "escalate",
+      "route_reason": "intent `account_access` is never auto-handled",
+      "signals_fired": [],
+      "reply": "Hey! If your Spotify account was linked via Facebook and you delete that FB account, it shouldn't affect your ability to log in with the email address you used. Let us know if you need any more help!",
+      "brand_reply": "@customer Hi! Could you send us a DM with your account's email address? We'll take a look backstage and see what we can suggest /DR <url>",
+      "best_retrieval_similarity": 0.2918,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply makes an unsupported claim about account behavior after FB deletion",
+      "unsupported_claims": [
+        "it shouldn't affect your ability to log in with the email address you used"
+      ],
+      "note": "hypothetical about fb login - generic answer"
+    },
+    {
+      "unit_id": "2812-2851",
+      "stratum": "money",
+      "position": 5,
+      "hard": true,
+      "customer_message": "@customer Hi. I havo no debit card but im interested. Can u help me?",
+      "gold_intent": "subscription_plan",
+      "gold_intent_alt": "billing_charge",
+      "pred_intent": "billing_charge",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "escalate",
+      "route_reason": "risk signal `money_involved`; intent `billing_charge` is never auto-handled",
+      "signals_fired": [
+        "money_involved"
+      ],
+      "reply": "Absolutely! Just head to our website and subscribe using your credit card or another payment method. Let us know if you need any more help!",
+      "brand_reply": "@customer @customer Hi Rachel! We've just sent you a bit more info over DM. We'll carry on helping out there /GN @customer Hey Angel, we'd love to help! We have some handy info about payments here: <url> If you need a hand with anything else, just le",
+      "best_retrieval_similarity": 0.3952,
+      "judge": {
+        "groundedness": 2,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply contradicts evidence that debit cards are supported",
+      "unsupported_claims": [
+        "credit card",
+        "another payment method"
+      ],
+      "note": "payment-method options - generic answer exists"
+    },
+    {
+      "unit_id": "1843943-1843943",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "Hey @customer, it\u2019d be super cool if you could make the maximum amount of downloads on premium bigger please help !!",
+      "gold_intent": "feature_request",
+      "gold_intent_alt": null,
+      "pred_intent": "feature_request",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `feature_request` is auto-eligible, no risk signals, precedent similarity 0.38",
+      "signals_fired": [],
+      "reply": "We can see how that'd be handy. Thanks for reaching out \u2013 your feedback's been noted \ud83d\udcdd",
+      "brand_reply": "@customer Hey Samantha! We can see how that\u2019d be handy. Thanks for taking the time to reach out \u2013 your feedback's been noted \ud83d\udcdd /RA",
+      "best_retrieval_similarity": 0.3793,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 2,
+        "tone": 3,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Acknowledges but doesn't provide any concrete next step or useful information",
+      "unsupported_claims": [],
+      "note": ""
+    },
+    {
+      "unit_id": "2853023-2853023",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares Hey up Spotifyers, what\u2019s craic with equaliser? My mate slammed up all to top other day at a party to get more volume. How should it be set? Any recommendations? <url>",
+      "gold_intent": "how_to",
+      "gold_intent_alt": null,
+      "pred_intent": "how_to",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `how_to` is auto-eligible, no risk signals, precedent similarity 0.21",
+      "signals_fired": [],
+      "reply": "Got it! For best sound, try the 'Flat' preset or adjust individually for your setup. Let us know if you need more tips!",
+      "brand_reply": "@customer Hi, help's here! Can you let us know your phone's model, as well as its iOS and Spotify versions? We'll see what we can suggest /DV",
+      "best_retrieval_similarity": 0.2104,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply makes claims about optimal equalizer settings without evidence from past customer interactions.",
+      "unsupported_claims": [
+        "For best sound, try the 'Flat' preset or adjust individually for your setup."
+      ],
+      "note": "equaliser settings advice"
+    },
+    {
+      "unit_id": "506025-506025",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "Wondering if anyone has issues with @customer (on browser) after updating to #HighSierra ? It was working day before yesterday. Then I updated yesterday, and now, bubkus. Tried different browsers. nada. But works fine on mobile and at home (not running HS there). hmmm.",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.28",
+      "signals_fired": [],
+      "reply": "We're sorry to hear you're having issues. Can you try signing out and back in? If that doesn't help, please DM your account info so we can look into it.",
+      "brand_reply": "@customer Hi Rafael, help's here! Does clearing your cache and cookies help? You might also want to try using an incognito window. Let us know how it goes /JI",
+      "best_retrieval_similarity": 0.2782,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 2
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a claim that the customer is having issues, but the evidence does not support this assumption.",
+      "unsupported_claims": [
+        "We're sorry to hear you're having issues."
+      ],
+      "note": ""
+    },
+    {
+      "unit_id": "2621360-2621358",
+      "stratum": "vague_short",
+      "position": 1,
+      "hard": false,
+      "customer_message": "@SpotifyCares @customer",
+      "gold_intent": "other_unclear",
+      "gold_intent_alt": null,
+      "pred_intent": "subscription_plan",
+      "confidence": "medium",
+      "gold_route": "escalate",
+      "gold_driver": "vague_no_detail",
+      "pred_route": "auto",
+      "route_reason": "intent `subscription_plan` is auto-eligible, no risk signals, precedent similarity 1.00",
+      "signals_fired": [
+        "vague_no_detail"
+      ],
+      "reply": "Hey there! We\u2019ve got your back. You can remove songs from your library if needed. Keep an eye on our updates for any changes ahead.",
+      "brand_reply": "@customer Hey Ruben! We have more info about this on our Community. Check it out: <url> /CP",
+      "best_retrieval_similarity": 1.0,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply makes unsupported claims about removing songs and future updates",
+      "unsupported_claims": [
+        "You can remove songs from your library if needed",
+        "Keep an eye on our updates for any changes ahead"
+      ],
+      "note": "bare mentions, no content"
+    },
+    {
+      "unit_id": "2711968-2711968",
+      "stratum": "general",
+      "position": 0,
+      "hard": true,
+      "customer_message": "hey, @customer @SpotifyCares just tell me, why? why is there limit for this? <url>",
+      "gold_intent": "other_unclear",
+      "gold_intent_alt": "how_to",
+      "pred_intent": "complaint_no_ask",
+      "confidence": "high",
+      "gold_route": "escalate",
+      "gold_driver": "vague_no_detail",
+      "pred_route": "auto",
+      "route_reason": "intent `complaint_no_ask` is auto-eligible, no risk signals, precedent similarity 0.43",
+      "signals_fired": [],
+      "reply": "Hey! Can you let us know what exactly is happening? We'll see what we can suggest.",
+      "brand_reply": "@customer Hey! At the moment, you can download up to 9,999 songs on three different devices (3,333 per device): <url> We're afraid we don't have any more info to share, but we'll be sure to pass your feedback to the right folks. If you need anything ",
+      "best_retrieval_similarity": 0.4335,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply doesn't address the customer's question about the limit, and is too generic.",
+      "unsupported_claims": [],
+      "note": "referent is only in the attached image"
+    },
+    {
+      "unit_id": "634012-634010",
+      "stratum": "general",
+      "position": 2,
+      "hard": false,
+      "customer_message": "it keeps getting better @SpotifyCares <url>",
+      "gold_intent": "praise_thanks",
+      "gold_intent_alt": null,
+      "pred_intent": "praise_thanks",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `praise_thanks` is auto-eligible, no risk signals, precedent similarity 0.41",
+      "signals_fired": [],
+      "reply": "Thanks so much! We're glad to hear it. Keep enjoying the music \ud83c\udfb6",
+      "brand_reply": "@customer Hey! Can you try the steps here for us: <url> They could help with this /L",
+      "best_retrieval_similarity": 0.4064,
+      "judge": {
+        "groundedness": 5,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "No concrete next step or specific info provided to move the customer forward",
+      "unsupported_claims": [],
+      "note": ""
+    },
+    {
+      "unit_id": "1272295-1272295",
+      "stratum": "general",
+      "position": 0,
+      "hard": true,
+      "customer_message": "@SpotifyCares I just submitted to claim one of my artist \"Free Waffle\" under the email __email__ can you speed up the verification process?",
+      "gold_intent": "how_to",
+      "gold_intent_alt": null,
+      "pred_intent": "how_to",
+      "confidence": "high",
+      "gold_route": "escalate",
+      "gold_driver": "account_specific",
+      "pred_route": "escalate",
+      "route_reason": "risk signal `account_specific`",
+      "signals_fired": [
+        "account_specific"
+      ],
+      "reply": "We've received your request. A teammate will look into speeding up the verification for Free Waffle. Can you DM us your account's email address, please?",
+      "brand_reply": "@customer Thanks! We'd suggest deleting your tweet containing your email address and sending it to us via DM instead. Just use the Send a Private Message button above /QI",
+      "best_retrieval_similarity": 0.3185,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 4
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Request for email address in public, but evidence suggests DMing is preferred",
+      "unsupported_claims": [],
+      "note": "artist-claim expedite - taxonomy gap, no good code"
+    },
+    {
+      "unit_id": "89536-89535",
+      "stratum": "general",
+      "position": 1,
+      "hard": false,
+      "customer_message": "@SpotifyCares Thanks for response! The app says that music is playing, but no sound comes out. I have to restart to make it work again.",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.36",
+      "signals_fired": [],
+      "reply": "Got it! We\u2019re looking into this issue and will let you know if there\u2019s anything else needed from your end. In the meantime, try restarting the app.",
+      "brand_reply": "@customer Gotcha. Can you try reinstalling the app using the steps here: <url> Let us know how it plays out /LM",
+      "best_retrieval_similarity": 0.3594,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Restarting the app is a good suggestion, but the reply makes an unsupported claim about investigating the issue further.",
+      "unsupported_claims": [],
+      "note": ""
+    }
+  ],
+  "unsupported_claim_examples": [
+    {
+      "unit_id": "514127-514128",
+      "stratum": "general",
+      "position": 2,
+      "hard": false,
+      "customer_message": "@SpotifyCares The problems started since I 've switched to spotify premium here in the netherlands. Before that, there were no problems",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.42",
+      "signals_fired": [],
+      "reply": "Thanks for letting us know! It sounds like you might be hitting some availability limits. Can you check if your device is connected to a different network and see if that helps?",
+      "brand_reply": "@customer Hmm. If it happens on WiFi only, can you reset the router if you're on a home WiFi network? Let us know how it goes /JU",
+      "best_retrieval_similarity": 0.4153,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Makes an unsupported claim and doesn't provide a concrete next step",
+      "unsupported_claims": [
+        "availability limits"
+      ],
+      "note": ""
+    },
+    {
+      "unit_id": "2544113-2544113",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares if we use fb as spotify login acct, what happened if that fb acct is deleted? Would the acct still work well with the email that use for the fb acct? Thanks",
+      "gold_intent": "how_to",
+      "gold_intent_alt": "account_access",
+      "pred_intent": "account_access",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "escalate",
+      "route_reason": "intent `account_access` is never auto-handled",
+      "signals_fired": [],
+      "reply": "Hey! If your Spotify account was linked via Facebook and you delete that FB account, it shouldn't affect your ability to log in with the email address you used. Let us know if you need any more help!",
+      "brand_reply": "@customer Hi! Could you send us a DM with your account's email address? We'll take a look backstage and see what we can suggest /DR <url>",
+      "best_retrieval_similarity": 0.2918,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply makes an unsupported claim about account behavior after FB deletion",
+      "unsupported_claims": [
+        "it shouldn't affect your ability to log in with the email address you used"
+      ],
+      "note": "hypothetical about fb login - generic answer"
+    },
+    {
+      "unit_id": "2812-2851",
+      "stratum": "money",
+      "position": 5,
+      "hard": true,
+      "customer_message": "@customer Hi. I havo no debit card but im interested. Can u help me?",
+      "gold_intent": "subscription_plan",
+      "gold_intent_alt": "billing_charge",
+      "pred_intent": "billing_charge",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "escalate",
+      "route_reason": "risk signal `money_involved`; intent `billing_charge` is never auto-handled",
+      "signals_fired": [
+        "money_involved"
+      ],
+      "reply": "Absolutely! Just head to our website and subscribe using your credit card or another payment method. Let us know if you need any more help!",
+      "brand_reply": "@customer @customer Hi Rachel! We've just sent you a bit more info over DM. We'll carry on helping out there /GN @customer Hey Angel, we'd love to help! We have some handy info about payments here: <url> If you need a hand with anything else, just le",
+      "best_retrieval_similarity": 0.3952,
+      "judge": {
+        "groundedness": 2,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply contradicts evidence that debit cards are supported",
+      "unsupported_claims": [
+        "credit card",
+        "another payment method"
+      ],
+      "note": "payment-method options - generic answer exists"
+    },
+    {
+      "unit_id": "2865516-2865516",
+      "stratum": "churn_human",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares I just signed up for a 3 month trial of premium. i wanna cancel the auto-renew. if i cancel now, does it end my premium today or in 3 months?",
+      "gold_intent": "subscription_plan",
+      "gold_intent_alt": null,
+      "pred_intent": "subscription_plan",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `subscription_plan` is auto-eligible, no risk signals, precedent similarity 0.30",
+      "signals_fired": [],
+      "reply": "Hey! If you cancel now, your Premium will end at the end of your current 3-month trial. Let's chat in a DM if you need to adjust anything /DR",
+      "brand_reply": "@customer Hey there! Can you DM us your account's email address or username? We'll take a look backstage /RH <url>",
+      "best_retrieval_similarity": 0.3002,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 4
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Claim about cancellation timing is not supported by evidence",
+      "unsupported_claims": [
+        "your Premium will end at the end of your current 3-month trial"
+      ],
+      "note": "routine auto-renew cancellation question, generic answer"
+    },
+    {
+      "unit_id": "2853023-2853023",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares Hey up Spotifyers, what\u2019s craic with equaliser? My mate slammed up all to top other day at a party to get more volume. How should it be set? Any recommendations? <url>",
+      "gold_intent": "how_to",
+      "gold_intent_alt": null,
+      "pred_intent": "how_to",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `how_to` is auto-eligible, no risk signals, precedent similarity 0.21",
+      "signals_fired": [],
+      "reply": "Got it! For best sound, try the 'Flat' preset or adjust individually for your setup. Let us know if you need more tips!",
+      "brand_reply": "@customer Hi, help's here! Can you let us know your phone's model, as well as its iOS and Spotify versions? We'll see what we can suggest /DV",
+      "best_retrieval_similarity": 0.2104,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply makes claims about optimal equalizer settings without evidence from past customer interactions.",
+      "unsupported_claims": [
+        "For best sound, try the 'Flat' preset or adjust individually for your setup."
+      ],
+      "note": "equaliser settings advice"
+    },
+    {
+      "unit_id": "506025-506025",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "Wondering if anyone has issues with @customer (on browser) after updating to #HighSierra ? It was working day before yesterday. Then I updated yesterday, and now, bubkus. Tried different browsers. nada. But works fine on mobile and at home (not running HS there). hmmm.",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.28",
+      "signals_fired": [],
+      "reply": "We're sorry to hear you're having issues. Can you try signing out and back in? If that doesn't help, please DM your account info so we can look into it.",
+      "brand_reply": "@customer Hi Rafael, help's here! Does clearing your cache and cookies help? You might also want to try using an incognito window. Let us know how it goes /JI",
+      "best_retrieval_similarity": 0.2782,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 2
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a claim that the customer is having issues, but the evidence does not support this assumption.",
+      "unsupported_claims": [
+        "We're sorry to hear you're having issues."
+      ],
+      "note": ""
+    },
+    {
+      "unit_id": "559976-559978",
+      "stratum": "general",
+      "position": 2,
+      "hard": true,
+      "customer_message": "@SpotifyCares No my son's getting a new phone for Christmas and he want s to have my other account. Is their a way to link them if i get the Spotify for 3 ppl",
+      "gold_intent": "subscription_plan",
+      "gold_intent_alt": null,
+      "pred_intent": "subscription_plan",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `subscription_plan` is auto-eligible, no risk signals, precedent similarity 0.28",
+      "signals_fired": [],
+      "reply": "Hey! If you get Spotify Family, you can add up to 3 accounts. Let us know if you need help setting it up!",
+      "brand_reply": "@customer If you'd like to have 3 accounts sharing a subscription, we suggest checking out Premium for Family at <url> Hope this helps! /JL",
+      "best_retrieval_similarity": 0.2842,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 2,
+        "tone": 5,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes an unsupported claim about the number of accounts that can be added with Spotify Family",
+      "unsupported_claims": [
+        "If you get Spotify Family, you can add up to 3 accounts"
+      ],
+      "note": "family plan linking question, generic answer"
+    },
+    {
+      "unit_id": "2621360-2621358",
+      "stratum": "vague_short",
+      "position": 1,
+      "hard": false,
+      "customer_message": "@SpotifyCares @customer",
+      "gold_intent": "other_unclear",
+      "gold_intent_alt": null,
+      "pred_intent": "subscription_plan",
+      "confidence": "medium",
+      "gold_route": "escalate",
+      "gold_driver": "vague_no_detail",
+      "pred_route": "auto",
+      "route_reason": "intent `subscription_plan` is auto-eligible, no risk signals, precedent similarity 1.00",
+      "signals_fired": [
+        "vague_no_detail"
+      ],
+      "reply": "Hey there! We\u2019ve got your back. You can remove songs from your library if needed. Keep an eye on our updates for any changes ahead.",
+      "brand_reply": "@customer Hey Ruben! We have more info about this on our Community. Check it out: <url> /CP",
+      "best_retrieval_similarity": 1.0,
+      "judge": {
+        "groundedness": 3,
+        "resolution": 2,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Reply makes unsupported claims about removing songs and future updates",
+      "unsupported_claims": [
+        "You can remove songs from your library if needed",
+        "Keep an eye on our updates for any changes ahead"
+      ],
+      "note": "bare mentions, no content"
+    },
+    {
+      "unit_id": "1347533-1347533",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares it\u2019s says I can skip ads, but where is the skip button ? <url>",
+      "gold_intent": "how_to",
+      "gold_intent_alt": null,
+      "pred_intent": "how_to",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `how_to` is auto-eligible, no risk signals, precedent similarity 0.42",
+      "signals_fired": [],
+      "reply": "@customer Hey! Thanks for letting us know. Can you check if the ad has a 'skip' option within it? If not, we\u2019ll look into it. Give it a try first!",
+      "brand_reply": "@customer Hey Lucas! Could you DM us your account's username or email address? We'll take a look backstage /LP <url>",
+      "best_retrieval_similarity": 0.4235,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a vague promise to 'look into' the issue without specifying what actions will be taken or when.",
+      "unsupported_claims": [
+        "we'll look into it"
+      ],
+      "note": "where is the skip-ad button"
+    },
+    {
+      "unit_id": "2653074-2653074",
+      "stratum": "churn_human",
+      "position": 0,
+      "hard": true,
+      "customer_message": "Dear, @customer, When I Am Listening To Satanic Black Metal, Please Do Not Put Shitty Pop Ads, Please. Thank you, And Goodbye~",
+      "gold_intent": "feature_request",
+      "gold_intent_alt": "complaint_no_ask",
+      "pred_intent": "how_to",
+      "confidence": "low",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "escalate",
+      "route_reason": "triage confidence is low",
+      "signals_fired": [
+        "vague_no_detail"
+      ],
+      "reply": "@customer Hi there! To reduce suggested tracks, try adding more black metal artists to your playlists. A human will look into your request too. DM us your username if needed. Thanks!",
+      "brand_reply": "@customer Thanks for the feedback \u2013 we appreciate it! We\u2019ll get this passed onto the right team /JS",
+      "best_retrieval_similarity": 0.21,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a commitment to have a human review the customer's request, but there is no evidence in past replies that Spotify actually does this.",
+      "unsupported_claims": [
+        "A human will look into your request too."
+      ],
+      "note": "ad-genre targeting request; \"goodbye\" is a sign-off not churn"
+    },
+    {
+      "unit_id": "563479-563479",
+      "stratum": "churn_human",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@customer it is disappointing that you are not supporting Samsung tvs before 2015. I\u2019m considering to cancel the subscription just because of it.",
+      "gold_intent": "feature_request",
+      "gold_intent_alt": "complaint_no_ask",
+      "pred_intent": "complaint_no_ask",
+      "confidence": "high",
+      "gold_route": "escalate",
+      "gold_driver": "churn_threat",
+      "pred_route": "escalate",
+      "route_reason": "risk signal `churn_threat`",
+      "signals_fired": [
+        "churn_threat"
+      ],
+      "reply": "We're sorry to hear about your experience. A human will look into getting Samsung TVs (2015+) added soon. Let us know if you need anything else.",
+      "brand_reply": "@customer We hear you \ud83c\udfa7 Rest assured, your feedback will be passed on to the right folks /DF",
+      "best_retrieval_similarity": 0.2773,
+      "judge": {
+        "groundedness": 2,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 1
+      },
+      "judge_send_ready": false,
+      "judge_reason": "The reply makes a commitment to add support for Samsung TVs (2015+), which is not supported by the evidence.",
+      "unsupported_claims": [
+        "A human will look into getting Samsung TVs (2015+) added soon"
+      ],
+      "note": "older Samsung TVs, considering cancelling"
+    }
+  ],
+  "high_precedent_still_blocked": [
+    {
+      "unit_id": "2934326-2934326",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares my spotify app doesn\u2019t work are thee problems with the app?",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.41",
+      "signals_fired": [],
+      "reply": "Can you check your internet connection and try restarting the app? Let us know if that helps!",
+      "brand_reply": "@customer Hi there. Help's here. Can you tell us exactly what's happening? We'll see what we can suggest /JU",
+      "best_retrieval_similarity": 0.4098,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but helpful advice",
+      "unsupported_claims": [],
+      "note": "vague but clearly app not working"
+    },
+    {
+      "unit_id": "2572241-2572239",
+      "stratum": "general",
+      "position": 1,
+      "hard": false,
+      "customer_message": "@SpotifyCares I\u2019m surprised that music steaming giant like Spotify is behind with an update, but thanks for your reply, will be patiently waiting \ud83d\udc4c\ud83c\udffb\ud83d\ude1c",
+      "gold_intent": "praise_thanks",
+      "gold_intent_alt": "complaint_no_ask",
+      "pred_intent": "how_to",
+      "confidence": "low",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "escalate",
+      "route_reason": "triage confidence is low",
+      "signals_fired": [
+        "vague_no_detail"
+      ],
+      "reply": "Hey! We understand the wait. A human teammate will look into it for you. Let us know if you need anything else.",
+      "brand_reply": "@customer Thanks for bearing with us. Don't worry, the devs are on it \ud83d\udd27 In the meantime, let us know if you need anything else /PC",
+      "best_retrieval_similarity": 0.3204,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Human teammate will look into it, but no specific next step or timeline mentioned",
+      "unsupported_claims": [],
+      "note": "thanks plus mild dig"
+    },
+    {
+      "unit_id": "565390-565390",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@customer your app constantly crashes or doesn't respond. Any known issues for this on android?",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.30",
+      "signals_fired": [],
+      "reply": "Hi there! Can you check if restarting your device helps? We'll keep an eye on it.",
+      "brand_reply": "@customer Hey there! Can you let us know your device's Android and Spotify versions? Also, is this happening over WiFi or 3G/4G? /NQ",
+      "best_retrieval_similarity": 0.3048,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but supported response",
+      "unsupported_claims": [],
+      "note": ""
+    },
+    {
+      "unit_id": "508837-508838",
+      "stratum": "general",
+      "position": 2,
+      "hard": true,
+      "customer_message": "@SpotifyCares (One previous thread here <url>",
+      "gold_intent": "other_unclear",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "escalate",
+      "gold_driver": "vague_no_detail",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.45",
+      "signals_fired": [],
+      "reply": "Thanks for reaching out, Jonny! We noticed your issue. Let's try restarting your device by holding the Home + Lock button for 10 seconds. Does that help?",
+      "brand_reply": "@customer Thanks. Can you try restarting your device, then log out and back in? Does that help? /AU",
+      "best_retrieval_similarity": 0.4488,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but correct advice, no unsupported claims",
+      "unsupported_claims": [],
+      "note": "fragment pointing at another thread"
+    },
+    {
+      "unit_id": "508873-508873",
+      "stratum": "security",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@SpotifyCares I believe my account has been hacked. My email address has been changed to something French and I cannot log in.",
+      "gold_intent": "account_access",
+      "gold_intent_alt": null,
+      "pred_intent": "account_access",
+      "confidence": "high",
+      "gold_route": "escalate",
+      "gold_driver": "security_or_privacy",
+      "pred_route": "escalate",
+      "route_reason": "risk signal `account_specific`; risk signal `security_or_privacy`; intent `account_access` is never auto-handled",
+      "signals_fired": [
+        "account_specific",
+        "security_or_privacy"
+      ],
+      "reply": "Hey! We\u2019re sorry to hear that. It\u2019d be best to check out this link for the steps needed: <url>. Let us know if you need more help.",
+      "brand_reply": "@customer Hi there! We've just sent you a bit more info over DM. We'll carry on helping out there /MG",
+      "best_retrieval_similarity": 0.5374,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generally good, but slightly generic resolution",
+      "unsupported_claims": [],
+      "note": "email changed, cannot log in"
+    },
+    {
+      "unit_id": "578101-578101",
+      "stratum": "money",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@customer @SpotifyCares hi, I've got a monthly subscription which renews on 9th Dec but have just taken advantage of your annual sub for \u00a399 offer. Do I need to cancel my monthly or does that automatically stop?",
+      "gold_intent": "subscription_plan",
+      "gold_intent_alt": "billing_charge",
+      "pred_intent": "billing_charge",
+      "confidence": "high",
+      "gold_route": "escalate",
+      "gold_driver": "money_involved",
+      "pred_route": "escalate",
+      "route_reason": "risk signal `money_involved`; intent `billing_charge` is never auto-handled",
+      "signals_fired": [
+        "money_involved"
+      ],
+      "reply": "Hey! Great question. Just select 'See more offers' on the Payments page to switch to yearly. Your monthly will pause automatically. Let us know if you need help finding it.",
+      "brand_reply": "@customer Hey there! Could you DM us your account's email address or username? We'll take a look under the hood /JA <url>",
+      "best_retrieval_similarity": 0.3009,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generally good, but monthly will pause automatically is not explicitly stated in the evidence",
+      "unsupported_claims": [],
+      "note": "risk of being double charged after taking annual offer"
+    },
+    {
+      "unit_id": "2704351-2704349",
+      "stratum": "general",
+      "position": 1,
+      "hard": false,
+      "customer_message": "@SpotifyCares @SpotifyCares yeah that worked, should have done that initially. Thanks",
+      "gold_intent": "praise_thanks",
+      "gold_intent_alt": null,
+      "pred_intent": "praise_thanks",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `praise_thanks` is auto-eligible, no risk signals, precedent similarity 0.45",
+      "signals_fired": [],
+      "reply": "You're welcome! Just let us know if you need anything else. \ud83c\udf1f",
+      "brand_reply": "@customer No worries! Glad to hear it's working. Just let us know if we can help with anything else. <url> /MG",
+      "best_retrieval_similarity": 0.4464,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic response, but no unsupported claims or safety risks.",
+      "unsupported_claims": [],
+      "note": ""
+    },
+    {
+      "unit_id": "89536-89535",
+      "stratum": "general",
+      "position": 1,
+      "hard": false,
+      "customer_message": "@SpotifyCares Thanks for response! The app says that music is playing, but no sound comes out. I have to restart to make it work again.",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.36",
+      "signals_fired": [],
+      "reply": "Got it! We\u2019re looking into this issue and will let you know if there\u2019s anything else needed from your end. In the meantime, try restarting the app.",
+      "brand_reply": "@customer Gotcha. Can you try reinstalling the app using the steps here: <url> Let us know how it plays out /LM",
+      "best_retrieval_similarity": 0.3594,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Restarting the app is a good suggestion, but the reply makes an unsupported claim about investigating the issue further.",
+      "unsupported_claims": [],
+      "note": ""
+    },
+    {
+      "unit_id": "2928683-2928683",
+      "stratum": "money",
+      "position": 0,
+      "hard": true,
+      "customer_message": "@SpotifyCares I made an account to try the free month and I would like to cancel it b4 I am charged. I can't remember the password for the spotify account or the email I used. Can you help me cancel it? The account is called 'your mom' and follows one account called 'darth gundy'",
+      "gold_intent": "subscription_plan",
+      "gold_intent_alt": "account_access",
+      "pred_intent": "subscription_plan",
+      "confidence": "high",
+      "gold_route": "escalate",
+      "gold_driver": "account_specific",
+      "pred_route": "escalate",
+      "route_reason": "risk signal `account_specific`",
+      "signals_fired": [
+        "account_specific"
+      ],
+      "reply": "Hey! Can you DM us the username 'your mom' or any possible email addresses? We'll check and help you cancel your free trial.",
+      "brand_reply": "@customer Hey there! Help's here. Can you DM us any email addresses that you might've used to create your account? We'll take a look backstage /NQ <url>",
+      "best_retrieval_similarity": 0.3278,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Accurately requests sensitive info and offers a clear next step",
+      "unsupported_claims": [],
+      "note": "cancel but locked out of account"
+    },
+    {
+      "unit_id": "488758-488757",
+      "stratum": "general",
+      "position": 1,
+      "hard": false,
+      "customer_message": "@SpotifyCares Yeah man this thing freezes more than the north pool",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.31",
+      "signals_fired": [],
+      "reply": "Got it. We're working on improving stability. Let us know if you have any other issues /RS",
+      "brand_reply": "@customer That's not cool! Can you let us know the make and model of your device, along with the OS and Spotify versions you're rocking? /QI",
+      "best_retrieval_similarity": 0.3111,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 4,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Acknowledges issue, but doesn't offer a concrete next step or specific info needed.",
+      "unsupported_claims": [],
+      "note": ""
+    },
+    {
+      "unit_id": "497735-497735",
+      "stratum": "general",
+      "position": 0,
+      "hard": false,
+      "customer_message": "@customer put @customer \u2018s \u201cWelcome to Forever\u201d album on Spotify please and thanks(:",
+      "gold_intent": "content_availability",
+      "gold_intent_alt": null,
+      "pred_intent": "content_availability",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `content_availability` is auto-eligible, no risk signals, precedent similarity 0.44",
+      "signals_fired": [],
+      "reply": "Hi there! We\u2019d love to have 'Welcome to Forever' available, but we have some info here: <url> /GK",
+      "brand_reply": "@customer Hey Riley, we\u2019ll have it available to you as soon as it\u2019s available to us! <url> /TR",
+      "best_retrieval_similarity": 0.4416,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Accurately references existing content info URL",
+      "unsupported_claims": [],
+      "note": ""
+    },
+    {
+      "unit_id": "1384558-1384552",
+      "stratum": "general",
+      "position": 3,
+      "hard": false,
+      "customer_message": "@SpotifyCares Nope, same issue. Cannot tell which episodes are already played on desktop.",
+      "gold_intent": "playback_bug",
+      "gold_intent_alt": null,
+      "pred_intent": "playback_bug",
+      "confidence": "high",
+      "gold_route": "auto",
+      "gold_driver": "none",
+      "pred_route": "auto",
+      "route_reason": "intent `playback_bug` is auto-eligible, no risk signals, precedent similarity 0.31",
+      "signals_fired": [],
+      "reply": "@customer We understand the frustration. Please try signing out of Spotify on both devices and then sign back in. This should help sync your playback across devices. Let us know if that helps!",
+      "brand_reply": "@customer Thanks for giving that a shot. Can you DM us your account's email address or username? We'll take a look backstage /RH <url>",
+      "best_retrieval_similarity": 0.3066,
+      "judge": {
+        "groundedness": 4,
+        "resolution": 3,
+        "tone": 5,
+        "safety": 5
+      },
+      "judge_send_ready": false,
+      "judge_reason": "Generic but supported advice, no sensitive data requested",
+      "unsupported_claims": [],
+      "note": "podcast played-state not syncing"
+    }
+  ],
   "no_precedent_cases": []
 }

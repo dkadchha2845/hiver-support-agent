@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"We can see how that would be handy. Just select 'See more offers' on the Payments page to check if yearly subscriptions are available for your family plan.\", \"used_evidence_ids\": [\"2309845-2309845\"], \"commitments\": []}"}

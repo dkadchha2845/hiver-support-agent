@@ -1,0 +1,1 @@
+{"model": "llama3.1:8b-instruct-q4_K_M", "provider": "ollama", "response": "{\n  \"groundedness\": 4,\n  \"resolution\": 2,\n  \"tone\": 5,\n  \"safety\": 5,\n  \"send_as_is\": false,\n  \"unsupported_claims\": [],\n  \"one_line_reason\": \"No concrete next step or information provided to move the customer forward.\"\n}"}
