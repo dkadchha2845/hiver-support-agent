@@ -5,3 +5,4 @@ __pycache__/
 data/raw/*.csv
 data/raw/*.zip
 .DS_Store
+results/REPORT.html

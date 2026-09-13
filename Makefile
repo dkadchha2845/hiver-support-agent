@@ -64,3 +64,7 @@ profile:          ## descriptive stats about the brand's inbox (cited in the rep
 
 failures:         ## dump concrete failure examples the report quotes
 	$(PY) src/failure_analysis.py
+
+pdf:              ## render REPORT.md to a print-ready REPORT.pdf (needs Chrome)
+	$(PY) -m pip install -q -r requirements-dev.txt
+	$(PY) scripts/report_to_pdf.py

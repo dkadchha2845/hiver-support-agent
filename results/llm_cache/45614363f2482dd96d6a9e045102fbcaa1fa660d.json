@@ -1,0 +1,1 @@
+{"model": "qwen2.5:7b-instruct", "provider": "ollama", "response": "{\"reply\": \"Hi! You can buy a Spotify Subscription directly from our site. Just head over to <url> and get started!\", \"used_evidence_ids\": [\"2294855-2294855\"], \"commitments\": []}"}

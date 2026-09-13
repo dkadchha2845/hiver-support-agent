@@ -39,10 +39,10 @@ customer turns across 28,280 threads here; the median thread is
 writing code. Three facts shaped everything after.
 
 **It is a triage desk, not a resolution desk.** The commonest outbound action is a *next
-step*, not an answer: ask for device/OS/version, or ask for the account email in DM.
-31.8% of replies request a DM.
-So "a good reply" here usually means *the correct next step*. Evaluating on "did it solve
-the problem" would measure something Spotify's own agents do not do in public.
+step*, not an answer — ask for device/OS/version, or ask for the account email in DM
+(31.8% of replies request one). So
+"a good reply" here usually means *the correct next step*; evaluating on "did it solve the
+problem" would measure something Spotify's own agents do not do in public.
 
 **The automatable and the risky separate cleanly — and not by topic.** Anything needing a
 look at *this customer's* account, plan or money goes to DM every time. Everything else —
@@ -50,14 +50,14 @@ a missing album, a feature request, a device bug, a thank-you — is answered pu
 a stable, near-templated response. That is the automation boundary, and it is why routing
 keys off *risk signals* rather than intent alone.
 
-**The tail carries the damage.** In the held-out pool, money is
-9.3% of volume, security
+**The tail carries the damage.** In the held-out pool: money
+9.3%, security
 2.4%, churn-or-human-request
 1.8%, non-English
 0.5%, legal/fraud
-0.3%. A uniform sample of 200
-would hold ~5 security cases, ~1 non-English message and probably zero legal ones — it
-could not measure the thing most worth measuring. Hence a stratified golden set.
+0.3%. A uniform sample of 200 would
+hold ~5 security cases, ~1 non-English message and probably zero legal ones — it could not
+measure the thing most worth measuring. Hence a stratified golden set.
 
 ### So "good" is three things, weighted unevenly
 
@@ -71,10 +71,10 @@ could not measure the thing most worth measuring. Hence a stratified golden set.
 3. **Draft replies a human would send unedited.** Not "reads nicely" — *ships*. Metric:
    **send-ready rate**, where any one rubric dimension below 4/5 fails the whole reply.
 
-Combined into the headline, **Trustworthy Automation Rate (TAR)**: the share of all
-messages where the agent chose auto, gold agrees that was safe, *and* the draft was
-send-ready. A composite, because every single-axis metric here has a trivial winner. §5
-is about how even TAR misleads.
+Combined into the headline, **Trustworthy Automation Rate (TAR)**: the share of all messages
+where the agent chose auto, gold agrees that was safe, *and* the draft was send-ready — a
+composite, because every single-axis metric here has a trivial winner. §5 is about how even TAR
+misleads.
 
 ### What I chose not to build
 
@@ -82,7 +82,7 @@ is about how even TAR misleads.
 **Not Banking77** — a clean 77-class number that would tell a Spotify support lead
 nothing; I looked and dropped it. **No fine-tuning** — with 200 labels, prompting plus
 retrieval is the honest ceiling. **No deflection/CSAT** — I cannot observe what a draft
-would do to a real customer, and §5.9 says so. **No dedicated safety model** — self-harm
+would do to a real customer, and §5.10 says so. **No dedicated safety model** — self-harm
 routes to a human via one risk signal, which is not good enough for production.
 
 ## 2. The system and the harness
@@ -90,10 +90,10 @@ routes to a human via one risk signal, which is not good enough for production.
 ### 2.1 The agent: LLM for perception, code for policy
 
 **① Perception (LLM).** One call returns the intent (10 codes, `data/taxonomy.yaml`), a
-confidence band, and 10 boolean risk signals (`account_specific`, `money_involved`,
+confidence band, and 10 boolean risk signals — `account_specific`, `money_involved`,
 `security_or_privacy`, `legal_or_regulatory`, `human_requested`, `churn_threat`,
-`safety_or_wellbeing`, `non_english`, `abusive_or_public_escalation`, `vague_no_detail`).
-The prompt carries the same codebook the annotator used.
+`safety_or_wellbeing`, `non_english`, `abusive_or_public_escalation`, `vague_no_detail`. The
+prompt carries the same codebook the annotator used.
 
 **② Policy (~25 lines of Python).** `auto` requires all of: intent auto-eligible, no hard risk
 signal, confidence not `low`. Otherwise escalate, with the failing condition returned as the
@@ -102,24 +102,22 @@ YAML edit. It also makes failure attribution possible — §4 F2 exists only bec
 Ablation S4 measures what happens when the LLM decides instead.
 
 **③ Generation (LLM).** A second call drafts the reply given the four most similar past
-messages Spotify actually answered, real replies attached, under the rule that every
-commitment must appear in that evidence.
-
-**Grounding store.** TF-IDF over word 1–2-grams plus `char_wb` 3–5-grams, fitted only on
-the 70% time-ordered history split; a unit can never retrieve its own conversation. Median
-best-neighbour similarity on the golden set is
+messages Spotify actually answered, real replies attached, under the rule that every commitment
+must appear in that evidence. The grounding store is TF-IDF over word 1–2-grams plus `char_wb`
+3–5-grams, fitted only on the 70% time-ordered history split; a unit can never retrieve its own
+conversation. Median best-neighbour similarity on the golden set is
 0.337 and only
 1.0%
-of units have a near-verbatim twin, so this is analogy, not lookup.
+of units have a near-verbatim twin — analogy, not lookup.
 
 ### 2.2 The golden set (200 hand-labelled units)
 
 Held-out pool de-duplicated to 11,644 answered turns,
-partitioned into 7 keyword strata (first match wins, so partition and weights are exact),
-with quotas per stratum: 120 `general`, 18 `money`, 16 `security`, 16 `churn_human`, 10 each
+partitioned into 7 keyword strata (first match wins, so partition and weights are exact), with
+quotas per stratum: 120 `general`, 18 `money`, 16 `security`, 16 `churn_human`, 10 each
 `safety_legal`/`non_english`/`vague_short`. Every unit carries
-`weight = stratum population / sampled`, which is what makes the reweighted column possible.
-Frame: `data/golden/frame_report.json`; protocol: `data/golden/LABELLING.md`.
+`weight = stratum population / sampled`, which is what makes the reweighted column possible
+(frame: `data/golden/frame_report.json`; protocol: `data/golden/LABELLING.md`).
 
 One annotator (me), seeing only the customer message and up to four earlier turns.
 **Spotify's actual reply was withheld by the tooling** — otherwise my "should this
@@ -128,9 +126,9 @@ evaluating the agent against a proxy for itself. Per unit: gold intent, an accep
 alternative intent, gold route, the single escalation driver, a `hard` flag, a note.
 
 Two signal definitions were tightened after ~100 units showed they were too loose
-(`money_involved` no longer fires on general price questions; `churn_threat` no longer
-fires on routine cancellation admin or jokes), and the affected units were re-labelled.
-Documented with indices in `LABELLING.md`.
+(`money_involved` no longer fires on general price questions; `churn_threat` no longer on
+routine cancellation admin or jokes) and the affected units re-labelled — indices in
+`LABELLING.md`.
 
 **46 of 200 units are flagged `hard`** — 23%.
 That is the most honest statistic here: a quarter of real support messages have no obvious
@@ -153,17 +151,13 @@ how much of the headline is the judge rather than the agent.
 
 ### 2.4 Baselines
 
-| | intent | routing | reply |
-|---|---|---|---|
-| **B0 trivial** | majority class | one fixed decision, reported both ways | one canned "DM us" line |
-| **B1 simple** | TF-IDF + logistic regression | keyword lexicon | verbatim nearest-neighbour Spotify reply |
-| **S2 ablation** | LLM | same policy | LLM with **no** evidence |
-| **S4 ablation** | LLM | **LLM** decides | LLM with evidence |
-| **S3 agent** | LLM | policy | LLM with evidence |
-| **HUMAN** | – | – | the reply Spotify actually sent |
-
-B0 and B1 are fitted with 5-fold cross-validation *on the golden labels*; the LLM systems
-are zero-shot and never see one. The baselines are deliberately allowed to cheat.
+**B0 trivial**: majority-class intent, one fixed routing decision (reported both ways), one
+canned "DM us" line. **B1 simple**: TF-IDF + logistic regression for intent, a hand-written
+keyword lexicon for routing, and a verbatim nearest-neighbour Spotify reply — no LLM anywhere.
+**S2** ablates the evidence from the draft; **S4** replaces the policy with an LLM router;
+**HUMAN** is the reply Spotify actually sent. B0 and B1 are fitted with 5-fold
+cross-validation *on the golden labels* while the LLM systems are zero-shot and never see one,
+so the baselines are deliberately allowed to cheat.
 
 ## 3. Results
 
@@ -183,34 +177,6 @@ including confidence intervals, per-intent breakdowns and handoff compliance, is
 | S3 agent (headline) | 0.670 | 71.0% | 86.7% | 6.5% | 50.0% | 25.0% | 10.5% |
 | HUMAN @SpotifyCares reply actually sent | - | - | - | - | - | 19.0% | - |
 
-### Table 2 - Judge rubric means (1-5, higher is better)
-
-| system | grounded | resolution | tone | safety | overall | chars | % with unsupported claims |
-|---|---|---|---|---|---|---|---|
-| B0 trivial (escalate all + canned reply) | 3.61 | 3.06 | 4.61 | 3.23 | 3.63 | 105 | 24.0% |
-| B0 trivial (auto all + canned reply) | 3.61 | 3.06 | 4.61 | 3.23 | 3.63 | 105 | 24.0% |
-| B1 simple (TF-IDF+LogReg / lexicon / NN reply) | 4.79 | 3.46 | 4.45 | 4.99 | 4.42 | 122 | 2.0% |
-| S2 agent, no retrieval (ablation) | 3.65 | 2.97 | 4.76 | 4.37 | 3.94 | 136 | 29.0% |
-| S4 agent, LLM router (ablation) | 4.25 | 3.27 | 4.65 | 4.85 | 4.25 | 113 | 6.0% |
-| S3 agent (headline) | 4.26 | 3.23 | 4.68 | 4.79 | 4.24 | 113 | 5.5% |
-| HUMAN @SpotifyCares reply actually sent | 4.00 | 3.18 | 4.51 | 4.73 | 4.11 | 132 | 15.5% |
-
-### Table 4 - Where the headline hides things (S3 agent)
-
-| slice | n | intent acc | unsafe auto-handle | send-ready |
-|---|---|---|---|---|
-| opening message | 140 | 67.1% | 7.1% | 25.7% |
-| mid-thread follow-up | 60 | 80.0% | 5.0% | 23.3% |
-| annotator: clear | 154 | 77.3% | 3.2% | 27.3% |
-| annotator: judgement call | 46 | 50.0% | 17.4% | 17.4% |
-| stratum: churn_human | 16 | 31.2% | 0.0% | 18.8% |
-| stratum: general | 120 | 73.3% | 8.3% | 24.2% |
-| stratum: money | 18 | 66.7% | 5.6% | 11.1% |
-| stratum: non_english | 10 | 70.0% | 0.0% | 40.0% |
-| stratum: safety_legal | 10 | 90.0% | 10.0% | 20.0% |
-| stratum: security | 16 | 87.5% | 0.0% | 31.2% |
-| stratum: vague_short | 10 | 70.0% | 10.0% | 50.0% |
-
 ### Table 6 - Judge vs human on 48 blind-scored replies
 
 | dimension | human mean | judge mean | judge bias | within 1 | QWK | Spearman |
@@ -223,10 +189,6 @@ including confidence intervals, per-intent breakdowns and handoff compliance, is
 Send-ready decision: human 29.2%, judge 37.5%, raw agreement 66.7%, kappa 0.2558. The judge waved through 10 replies a human would block and blocked 6 a human would send (false-pass rate 20.8% [0.12, 0.34]).
 
 System ranking by mean rubric score - human: S3_agent > HUMAN_brand_reply > B1_simple > B0_trivial_escalate_all; judge: B1_simple > S3_agent > HUMAN_brand_reply > B0_trivial_escalate_all; identical: **False**.
-
-### Table 7 - Annotator second pass (n=40)
-
-Intent agreement 100.0% (kappa 1.0), route agreement 100.0% (kappa 1.0). Read the caveat in the report before believing this number.
 
 ### 3.1 The headline metric picks the wrong winner
 
@@ -247,12 +209,12 @@ So the composite I designed to have no trivial winner does have one, and it is t
 plagiarises. §3.3 shows why, and it is a flaw in my rubric rather than a virtue of B1.
 
 **The trivial baselines do their job: they expose bad metrics.** Escalate-everything scores a
-perfect escalation recall of 100.0%
-and a perfect unsafe rate of 0.0%
-while automating nothing. Auto-everything gets
+perfect 100.0% escalation recall and a
+perfect 0.0% unsafe rate while
+automating nothing; auto-everything gets
 100.0% coverage and lets through all
-98 cases that needed a human. Both have
-a TAR near zero, which is the one thing TAR does right.
+98 cases needing a human. Both have a
+TAR near zero, which is the one thing TAR does right.
 
 **The intent classifier is the least interesting result.** Strict accuracy
 71.0% (95% CI
@@ -263,10 +225,10 @@ the gold labels manages macro-F1 0.295 against the agent's
 zero-shot 0.67 — but no intent number tells you whether the
 system is safe to deploy.
 
-### 3.2 The ablations (Table 5b, matched on the same 100 units)
+### 3.2 The ablations, matched on the same 100 units
 
 **Retrieval is what makes the replies usable at all.** Triage never sees the evidence and the
-policy's retrieval clause is inert (§5.5), so S2 and S3 produce *identical* intents and routes
+policy's retrieval clause is inert (§5.7), so S2 and S3 produce *identical* intents and routes
 by construction — the ablation isolates reply quality alone, and there the effect is enormous:
 send-ready 26.0% with
 evidence against
@@ -290,7 +252,7 @@ decide".
 
 ### 3.3 Reply quality: the judge prefers the plagiarist
 
-Table 2 is the most important table here, and not for the reason I expected. B1 scores
+The judge rubric means (Table 2 in `results/tables.md`) are the most important numbers here, and not for the reason I expected. B1 scores
 4.79/5 on groundedness and
 4.99/5 on safety — the highest of any
 system, including Spotify's own agents.
@@ -304,8 +266,8 @@ threshold. So the rubric systematically rewards copy-paste, and **had I selected
 the judge alone I would have shipped the baseline that answered a request for one album with a
 paragraph about a different artist** (§4).
 
-Two more things fall out of Table 2. Spotify's own replies carry the *highest*
-unsupported-claim rate (15.5%
+Two more things fall out of it. Spotify's own replies carry the *highest*
+unsupported-claim rate of any system (15.5%
 vs 5.5%) because real agents
 reference account records the judge cannot see — the judge penalises them for having
 information. And the judge's own `send_as_is` boolean says
@@ -402,15 +364,15 @@ Of the 13 missed escalations,
 that attempted public resolution**; the other
 6 said "DM us" anyway,
 making them label errors with little consequence. Routing and drafting are separate calls
-and nothing forces them to agree — hence handoff compliance as its own metric (Table 3b).
+and nothing forces them to agree — hence handoff compliance as its own metric (Table 3b, `results/tables.md`).
 
 > **Customer:** "(One previous thread here `<url>`" *(a fragment pointing elsewhere)*
 > **Draft:** "Thanks for reaching out, Jonny! We noticed your issue. Let's try restarting
 > your device by holding the Home + Lock button for 10 seconds."
 
 A name from nowhere, invented hardware steps for an unknown device, and a confident fix for a
-message containing no problem statement. **Fix:** when `route == escalate`, don't let the
-model write the reply — pick a handoff template, let it fill the acknowledgement.
+message containing no problem statement. **Fix:** when `route == escalate`, pick a handoff
+template and let the model fill only the acknowledgement.
 
 ### F4. It invents plausible specifics when the evidence is generic
 
@@ -448,16 +410,17 @@ the `clarify` tier in §6.
 ### Intent confusions, and the baselines
 
 Intent mismatches: 71.0% strict accuracy, so 58/200
-disagree with my first-choice label. Of those,
-24 hit the alternative label I had
-already written down as defensible, leaving
+disagree with my first-choice label — but
+24 of those hit the alternative label I
+had already written down as defensible, leaving
 34 genuine errors
-(83.0% lenient accuracy). Top confusions: `subscription_plan`→`billing_charge`,
-`playback_bug`→`complaint_no_ask`, `playback_bug`→`account_access`,
-`content_availability`→`feature_request`, `other_unclear`→`complaint_no_ask`. Two patterns:
-**lexical pull** (money words drag classification to billing regardless of what is asked —
-the same mechanism as the keyword baseline it should beat) and **reluctance to abstain**
-(`other_unclear` under-predicted, the classifier-side version of F5).
+(83.0% lenient). Top confusions:
+`subscription_plan`→`billing_charge`, `playback_bug`→`complaint_no_ask`,
+`playback_bug`→`account_access`, `content_availability`→`feature_request`,
+`other_unclear`→`complaint_no_ask`. Two patterns: **lexical pull** (money words drag
+classification to billing regardless of what is asked — the same mechanism as the keyword
+baseline it should beat) and **reluctance to abstain** (`other_unclear` under-predicted, the
+classifier-side version of F5).
 
 B1 fails differently and more dangerously — always fluent, sometimes about another subject:
 
@@ -528,10 +491,9 @@ drive the population estimate, whose true variance is wider than the Wilson inte
 beside it. A stratum bootstrap would widen it further; I did not implement one.
 
 **5.6 Routing measures agreement with my policy, not with reality.** Gold routes apply a risk
-appetite I chose, and the agent's routing is a function of signals defined in the same codebook
-I labelled from — so escalation recall partly measures whether the model and I read one
-document the same way. The external check (did Spotify actually DM?) I deliberately kept out of
-the labels.
+appetite I chose, and the agent routes from signals defined in the same codebook I labelled
+from — so escalation recall partly measures whether the model and I read one document the same
+way. The external check (did Spotify actually DM?) I kept out of the labels deliberately.
 
 **5.7 One of my four routing conditions never fires.** The policy escalates when best retrieval
 similarity is below 0.18; the minimum on the golden set is
@@ -539,24 +501,23 @@ similarity is below 0.18; the minimum on the golden set is
 depth" is decoration. The fix is calibrating on a held-out dev slice — not, as I was tempted,
 tuning on the golden set until the numbers improved.
 
-**5.8 n=200 means ±7pp, and there are ~24 reported numbers.** No multiplicity correction. Treat
-any gap narrower than ~10pp as not demonstrated; the ablations are directional. The one
-comparison I would defend at this n is the router ablation, where the gap is 6.7×.
+**5.8 n=200 means ±7pp across ~24 reported numbers, with no multiplicity correction.** Treat
+any gap narrower than ~10pp as not demonstrated. The one comparison I would defend at this n is
+the router ablation, where the gap is 6.7×.
 
 **5.9 One annotator, and the consistency check is worthless.** I re-labelled 40 units in a
-second pass and got 100% agreement (Table 7). That is evidence of *memory* — same person, same
+second pass and got 100% agreement (Table 7, `results/tables.md`). That is evidence of *memory* — same person, same
 day, items recognised. **Ignore that number.** Label uncertainty is unmeasured; the closest
-bound is the 23% `hard` rate, and Table 4 shows the agent's unsafe auto-handle rate is
+bound is the 23% `hard` rate, and the slice breakdown shows the agent's unsafe auto-handle rate is
 17.4% on those units
 against 3.2% on the clear ones —
 a 5× difference driven entirely by how hard *I* found the label.
 
-**5.10 Nothing here measures whether a customer was helped.** No deflection, CSAT, re-contact or
-time-to-resolution. `resolution` is a model's guess about a reply whose consequences it never
-saw. `non_english` is a hard escalation signal by design, which conveniently removes the hardest
-generation cases from the quality metric — and §4 F2 shows that exclusion barely works anyway.
-The data is 2017, so a reply perfectly grounded in this evidence may be wrong today. One brand,
-one channel, one language.
+**5.10 Nothing here measures whether a customer was helped.** No deflection, CSAT, re-contact
+or time-to-resolution — `resolution` is a model's guess about a reply whose consequences it
+never saw. `non_english` being a hard escalation signal conveniently removes the hardest
+generation cases from the quality metric (and §4 F2 shows that exclusion barely works anyway).
+The data is 2017, one brand, one channel, one language.
 
 ### What I would actually put on a slide
 
@@ -578,56 +539,35 @@ one channel, one language.
 
 Ordered by expected value per day, not by how interesting it is.
 
-**Day 1 — fix the name bug and the handoff bug, then re-measure.** Both are quantified in
-§4 and both get *guardrails*, not better prompts, because a guardrail is unit testable. Name
-bug: reject any first name in a draft that does not appear in the current thread — a
-five-line post-filter that removes the whole class. Handoff bug: if `route == escalate` and
-the draft contains no handoff language, fall back to a fixed holding template.
+**Day 1 — fix the name and handoff bugs, then re-measure.** Both are quantified in §4 and both
+get *guardrails* rather than better prompts, because a guardrail is unit testable: reject any
+first name in a draft that does not appear in the current thread, and fall back to a fixed
+holding template when an escalate-routed draft contains no handoff language.
 
-**Day 2 — a second annotator on 80 units.** The biggest hole in this evaluation. Write the
-codebook into a labelling guide, hand over 80 stratified units including all
-46 `hard` ones, compute real inter-annotator
-kappa, adjudicate into a v2 golden set. Every number here is conditional on labels only I
-have seen, and I cannot fix that alone.
+**Day 2 — a second annotator on 80 units.** The biggest hole here. Hand over 80 stratified
+units including all 46 `hard` ones, compute real
+inter-annotator kappa, adjudicate into a v2 golden set. Every number in this report is
+conditional on labels only I have seen, and I cannot fix that alone.
 
 **Day 3 — calibrate the abstention rule that currently does nothing.** Carve a 300-unit dev
 slice out of the pool (never the golden set), label it coarsely, and fit both the retrieval
-threshold (§5.5) and the confidence band — which currently trusts the model's self-reported
-`low`/`medium`/`high` with no evidence those words mean anything. Target a selective
-prediction curve so a support lead picks the operating point rather than accepting mine.
+threshold (§5.7) and the confidence band, which currently trusts the model's self-reported
+`low`/`medium`/`high` with no evidence those words mean anything. Target a selective prediction
+curve so a support lead picks the operating point rather than accepting mine.
 
-**Day 4 — add the `clarify` tier.** The biggest coverage win available. `other_unclear` and
-low-confidence cases currently go to a human, but §4 F5 shows many need only "what's
-happening exactly, and on which device?". A third routing action makes no commitments, so it
-adds almost no risk. Gate it hard: no clarify if any money/security/legal signal fires, and
-one clarify then escalate.
+**Day 4 — add the `clarify` tier.** The biggest coverage win available: `other_unclear` and
+low-confidence cases go to a human today, but §4 F5 shows many need only "what's happening
+exactly, and on which device?". A clarifying question makes no commitments, so it adds almost no
+risk. Gate it hard — no clarify if any money/security/legal signal fires, and one clarify then
+escalate.
 
-**Day 5 — fix the judge, which is now the weakest component.** §3.3 showed the rubric ranks a
-copy-paste baseline first, so: add a `relevance` dimension ("does this answer *this* question")
-and make `groundedness` conditional on it; keep the copy-paste baseline permanently in the
-comparison as a canary and fail the rubric if it ever wins again; run the whole thing past a
-genuinely stronger judge and report how far the ranking moves; bootstrap CIs over strata
-instead of Wilson, which understates uncertainty on the reweighted numbers; and add a
-prompt-injection slice — the golden set contains none, and a public inbox is exactly where
-those arrive.
+**Day 5 — fix the judge, now the weakest component.** §3.3 showed the rubric ranks a copy-paste
+baseline first, so: add a `relevance` dimension and make `groundedness` conditional on it; keep
+the copy-paste baseline in the comparison permanently as a canary; run it all past a stronger
+judge; bootstrap CIs over strata instead of Wilson; and add a prompt-injection slice — the
+golden set has none, and a public inbox is exactly where those arrive.
 
 **If a sixth day existed — measure something real.** A shadow-mode harness: run the agent
-behind a live queue, send nothing, and have the human who answered the ticket mark whether
+behind a live queue, send nothing, and have the human who answered each ticket mark whether
 they would have sent the draft. Two weeks of that beats everything in this repo, because the
 label comes from the person whose name goes on the reply.
-
-## 7. Reproducing this
-
-`make setup && make repro` regenerates every number above from committed artefacts in well
-under 15 minutes and without generating a token — every LLM call is cached by content hash,
-and this report is *built* from `results/metrics.json` by `scripts/build_report.py`, so no
-figure here can drift from the artefact that produced it. `make all` re-runs generation from
-the raw 516 MB dump. `make test` runs 16 unit tests covering thread reconstruction, PII
-masking, retrieval exclusion, the stratified weights, the escalation policy's invariants
-(no always-escalate intent can ever be auto-routed; every hard signal forces escalation)
-and the metric definitions.
-
-Design reasoning: [DECISIONS.md](DECISIONS.md). Sampling and labelling protocol:
-[data/golden/LABELLING.md](data/golden/LABELLING.md). Full tables including confidence
-intervals, per-intent breakdowns, handoff compliance and the matched ablation comparison:
-`results/tables.md`.

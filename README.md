@@ -115,7 +115,7 @@ statement about why the decision was made.
 
 | path | what it is |
 |---|---|
-| [REPORT.md](REPORT.md) | the report: framing, results, failure analysis, **what is misleading about my headline number**, next steps |
+| [REPORT.md](REPORT.md) / [REPORT.pdf](REPORT.pdf) | the report (6 pages): framing, results, failure analysis, **what is misleading about my headline number**, next steps. `make pdf` regenerates the PDF |
 | [DECISIONS.md](DECISIONS.md) | 15 non-obvious decisions and why |
 | `data/taxonomy.yaml` | the intent codebook + risk-signal definitions, induced from the data |
 | `data/golden/golden_set.jsonl` | **200 hand-labelled units** with stratum, sampling weight, gold intent, gold route, escalation driver, difficulty flag and annotator note |

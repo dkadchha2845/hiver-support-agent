@@ -87,15 +87,15 @@ Of the {{F:failures.json:missed_escalation_severity.n_missed}} missed escalation
 that attempted public resolution**; the other
 {{F:failures.json:missed_escalation_severity.draft_still_handed_off}} said "DM us" anyway,
 making them label errors with little consequence. Routing and drafting are separate calls
-and nothing forces them to agree — hence handoff compliance as its own metric (Table 3b).
+and nothing forces them to agree — hence handoff compliance as its own metric (Table 3b, `results/tables.md`).
 
 > **Customer:** "(One previous thread here `<url>`" *(a fragment pointing elsewhere)*
 > **Draft:** "Thanks for reaching out, Jonny! We noticed your issue. Let's try restarting
 > your device by holding the Home + Lock button for 10 seconds."
 
 A name from nowhere, invented hardware steps for an unknown device, and a confident fix for a
-message containing no problem statement. **Fix:** when `route == escalate`, don't let the
-model write the reply — pick a handoff template, let it fill the acknowledgement.
+message containing no problem statement. **Fix:** when `route == escalate`, pick a handoff
+template and let the model fill only the acknowledgement.
 
 ### F4. It invents plausible specifics when the evidence is generic
 
@@ -133,16 +133,17 @@ the `clarify` tier in §6.
 ### Intent confusions, and the baselines
 
 Intent mismatches: {{P:systems.S3_agent.intent.accuracy_strict}} strict accuracy, so 58/200
-disagree with my first-choice label. Of those,
-{{F:failures.json:counts.intent_wrong_but_matched_alt}} hit the alternative label I had
-already written down as defensible, leaving
+disagree with my first-choice label — but
+{{F:failures.json:counts.intent_wrong_but_matched_alt}} of those hit the alternative label I
+had already written down as defensible, leaving
 {{F:failures.json:counts.intent_wrong_strict}} genuine errors
-({{P:systems.S3_agent.intent.accuracy_lenient}} lenient accuracy). Top confusions: `subscription_plan`→`billing_charge`,
-`playback_bug`→`complaint_no_ask`, `playback_bug`→`account_access`,
-`content_availability`→`feature_request`, `other_unclear`→`complaint_no_ask`. Two patterns:
-**lexical pull** (money words drag classification to billing regardless of what is asked —
-the same mechanism as the keyword baseline it should beat) and **reluctance to abstain**
-(`other_unclear` under-predicted, the classifier-side version of F5).
+({{P:systems.S3_agent.intent.accuracy_lenient}} lenient). Top confusions:
+`subscription_plan`→`billing_charge`, `playback_bug`→`complaint_no_ask`,
+`playback_bug`→`account_access`, `content_availability`→`feature_request`,
+`other_unclear`→`complaint_no_ask`. Two patterns: **lexical pull** (money words drag
+classification to billing regardless of what is asked — the same mechanism as the keyword
+baseline it should beat) and **reluctance to abstain** (`other_unclear` under-predicted, the
+classifier-side version of F5).
 
 B1 fails differently and more dangerously — always fluent, sometimes about another subject:
 

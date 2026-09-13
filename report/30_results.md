@@ -25,12 +25,12 @@ So the composite I designed to have no trivial winner does have one, and it is t
 plagiarises. §3.3 shows why, and it is a flaw in my rubric rather than a virtue of B1.
 
 **The trivial baselines do their job: they expose bad metrics.** Escalate-everything scores a
-perfect escalation recall of {{P:systems.B0_trivial_escalate_all.routing.escalation_recall}}
-and a perfect unsafe rate of {{P:systems.B0_trivial_escalate_all.routing.unsafe_auto_rate}}
-while automating nothing. Auto-everything gets
+perfect {{P:systems.B0_trivial_escalate_all.routing.escalation_recall}} escalation recall and a
+perfect {{P:systems.B0_trivial_escalate_all.routing.unsafe_auto_rate}} unsafe rate while
+automating nothing; auto-everything gets
 {{P:systems.B0_trivial_auto_all.routing.auto_coverage}} coverage and lets through all
-{{F:metrics.json:golden_set.route_distribution.escalate}} cases that needed a human. Both have
-a TAR near zero, which is the one thing TAR does right.
+{{F:metrics.json:golden_set.route_distribution.escalate}} cases needing a human. Both have a
+TAR near zero, which is the one thing TAR does right.
 
 **The intent classifier is the least interesting result.** Strict accuracy
 {{P:systems.S3_agent.intent.accuracy_strict}} (95% CI
@@ -41,10 +41,10 @@ the gold labels manages macro-F1 {{N:systems.B1_simple.intent.macro_f1}} against
 zero-shot {{N:systems.S3_agent.intent.macro_f1}} — but no intent number tells you whether the
 system is safe to deploy.
 
-### 3.2 The ablations (Table 5b, matched on the same 100 units)
+### 3.2 The ablations, matched on the same 100 units
 
 **Retrieval is what makes the replies usable at all.** Triage never sees the evidence and the
-policy's retrieval clause is inert (§5.5), so S2 and S3 produce *identical* intents and routes
+policy's retrieval clause is inert (§5.7), so S2 and S3 produce *identical* intents and routes
 by construction — the ablation isolates reply quality alone, and there the effect is enormous:
 send-ready {{P:matched_ablation_comparison.S2_agent_noretrieval.S3_agent.send_ready_rate}} with
 evidence against
@@ -68,7 +68,7 @@ decide".
 
 ### 3.3 Reply quality: the judge prefers the plagiarist
 
-Table 2 is the most important table here, and not for the reason I expected. B1 scores
+The judge rubric means (Table 2 in `results/tables.md`) are the most important numbers here, and not for the reason I expected. B1 scores
 {{N:systems.B1_simple.reply_quality.mean_scores.groundedness}}/5 on groundedness and
 {{N:systems.B1_simple.reply_quality.mean_scores.safety}}/5 on safety — the highest of any
 system, including Spotify's own agents.
@@ -82,8 +82,8 @@ threshold. So the rubric systematically rewards copy-paste, and **had I selected
 the judge alone I would have shipped the baseline that answered a request for one album with a
 paragraph about a different artist** (§4).
 
-Two more things fall out of Table 2. Spotify's own replies carry the *highest*
-unsupported-claim rate ({{P:systems.HUMAN_brand_reply.reply_quality.pct_with_unsupported_claims}}
+Two more things fall out of it. Spotify's own replies carry the *highest*
+unsupported-claim rate of any system ({{P:systems.HUMAN_brand_reply.reply_quality.pct_with_unsupported_claims}}
 vs {{P:systems.S3_agent.reply_quality.pct_with_unsupported_claims}}) because real agents
 reference account records the judge cannot see — the judge penalises them for having
 information. And the judge's own `send_as_is` boolean says

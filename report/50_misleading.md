@@ -60,10 +60,9 @@ drive the population estimate, whose true variance is wider than the Wilson inte
 beside it. A stratum bootstrap would widen it further; I did not implement one.
 
 **5.6 Routing measures agreement with my policy, not with reality.** Gold routes apply a risk
-appetite I chose, and the agent's routing is a function of signals defined in the same codebook
-I labelled from — so escalation recall partly measures whether the model and I read one
-document the same way. The external check (did Spotify actually DM?) I deliberately kept out of
-the labels.
+appetite I chose, and the agent routes from signals defined in the same codebook I labelled
+from — so escalation recall partly measures whether the model and I read one document the same
+way. The external check (did Spotify actually DM?) I kept out of the labels deliberately.
 
 **5.7 One of my four routing conditions never fires.** The policy escalates when best retrieval
 similarity is below 0.18; the minimum on the golden set is
@@ -71,24 +70,23 @@ similarity is below 0.18; the minimum on the golden set is
 depth" is decoration. The fix is calibrating on a held-out dev slice — not, as I was tempted,
 tuning on the golden set until the numbers improved.
 
-**5.8 n=200 means ±7pp, and there are ~24 reported numbers.** No multiplicity correction. Treat
-any gap narrower than ~10pp as not demonstrated; the ablations are directional. The one
-comparison I would defend at this n is the router ablation, where the gap is 6.7×.
+**5.8 n=200 means ±7pp across ~24 reported numbers, with no multiplicity correction.** Treat
+any gap narrower than ~10pp as not demonstrated. The one comparison I would defend at this n is
+the router ablation, where the gap is 6.7×.
 
 **5.9 One annotator, and the consistency check is worthless.** I re-labelled 40 units in a
-second pass and got 100% agreement (Table 7). That is evidence of *memory* — same person, same
+second pass and got 100% agreement (Table 7, `results/tables.md`). That is evidence of *memory* — same person, same
 day, items recognised. **Ignore that number.** Label uncertainty is unmeasured; the closest
-bound is the 23% `hard` rate, and Table 4 shows the agent's unsafe auto-handle rate is
+bound is the 23% `hard` rate, and the slice breakdown shows the agent's unsafe auto-handle rate is
 {{P:slices_S3_agent.by_annotator_difficulty.flagged_hard.unsafe_auto_rate}} on those units
 against {{P:slices_S3_agent.by_annotator_difficulty.clear.unsafe_auto_rate}} on the clear ones —
 a 5× difference driven entirely by how hard *I* found the label.
 
-**5.10 Nothing here measures whether a customer was helped.** No deflection, CSAT, re-contact or
-time-to-resolution. `resolution` is a model's guess about a reply whose consequences it never
-saw. `non_english` is a hard escalation signal by design, which conveniently removes the hardest
-generation cases from the quality metric — and §4 F2 shows that exclusion barely works anyway.
-The data is 2017, so a reply perfectly grounded in this evidence may be wrong today. One brand,
-one channel, one language.
+**5.10 Nothing here measures whether a customer was helped.** No deflection, CSAT, re-contact
+or time-to-resolution — `resolution` is a model's guess about a reply whose consequences it
+never saw. `non_english` being a hard escalation signal conveniently removes the hardest
+generation cases from the quality metric (and §4 F2 shows that exclusion barely works anyway).
+The data is 2017, one brand, one channel, one language.
 
 ### What I would actually put on a slide
 

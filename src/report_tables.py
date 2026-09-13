@@ -210,7 +210,7 @@ def main() -> None:
 
     # The report has a page budget, so it embeds only the four tables an argument
     # cannot be made without. The rest stay in results/tables.md.
-    CORE = ("### Table 1", "### Table 2", "### Table 4", "### Table 6", "### Table 7")
+    CORE = ("### Table 1", "### Table 6")
     blocks: list[list[str]] = []
     for raw in lines:
         line = raw.lstrip("\n")
