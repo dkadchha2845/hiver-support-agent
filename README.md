@@ -147,7 +147,8 @@ twcs.csv (2.8M tweets)
 ## Borrowed, and cited
 
 - **Dataset**: *Customer Support on Twitter*, Stuart Axelbrooke, Kaggle
-  (`thoughtvector/customer-support-on-twitter`), CC BY-NC-SA 4.0. `scripts/download_data.sh`
+  (`thoughtvector/customer-support-on-twitter`), CC BY-NC-SA 4.0 — see
+  [DATA_LICENSE.md](DATA_LICENSE.md) for what this repo redistributes and how PII is masked. `scripts/download_data.sh`
   pulls it via the Kaggle CLI when credentials exist, otherwise from a byte-identical
   Hugging Face mirror so a grader with no Kaggle account can still run it.
 - **Models**: `Qwen2.5-7B-Instruct` (Alibaba, Apache-2.0) and `Llama-3.1-8B-Instruct`
